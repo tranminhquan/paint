@@ -1,0 +1,9 @@
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\bin\Debug\Paint.exe.config
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\bin\Debug\Paint.exe
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\bin\Debug\Paint.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\obj\Debug\Paint.exe
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\obj\Debug\Paint.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\obj\Debug\Paint.frmPaint.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Official\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
