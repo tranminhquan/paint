@@ -1,2 +1,2 @@
 # paint
-Winform projects UIT - Absoluke Paint
+Winform project UIT - Absoluke Paint
