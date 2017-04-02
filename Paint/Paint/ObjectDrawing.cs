@@ -13,7 +13,7 @@ namespace Paint
     class ObjectDrawing
     {
         #region Declare
-        const int HANDLE_COUNT = 0;
+        protected int HANDLE_COUNT;
         protected enum MODE { DRAW, MOVE, RESIZE }
         MODE STATUS;
 
@@ -21,6 +21,7 @@ namespace Paint
         protected int _penWidth;
         protected Point _startPoint, _endPoint, _currentPoint;
         protected GraphicsPath _grapPath;
+        protected Region _region;
         #endregion
 
         #region Method

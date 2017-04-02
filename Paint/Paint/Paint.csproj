@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GraphicsList.cs" />
     <Compile Include="ObjectDrawing.cs" />
     <Compile Include="PenDrawing.cs" />
     <Compile Include="Program.cs" />
@@ -88,6 +89,7 @@
     <Content Include="Icon\1490873152_add.ico" />
     <Content Include="Icon\newIcon.png" />
     <Content Include="Icon\saveIcon.png" />
+    <Content Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
