@@ -13,32 +13,30 @@ namespace Paint
     class ObjectDrawing
     {
         #region Declare
-        protected int HANDLE_COUNT;
-        protected enum MODE { DRAW, MOVE, RESIZE }
-        MODE STATUS;
-
+        
+        public enum MODE { DRAW, MOVE, RESIZE, IDLE }
+        public MODE _PaintMode;        
         protected Color _color;
         protected int _penWidth;
-        protected Point _startPoint, _endPoint, _currentPoint;
         protected GraphicsPath _grapPath;
-        protected Region _region;
+        
         #endregion
 
         #region Method
         public ObjectDrawing()
         {
+            _PaintMode = MODE.DRAW;
             _color = Color.Black;
             _penWidth = 2;
-            _grapPath = new GraphicsPath();
-            STATUS = MODE.DRAW;
+            _grapPath = new GraphicsPath();          
         }
 
         public ObjectDrawing(Color color, int penwidth)
         {
+            _PaintMode = MODE.DRAW;
             _color = color;
             _penWidth = penwidth;
-            _grapPath = new GraphicsPath();
-            STATUS = MODE.DRAW;
+            _grapPath = new GraphicsPath();           
         }
 
         public virtual void Draw(Graphics g)
@@ -46,43 +44,16 @@ namespace Paint
 
         }
 
-        protected virtual Point GetHandlePoint(int handleIndex)
-        {
-            return new Point();
-        }
-
-        protected virtual Rectangle GetRectangleHandle(int handleIndex)
-        {
-            Point point = GetHandlePoint(handleIndex);
-
-            return new Rectangle(point.X - 3, point.Y - 3, 7, 7);
-        }
-
         public virtual void DrawHandlePoint(Graphics g)
         {
-            Pen p = new Pen(Color.Green, 2);
-            Brush brush = new SolidBrush(Color.White);
-            for (int i = 1; i < HANDLE_COUNT; i++)
-            {
-                g.DrawRectangle(p, GetRectangleHandle(i));
-                g.FillRectangle(brush, GetRectangleHandle(i));
-            }
-            p.Dispose();
-            brush.Dispose();
+
         }
 
-        protected virtual void Move(int deltaX, int deltaY)
+        public virtual int CheckLocation(Point cursor)
         {
-            _startPoint.X += deltaX;
-            _startPoint.Y += deltaY;
-            _endPoint.X += deltaX;
-            _endPoint.Y += deltaY;
+            return -1;
         }
 
-        protected virtual void ChangeSize(int handleIndex, Point destiny)
-        {
-
-        }
         #endregion
 
         #region Event

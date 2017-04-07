@@ -19,6 +19,13 @@ namespace Paint
         public EraserDrawing()
         {
             _color = Color.White;
+            _penWidth = 2;
+        }
+
+        public EraserDrawing(int penWidth)
+        {
+            _color = Color.White;
+            _penWidth = penWidth;
         }
         #endregion
 

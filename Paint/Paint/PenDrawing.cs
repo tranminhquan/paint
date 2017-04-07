@@ -19,21 +19,21 @@ namespace Paint
         #region Method
         public PenDrawing() : base()
         {
-            HANDLE_COUNT = 0;
+           
             _listPoint = new List<Point>(2) { new Point(0, 0), new Point(0, 1) };
             _grapPath.AddCurve(_listPoint.ToArray());
             _grapPath.Widen(new Pen(_color, _penWidth));
-            _region = new Region(_grapPath);
+           
             _listPoint.Clear();
         }
 
         public PenDrawing(Color color, int penWidth) : base(color, penWidth)
         {
-            HANDLE_COUNT = 0;
+          
             _listPoint = new List<Point>(2) { new Point(0, 0), new Point(0, 1) };
             _grapPath.AddCurve(_listPoint.ToArray());
             _grapPath.Widen(new Pen(_color, _penWidth));
-            _region = new Region(_grapPath);
+          
             _listPoint.Clear();
         }
         public override void Draw(Graphics g)
@@ -56,6 +56,12 @@ namespace Paint
         {
             _listPoint.Insert(_listPoint.Count, e.Location);
         }
+
+        public override void Mouse_Up(MouseEventArgs e)
+        {
+            base.Mouse_Up(e);
+        }
+
         #endregion
     }
 }

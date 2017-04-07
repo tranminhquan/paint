@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Paint.EraserDrawing" Collapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EraserDrawing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.GraphicsList" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>GraphicsList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.ObjectDrawing" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAIAgBAAAAAAAACAgACAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectDrawing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.PenDrawing" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAgAAAAAAAAAAAgAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>PenDrawing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.RectangleDrawing" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAACAAQABAAABCAAAAACChABIAgAAAAAAQAQAIA=</HashCode>
+      <FileName>RectangleDrawing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
