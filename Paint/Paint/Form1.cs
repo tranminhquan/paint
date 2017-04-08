@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Paint
@@ -71,6 +65,20 @@ namespace Paint
                     }
                 }
                 else if (objectChoose == "circle")
+                {
+                    if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
+                    {
+                        Shape.Mouse_Down(e);
+                    }
+
+                    else
+                    {
+                        ChooseObject();
+                        Shape.Mouse_Down(e);
+                        grapList._list.Insert(grapList._list.Count, Shape);
+                    }
+                }
+                else if (objectChoose == "star")
                 {
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
                     {
@@ -195,6 +203,9 @@ namespace Paint
                     break;
                 case "circle":
                     Shape = new CircleDrawing(color,penWidth);
+                    break;
+                case "star":
+                    Shape = new StarDrawing(color, penWidth);
                     break;
                 default:
                     break;

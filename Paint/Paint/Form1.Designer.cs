@@ -65,7 +65,7 @@
             this.button28 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
+            this.btnStar = new System.Windows.Forms.Button();
             this.btnCircle = new System.Windows.Forms.Button();
             this.btnRectangle = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -431,7 +431,7 @@
             this.panel6.Controls.Add(this.button28);
             this.panel6.Controls.Add(this.button27);
             this.panel6.Controls.Add(this.button23);
-            this.panel6.Controls.Add(this.button26);
+            this.panel6.Controls.Add(this.btnStar);
             this.panel6.Controls.Add(this.btnCircle);
             this.panel6.Controls.Add(this.btnRectangle);
             this.panel6.Location = new System.Drawing.Point(70, 14);
@@ -509,19 +509,20 @@
             this.button23.Tag = "Tool";
             this.button23.UseVisualStyleBackColor = false;
             // 
-            // button26
+            // btnStar
             // 
-            this.button26.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button26.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button26.FlatAppearance.BorderSize = 0;
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Location = new System.Drawing.Point(174, 0);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(70, 69);
-            this.button26.TabIndex = 1;
-            this.button26.Tag = "Tool";
-            this.button26.UseVisualStyleBackColor = false;
+            this.btnStar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnStar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnStar.FlatAppearance.BorderSize = 0;
+            this.btnStar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStar.Location = new System.Drawing.Point(174, 0);
+            this.btnStar.Name = "btnStar";
+            this.btnStar.Size = new System.Drawing.Size(70, 69);
+            this.btnStar.TabIndex = 1;
+            this.btnStar.Tag = "Tool";
+            this.btnStar.UseVisualStyleBackColor = false;
+            this.btnStar.Click += new System.EventHandler(this.btnObject_Click);
             // 
             // btnCircle
             // 
@@ -894,7 +895,7 @@
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button btnStar;
         private System.Windows.Forms.Button btnCircle;
         private System.Windows.Forms.Button btnRectangle;
     }
