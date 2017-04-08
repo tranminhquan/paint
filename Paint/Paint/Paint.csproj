@@ -92,6 +92,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Icon\1490873152_add.ico" />
+    <Content Include="Icon\Circle.png" />
     <Content Include="Icon\newIcon.png" />
     <Content Include="Icon\saveIcon.png" />
     <Content Include="Readme.txt" />

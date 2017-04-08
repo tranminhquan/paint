@@ -530,6 +530,7 @@
             this.btnCircle.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.btnCircle.FlatAppearance.BorderSize = 0;
             this.btnCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCircle.Image = ((System.Drawing.Image)(resources.GetObject("btnCircle.Image")));
             this.btnCircle.Location = new System.Drawing.Point(89, 0);
             this.btnCircle.Name = "btnCircle";
             this.btnCircle.Size = new System.Drawing.Size(70, 69);

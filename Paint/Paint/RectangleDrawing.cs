@@ -45,7 +45,7 @@ namespace Paint
 
         public override void Draw(Graphics g)
         {
-            base.Draw(g);
+            //base.Draw(g);
 
             g.DrawRectangle(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));
             DrawHandlePoint(g);
