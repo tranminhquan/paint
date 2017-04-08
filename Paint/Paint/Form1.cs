@@ -58,11 +58,25 @@ namespace Paint
                 //Neu da chon doi tuong
                 if (objectChoose == "rectangle")
                 {
-                    if (Shape != null && Shape.CheckLocation(e.Location) >= 0) 
-                    {                       
-                        Shape.Mouse_Down(e);                         
+                    if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
+                    {
+                        Shape.Mouse_Down(e);
                     }
-                                           
+
+                    else
+                    {
+                        ChooseObject();
+                        Shape.Mouse_Down(e);
+                        grapList._list.Insert(grapList._list.Count, Shape);
+                    }
+                }
+                else if (objectChoose == "circle")
+                {
+                    if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
+                    {
+                        Shape.Mouse_Down(e);
+                    }
+
                     else
                     {
                         ChooseObject();
@@ -178,6 +192,9 @@ namespace Paint
                     break;
                 case "rectangle":
                     Shape = new RectangleDrawing(color, penWidth);
+                    break;
+                case "circle":
+                    Shape = new CircleDrawing(color,penWidth);
                     break;
                 default:
                     break;

@@ -1541,19 +1541,15 @@
   </metadata>
   <data name="btnRectangle.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAFZSURBVHhe7dKxkUIxEAXBn9mFRAiEQAiEQmichEmtg6vprnqOZO5cAAAAAAAAAJzstvay1PbN
-        Px5rb0tu3378sM7GR+tsfLTOxsfn2t2O2r7pdOvx8W+Ns+ybTrceHwVwHgHECSBOAHECiBNAnADiBBAn
-        gDgBxAkgTgBxAogTQJwA4gQQJ4A4AcQJIE4AcQKIE0CcAOIEECeAOAHECSBOAHECiBNAnADiBBAngDgB
-        xAkgTgBxAogTQJwA4gQQJ4A4AcQJIE4AcQKIE0CcAOIEECeAOAHECSBOAHECiBNAnADiBBAngDgBxAkg
-        TgBxAogTQJwA4gQQJ4A4AcQJIE4AcQKIE0CcAOIEECeAOAHECSBOAHECiBNAnADiBBAngDgBxAkgTgBx
-        Aoj7KYDn2t2O2r7pdOvx0TobH62z8dE6ux5fD9bZvv3Hbe1lqe2bAwAAAAAAAHCi6/oHDGLB9WUCRg4A
-        AAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAVlJREFUeF7t
+        0rGRQjEQBcGf2YVECIRACIRCaJyESa2Dq+mueo5k7lwAAAAAAAAAnOy29rLU9s0/HmtvS27ffvywzsZH
+        62x8tM7Gx+fa3Y7avul06/Hxb42z7JtOtx4fBXAeAcQJIE4AcQKIE0CcAOIEECeAOAHECSBOAHECiBNA
+        nADiBBAngDgBxAkgTgBxAogTQJwA4gQQJ4A4AcQJIE4AcQKIE0CcAOIEECeAOAHECSBOAHECiBNAnADi
+        BBAngDgBxAkgTgBxAogTQJwA4gQQJ4A4AcQJIE4AcQKIE0CcAOIEECeAOAHECSBOAHECiBNAnADiBBAn
+        gDgBxAkgTgBxAogTQJwA4gQQJ4A4AcQJIE4AcQKIE0CcAOIEECeAOAHECSBOAHECiPspgOfa3Y7avul0
+        6/HROhsfrbPx0Tq7Hl8P1tm+/cdt7WWp7ZsDAAAAAAAAcKLr+gcMYsH1ZQJGDgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="timerPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>416, 16</value>
-  </metadata>
   <data name="button6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -1593,6 +1589,9 @@
         yf9SjTUpUfpTVQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="timerPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>416, 16</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>42</value>
   </metadata>

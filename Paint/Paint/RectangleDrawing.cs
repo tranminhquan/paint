@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -135,7 +131,7 @@ namespace Paint
             _endPoint.Y += deltaY;
         }
 
-        protected void ChangeStartAndEndPoint(int handleIndex)
+        public virtual void ChangeStartAndEndPoint(int handleIndex)
         {
             if (handleIndex == 1 || handleIndex == 2 || handleIndex == 4)
             {
@@ -157,7 +153,7 @@ namespace Paint
             }
         }
 
-        protected virtual void ChangeSize(int handleIndex, Point destiny)
+        public virtual void ChangeSize(int handleIndex, Point destiny)
         {
             //Khi goi ham nay start point va endpoint da thay doi
             int deltaX = destiny.X - _currentPoint.X;
@@ -270,8 +266,7 @@ namespace Paint
             _grapPath.Widen(new Pen(_color, _penWidth));
             _region = new Region(GetRectangle(_startPoint, _endPoint));
             _region.Union(_grapPath);
-            _PaintMode = MODE.IDLE;
-            
+            _PaintMode = MODE.IDLE;    
         }
         #endregion
     }
