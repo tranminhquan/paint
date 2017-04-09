@@ -30,7 +30,7 @@ namespace Paint
             g = Graphics.FromImage(fillImage);
             g.Clear(Color.White);
             grapList = new GraphicsList();
-         
+            picPaint.Image = new Bitmap(@"C:\Users\User\Desktop\paint\trunk\Paint\Untitled.png");
         }
 
        
@@ -50,6 +50,14 @@ namespace Paint
             if (e.Button == MouseButtons.Left)
             {
                 //Neu da chon doi tuong
+                if (objectChoose == "bucket")
+                {
+                    BucketDrawing b = new BucketDrawing(color);
+                    Bitmap t = new Bitmap(picPaint.Image);
+                    b.Fill(t, e.X, e.Y);
+                    picPaint.Image = t;
+                }
+
                 if (objectChoose == "rectangle")
                 {
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
@@ -104,6 +112,7 @@ namespace Paint
             {
                 Shape = null;
             }
+            
         }
 
         private void picPaint_MouseMove(object sender, MouseEventArgs e)
@@ -187,6 +196,11 @@ namespace Paint
                 this.timerPanel.Enabled = true;
         }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+           objectChoose = "bucket";
+        }
+
         private void ChooseObject()
         {           
             switch(objectChoose)
@@ -207,6 +221,11 @@ namespace Paint
                 case "star":
                     Shape = new StarDrawing(color, penWidth);
                     break;
+                case "bucket":
+                    Shape = new BucketDrawing(color);
+                    break;
+             
+                
                 default:
                     break;
             }
