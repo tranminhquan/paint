@@ -12,7 +12,7 @@ namespace Paint
         int penWidth = 3;
         string objectChoose;
         ObjectDrawing Shape;
-        Bitmap doubleBuffer, fillImage;
+        Bitmap doubleBuffer;
         GraphicsList grapList;
         
 
@@ -25,24 +25,21 @@ namespace Paint
             InitializeComponent();
             doubleBuffer = new Bitmap(picPaint.Width, picPaint.Height, picPaint.CreateGraphics());
             Graphics g = Graphics.FromImage(doubleBuffer);
-            g.Clear(Color.White);
-            fillImage = new Bitmap(picPaint.Width, picPaint.Height, picPaint.CreateGraphics());
-            g = Graphics.FromImage(fillImage);
-            g.Clear(Color.White);
-            grapList = new GraphicsList();
-            //picPaint.Image = new Bitmap(@"C:\Users\User\Desktop\paint\trunk\Paint\Untitled.png");
+            g.Clear(Color.White);       
+            grapList = new GraphicsList();     
         }
 
        
         private void picPaint_Paint(object sender, PaintEventArgs e)
         {
-                      
+            Graphics g = Graphics.FromImage(doubleBuffer);
             if (grapList._list.Count>0)
-            {
-                Graphics g = e.Graphics;
-                grapList.Draw(g);
+            {              
+                grapList.Draw(g);               
             }
-        
+
+            e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
+
         }
 
         private void picPaint_MouseDown(object sender, MouseEventArgs e)
@@ -50,13 +47,13 @@ namespace Paint
             if (e.Button == MouseButtons.Left)
             {
                 //Neu da chon doi tuong
-                if (objectChoose == "bucket")
-                {
-                    BucketDrawing b = new BucketDrawing(color);
-                    Bitmap t = new Bitmap(picPaint.Image);
-                    b.Fill(t, e.X, e.Y);
-                    picPaint.Image = t;
-                }
+                //if (objectChoose == "bucket")
+                //{
+                //    BucketDrawing bucket = new BucketDrawing(color);
+                //    Bitmap temp = new Bitmap(picPaint.Image);
+                //    bucket.Fill(temp, e.X, e.Y);
+                //    picPaint.Image = temp;
+                //}
 
                 if (objectChoose == "rectangle")
                 {
@@ -142,8 +139,7 @@ namespace Paint
         public void btnObject_Click(object sender, EventArgs e)
         {
             Button btnObject = (Button)sender;
-            objectChoose = btnObject.Name.Remove(0, 3).ToLower();
-                   
+            objectChoose = btnObject.Name.Remove(0, 3).ToLower();              
         }
 
         private void timerPanel_Tick(object sender, EventArgs e)
@@ -194,19 +190,6 @@ namespace Paint
         {
             if (panelMode == PANEL_MODE.OPEN)
                 this.timerPanel.Enabled = true;
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-           objectChoose = "bucket";
-        }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog _Open = new OpenFileDialog();
-            if (_Open.ShowDialog() == DialogResult.OK )
-            {
-            }
         }
 
         private void ChooseObject()

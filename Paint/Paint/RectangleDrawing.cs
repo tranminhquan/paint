@@ -47,8 +47,7 @@ namespace Paint
         {
             //base.Draw(g);
 
-            g.DrawRectangle(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));
-            //DrawHandlePoint(g);
+            g.DrawRectangle(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));           
         }
 
         protected Rectangle GetRectangle(Point start, Point end)
@@ -196,7 +195,15 @@ namespace Paint
             //Neu con tro nam ngoai region
             return -1;
         }
-
+        public override void ChaneCursor(Cursor _cursor)
+        {
+            if (_PaintMode == MODE.MOVE)
+                _cursor = Cursors.SizeAll;
+            else if (_PaintMode == MODE.RESIZE)
+                _cursor = Cursors.Cross;
+            else
+                _cursor = Cursors.Default;
+        }
         #endregion
 
         #region Event
@@ -212,7 +219,8 @@ namespace Paint
                 {
                     _PaintMode = MODE.DRAW;
                     _startPoint = e.Location;
-                  
+                    _endPoint.X = e.Location.X + 1;
+                    _endPoint.Y = e.Location.Y + 1;
 
                 }
                 else if (posOfLocation == 0)

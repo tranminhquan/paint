@@ -12,3 +12,8 @@ Cập nhật (7/4)
 +Phong, Kiệt, Khang làm phần đã được giao
 +Shape của Kiệt và Khang kế thừa RectangleDrawing
 +Nhớ đọc code!!!
+
+Cập nhật (16/04)
++Fix một số lỗi của RectangleDrawing
++Hoàn thiện kỹ thuật doubleBuffering
++Vẽ lại cursor khi vào mỗi vùng khác nhau

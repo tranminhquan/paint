@@ -35,6 +35,7 @@ namespace Paint
         }
         #endregion
 
+        #region Method
         public override void Draw(Graphics g)
         {
             //base.Draw(g);
@@ -82,9 +83,10 @@ namespace Paint
         {
             base.ChangeStartAndEndPoint(handleIndex);
         }
+        #endregion
 
 
-
+        #region Event
         public override void Mouse_Down(MouseEventArgs e)
         {
             base.Mouse_Down(e);
@@ -97,5 +99,7 @@ namespace Paint
         {
             base.Mouse_Up(e);
         }
+
+        #endregion
     }
 }
