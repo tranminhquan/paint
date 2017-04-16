@@ -95,22 +95,22 @@ namespace Paint
             float _distance_X = (float)(Math.Sqrt(Math.Pow((p2_Temp.X - p1_Temp.X), 2) + Math.Pow((p2_Temp.Y - p1_Temp.Y), 2)));
             float _distance_Y = (float)(Math.Sqrt(Math.Pow((p4_Temp.X - p1_Temp.X), 2) + Math.Pow((p4_Temp.Y - p1_Temp.Y), 2)));
 
-            PointF p24 = new PointF(p2_Temp.X - _distance_X/5, p4_Temp.Y - _distance_Y/5);
-            PointF p25 = new PointF(p2_Temp.X + _distance_X / 5, p4_Temp.Y - _distance_Y /5);
+            PointF p24 = new PointF(p2_Temp.X - _distance_X/4, p4_Temp.Y - _distance_Y/5 - _distance_Y/25);
+            PointF p25 = new PointF(p2_Temp.X + _distance_X/4, p5_Temp.Y - _distance_Y/5 - _distance_Y/25);
 
-            PointF p4 = new PointF(p4_Temp.X, p4_Temp.Y - _distance_Y / 5);
+            PointF p4 = new PointF(p4_Temp.X, p4_Temp.Y - _distance_Y/5);
             PointF p5 = new PointF(p5_Temp.X, p5_Temp.Y - _distance_Y/5);
 
-            PointF p46 = new PointF(p2_Temp.X - 2*_distance_X / 5, p4_Temp.Y + _distance_Y / 5);
-            PointF p57 = new PointF(p2_Temp.X + 2*_distance_X / 5, p5_Temp.Y + _distance_Y / 5);
+            PointF p46 = new PointF(p2_Temp.X - _distance_X /(float)2.5, p4_Temp.Y + _distance_Y / 5 + _distance_Y / 25);
+            PointF p57 = new PointF(p2_Temp.X + _distance_X /(float)2.5, p5_Temp.Y + _distance_Y / 5 + _distance_Y / 25);
 
-            PointF p7 = new PointF(p2_Temp.X, p7_Temp.Y - _distance_Y / 2);
+            PointF p7 = new PointF(p2_Temp.X, p7_Temp.Y - 2*_distance_Y /3 + _distance_Y/5);
 
-            PointF p67 = new PointF(p7_Temp.X - _distance_X/2, p7_Temp.Y);
-            PointF p78 = new PointF(p7_Temp.X + _distance_X/2, p7_Temp.Y);
+            PointF p67 = new PointF(p6_Temp.X + _distance_X/3, p7_Temp.Y);
+            PointF p78 = new PointF(p8_Temp.X - _distance_X/3, p7_Temp.Y);
 
-            PointF p12 = new PointF(p2_Temp.X - _distance_X / 2, p2_Temp.Y);
-            PointF p23 = new PointF(p2_Temp.X + _distance_X / 2, p2_Temp.Y);
+            PointF p12 = new PointF(p2_Temp.X - _distance_X /2, p2_Temp.Y);
+            PointF p23 = new PointF(p2_Temp.X + _distance_X /2, p2_Temp.Y);
 
             g.DrawLine(new Pen(_color, _penWidth), p2_Temp, p24);
             g.DrawLine(new Pen(_color, _penWidth), p24 , p4);

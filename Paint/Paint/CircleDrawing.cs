@@ -41,9 +41,10 @@ namespace Paint
             float[] dashValues = { 2, 2, 2, 2 };
             Pen p = new Pen(_color, _penWidth - 1);
             p.DashPattern = dashValues;
-            g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
+            //g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
             g.DrawEllipse(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));
-            DrawHandlePoint(g);
+
+            //DrawHandlePoint(g);
         }
 
         public override void DrawHandlePoint(Graphics g)

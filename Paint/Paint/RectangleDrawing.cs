@@ -19,7 +19,7 @@ namespace Paint
         {
             _color = Color.Black;
             _penWidth = 2;
-            _startPoint = new Point(0, 0);
+            //_startPoint = new Point(0, 0);
             _endPoint = new Point(0, 1);
             _grapPath = new GraphicsPath();
             _grapPath.AddRectangle(new Rectangle(0, 0, 0, 1));
@@ -48,7 +48,7 @@ namespace Paint
             //base.Draw(g);
 
             g.DrawRectangle(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));
-            DrawHandlePoint(g);
+            //DrawHandlePoint(g);
         }
 
         protected Rectangle GetRectangle(Point start, Point end)

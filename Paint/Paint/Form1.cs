@@ -30,7 +30,7 @@ namespace Paint
             g = Graphics.FromImage(fillImage);
             g.Clear(Color.White);
             grapList = new GraphicsList();
-            picPaint.Image = new Bitmap(@"C:\Users\User\Desktop\paint\trunk\Paint\Untitled.png");
+            //picPaint.Image = new Bitmap(@"C:\Users\User\Desktop\paint\trunk\Paint\Untitled.png");
         }
 
        
@@ -199,6 +199,14 @@ namespace Paint
         private void button11_Click(object sender, EventArgs e)
         {
            objectChoose = "bucket";
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog _Open = new OpenFileDialog();
+            if (_Open.ShowDialog() == DialogResult.OK )
+            {
+            }
         }
 
         private void ChooseObject()
