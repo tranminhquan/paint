@@ -58,13 +58,13 @@ namespace Paint
             {
 
                 //Neu da chon doi tuong
-                //if (objectChoose == "bucket")
-                //{
-                //    BucketDrawing bucket = new BucketDrawing(color);
-                //    Bitmap temp = new Bitmap(picPaint.Image);
-                //    bucket.Fill(temp, e.X, e.Y);
-                //    picPaint.Image = temp;
-                //}
+                if (objectChoose == "bucket")
+                {
+                    BucketDrawing bucket = new BucketDrawing(color);
+                  
+                    bucket.Fill(doubleBuffer, e.X, e.Y);
+                    
+                }
 
                 if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star")
                 {
