@@ -45,7 +45,7 @@ namespace Paint
             {
                 grapList.Draw(g);
             }
-            if (status == DRAW_STATUS.INCOMPLETE)
+            if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket")
                 Shape.DrawHandlePoint(g);
 
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
@@ -60,12 +60,16 @@ namespace Paint
                 //Neu da chon doi tuong
                 if (objectChoose == "bucket")
                 {
+                    //Shape = null;
+
                     BucketDrawing bucket = new BucketDrawing(color);
                   
-                    bucket.Fill(doubleBuffer, e.X, e.Y);
+                   
+                    fillImage = bucket.Fill(doubleBuffer,fillImage, e.X, e.Y);
+                    picPaint.Refresh();
                     
                 }
-
+                else
                 if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star")
                 {
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
@@ -216,10 +220,7 @@ namespace Paint
                 case "star":
                     Shape = new StarDrawing(color, penWidth);
                     break;
-                case "bucket":
-                    Shape = new BucketDrawing(color);
-                    break;
-
+              
 
                 default:
                     break;
