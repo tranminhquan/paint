@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using System.IO;
 namespace Paint
 {
     public partial class frmPaint : Form
@@ -16,6 +16,7 @@ namespace Paint
         Bitmap doubleBuffer, fillImage;
         GraphicsList grapList;
         DRAW_STATUS status;
+        bool isSaved = false;
 
 
         Panel panelTab; //Dung trong hieu ung slide tab
@@ -194,10 +195,104 @@ namespace Paint
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog _Open = new OpenFileDialog();
-            if (_Open.ShowDialog() == DialogResult.OK)
+            openFileDialog1.Filter = "All Picture Files|*.bmp;*.ico;*.gif;*.jpeg;*.jpg;*.jfif;*.png;*.tif;*.tiff;*.wmf;*.emf|" +
+                            "Windows Bitmap (*.bmp)|*.bmp|" +
+                            "All Files (*.*)|*.*";
+            openFileDialog1.Title = "Open an Image File";
+
+            newToolStripMenuItem_Click(sender, e);
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                try
+                {
+                    fillImage = new Bitmap(openFileDialog1.FileName);
+                    picPaint.Image = fillImage;
+                    picPaint.Refresh();
+                }
+                catch
+                {
+                    MessageBox.Show("Can't read this file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Shape = null;
+            grapList._list.Clear();
+            if (isSaved == false)
+            {
+                DialogResult dlr = MessageBox.Show("Do you want to save first?", "Absoluke Paint", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    saveAsToolStripMenuItem_Click(sender, e);
+                    isSaved = true;
+                }
+                else
+                {
+                    fillImage = new Bitmap(1145, 526, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                    Graphics g = Graphics.FromImage(fillImage);
+                    g.Clear(Color.White);
+                    picPaint.Size = fillImage.Size;
+                    picPaint.Refresh();
+                }
+            }
+            else
+            {
+                fillImage = new Bitmap(1145, 526, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                Graphics g = Graphics.FromImage(fillImage);
+                g.Clear(Color.White);
+                picPaint.Size = fillImage.Size;
+                picPaint.Refresh();
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(saveFileDialog1.FileName))
+                doubleBuffer.Save(saveFileDialog1.FileName);
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Title = "Save an Image File";
+            saveFileDialog1.Filter = "BMP (*.bmp)|*.bmp|All File (*.*)|*.*";
+            saveFileDialog1.CheckPathExists = true;
+            saveFileDialog1.OverwritePrompt = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                doubleBuffer.Save(saveFileDialog1.FileName);
+            isSaved = true;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isSaved == false)
+            {
+                DialogResult dlr = MessageBox.Show("Do you want to save first?", "Absoluke Paint", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    saveAsToolStripMenuItem_Click(sender, e);
+                    isSaved = true;
+                    this.Close();
+                    this.Dispose();
+                }
+                else
+                {
+                    this.Close();
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                this.Close();
+                this.Dispose();
+            }
+        }
+
+        private void frmPaint_FormClosed(object sender, FormClosingEventArgs e)
+        {
+            exitToolStripMenuItem_Click(sender, e);
         }
 
         private void ChooseObject()
