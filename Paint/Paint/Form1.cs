@@ -71,7 +71,7 @@ namespace Paint
                     
                 }
                 else
-                if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star")
+                if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon")
                 {
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
                     {
@@ -315,7 +315,22 @@ namespace Paint
                 case "star":
                     Shape = new StarDrawing(color, penWidth);
                     break;
-              
+                case "line":
+                    Shape = new LineDrawing(color, penWidth);
+                    break;
+                case "triangle":
+                    Shape = new TriangleDrawing(color, penWidth);
+                    break;
+                case "rhombus":
+                    Shape = new RhombusDrawing(color, penWidth);
+                    break;
+                case "pentagon":
+                    Shape = new PentagonDrawing(color, penWidth);
+                    break;
+                case "hexagon":
+                    Shape = new HexagonDrawing(color, penWidth);
+                    break;
+
 
                 default:
                     break;

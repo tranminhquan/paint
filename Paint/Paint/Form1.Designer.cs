@@ -61,11 +61,11 @@
             this.pnlTab = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
+            this.btnHexagon = new System.Windows.Forms.Button();
+            this.btnRhombus = new System.Windows.Forms.Button();
+            this.btnPentagon = new System.Windows.Forms.Button();
+            this.btnLine = new System.Windows.Forms.Button();
+            this.btnTriangle = new System.Windows.Forms.Button();
             this.btnStar = new System.Windows.Forms.Button();
             this.btnCircle = new System.Windows.Forms.Button();
             this.btnRectangle = new System.Windows.Forms.Button();
@@ -136,35 +136,35 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.saveAsToolStripMenuItem.Text = "Save As . . .";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -277,7 +277,6 @@
             // btnBucket
             // 
             this.btnBucket.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnBucket.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBucket.BackgroundImage")));
             this.btnBucket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBucket.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.btnBucket.FlatAppearance.BorderSize = 0;
@@ -459,21 +458,21 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Navy;
             this.panel3.Controls.Add(this.panel6);
-            this.panel3.Location = new System.Drawing.Point(257, 352);
+            this.panel3.Location = new System.Drawing.Point(2, 352);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(375, 145);
+            this.panel3.Size = new System.Drawing.Size(630, 145);
             this.panel3.TabIndex = 1;
             this.panel3.Click += new System.EventHandler(this.pnlTab_Click);
             this.panel3.MouseLeave += new System.EventHandler(this.pnlTab_MouseLeave);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.button29);
-            this.panel6.Controls.Add(this.button25);
-            this.panel6.Controls.Add(this.button28);
-            this.panel6.Controls.Add(this.button27);
-            this.panel6.Controls.Add(this.button23);
+            this.panel6.Controls.Add(this.btnHexagon);
+            this.panel6.Controls.Add(this.btnRhombus);
+            this.panel6.Controls.Add(this.btnPentagon);
+            this.panel6.Controls.Add(this.btnLine);
+            this.panel6.Controls.Add(this.btnTriangle);
             this.panel6.Controls.Add(this.btnStar);
             this.panel6.Controls.Add(this.btnCircle);
             this.panel6.Controls.Add(this.btnRectangle);
@@ -483,85 +482,89 @@
             this.panel6.Size = new System.Drawing.Size(320, 122);
             this.panel6.TabIndex = 0;
             // 
-            // button29
+            // btnHexagon
             // 
-            this.button29.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button29.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button29.FlatAppearance.BorderSize = 0;
-            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button29.Location = new System.Drawing.Point(195, 63);
-            this.button29.Margin = new System.Windows.Forms.Padding(2);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(52, 56);
-            this.button29.TabIndex = 1;
-            this.button29.Tag = "Tool";
-            this.button29.UseVisualStyleBackColor = false;
+            this.btnHexagon.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnHexagon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHexagon.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnHexagon.FlatAppearance.BorderSize = 0;
+            this.btnHexagon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHexagon.Location = new System.Drawing.Point(195, 63);
+            this.btnHexagon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHexagon.Name = "btnHexagon";
+            this.btnHexagon.Size = new System.Drawing.Size(52, 56);
+            this.btnHexagon.TabIndex = 1;
+            this.btnHexagon.Tag = "Tool";
+            this.btnHexagon.UseVisualStyleBackColor = false;
+            this.btnHexagon.Click += new System.EventHandler(this.btnObject_Click);
             // 
-            // button25
+            // btnRhombus
             // 
-            this.button25.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button25.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button25.FlatAppearance.BorderSize = 0;
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Location = new System.Drawing.Point(67, 63);
-            this.button25.Margin = new System.Windows.Forms.Padding(2);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(52, 56);
-            this.button25.TabIndex = 1;
-            this.button25.Tag = "Tool";
-            this.button25.UseVisualStyleBackColor = false;
+            this.btnRhombus.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRhombus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRhombus.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnRhombus.FlatAppearance.BorderSize = 0;
+            this.btnRhombus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRhombus.Location = new System.Drawing.Point(67, 63);
+            this.btnRhombus.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRhombus.Name = "btnRhombus";
+            this.btnRhombus.Size = new System.Drawing.Size(52, 56);
+            this.btnRhombus.TabIndex = 1;
+            this.btnRhombus.Tag = "Tool";
+            this.btnRhombus.UseVisualStyleBackColor = false;
+            this.btnRhombus.Click += new System.EventHandler(this.btnObject_Click);
             // 
-            // button28
+            // btnPentagon
             // 
-            this.button28.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button28.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button28.FlatAppearance.BorderSize = 0;
-            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Location = new System.Drawing.Point(130, 63);
-            this.button28.Margin = new System.Windows.Forms.Padding(2);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(52, 56);
-            this.button28.TabIndex = 1;
-            this.button28.Tag = "Tool";
-            this.button28.UseVisualStyleBackColor = false;
+            this.btnPentagon.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPentagon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPentagon.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnPentagon.FlatAppearance.BorderSize = 0;
+            this.btnPentagon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPentagon.Location = new System.Drawing.Point(130, 63);
+            this.btnPentagon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPentagon.Name = "btnPentagon";
+            this.btnPentagon.Size = new System.Drawing.Size(52, 56);
+            this.btnPentagon.TabIndex = 1;
+            this.btnPentagon.Tag = "Tool";
+            this.btnPentagon.UseVisualStyleBackColor = false;
+            this.btnPentagon.Click += new System.EventHandler(this.btnObject_Click);
             // 
-            // button27
+            // btnLine
             // 
-            this.button27.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button27.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button27.FlatAppearance.BorderSize = 0;
-            this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button27.Location = new System.Drawing.Point(195, 0);
-            this.button27.Margin = new System.Windows.Forms.Padding(2);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(52, 56);
-            this.button27.TabIndex = 1;
-            this.button27.Tag = "Tool";
-            this.button27.UseVisualStyleBackColor = false;
+            this.btnLine.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLine.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnLine.FlatAppearance.BorderSize = 0;
+            this.btnLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLine.Location = new System.Drawing.Point(195, 0);
+            this.btnLine.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLine.Name = "btnLine";
+            this.btnLine.Size = new System.Drawing.Size(52, 56);
+            this.btnLine.TabIndex = 1;
+            this.btnLine.Tag = "Tool";
+            this.btnLine.UseVisualStyleBackColor = false;
+            this.btnLine.Click += new System.EventHandler(this.btnObject_Click);
             // 
-            // button23
+            // btnTriangle
             // 
-            this.button23.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button23.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button23.FlatAppearance.BorderSize = 0;
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Location = new System.Drawing.Point(2, 63);
-            this.button23.Margin = new System.Windows.Forms.Padding(2);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(52, 56);
-            this.button23.TabIndex = 1;
-            this.button23.Tag = "Tool";
-            this.button23.UseVisualStyleBackColor = false;
+            this.btnTriangle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTriangle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTriangle.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnTriangle.FlatAppearance.BorderSize = 0;
+            this.btnTriangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTriangle.Location = new System.Drawing.Point(2, 63);
+            this.btnTriangle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTriangle.Name = "btnTriangle";
+            this.btnTriangle.Size = new System.Drawing.Size(52, 56);
+            this.btnTriangle.TabIndex = 1;
+            this.btnTriangle.Tag = "Tool";
+            this.btnTriangle.UseVisualStyleBackColor = false;
+            this.btnTriangle.Click += new System.EventHandler(this.btnObject_Click);
             // 
             // btnStar
             // 
             this.btnStar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnStar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStar.BackgroundImage")));
             this.btnStar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnStar.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.btnStar.FlatAppearance.BorderSize = 0;
@@ -578,7 +581,6 @@
             // btnCircle
             // 
             this.btnCircle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCircle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCircle.BackgroundImage")));
             this.btnCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCircle.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.btnCircle.FlatAppearance.BorderSize = 0;
@@ -966,11 +968,11 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button btnHexagon;
+        private System.Windows.Forms.Button btnRhombus;
+        private System.Windows.Forms.Button btnPentagon;
+        private System.Windows.Forms.Button btnLine;
+        private System.Windows.Forms.Button btnTriangle;
         private System.Windows.Forms.Button btnStar;
         private System.Windows.Forms.Button btnCircle;
         private System.Windows.Forms.Button btnRectangle;
