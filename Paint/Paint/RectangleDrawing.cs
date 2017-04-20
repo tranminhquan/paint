@@ -19,7 +19,7 @@ namespace Paint
         {
             _color = Color.Black;
             _penWidth = 2;
-            //_startPoint = new Point(0, 0);
+            _startPoint = new Point(0, 0);
             _endPoint = new Point(0, 1);
             _grapPath = new GraphicsPath();
             _grapPath.AddRectangle(new Rectangle(0, 0, 0, 1));

@@ -57,6 +57,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsList.cs" />
+    <Compile Include="LineDrawing.cs" />
     <Compile Include="ObjectDrawing.cs" />
     <Compile Include="PenDrawing.cs" />
     <Compile Include="Program.cs" />

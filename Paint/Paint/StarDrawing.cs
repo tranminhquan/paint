@@ -39,10 +39,10 @@ namespace Paint
         public override void Draw(Graphics g)
         {
             //base.Draw(g);
-            float[] dashValues = { 2, 2, 2, 2 };
-            Pen p = new Pen(_color, _penWidth - 1);
-            p.DashPattern = dashValues;
-            g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
+            //float[] dashValues = { 2, 2, 2, 2 };
+            //Pen p = new Pen(_color, _penWidth - 1);
+            //p.DashPattern = dashValues;
+            //g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
 
             PointF p4_Temp = GetHandlePoint(4);
             PointF p5_Temp = GetHandlePoint(5);
@@ -124,7 +124,7 @@ namespace Paint
             g.DrawLine(new Pen(_color, _penWidth), p25, p2_Temp);
             
             
-            DrawHandlePoint(g);
+            //DrawHandlePoint(g);
         }
         public override void DrawHandlePoint(Graphics g)
         {
