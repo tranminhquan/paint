@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BucketDrawing.cs" />
     <Compile Include="CircleDrawing.cs" />
+    <Compile Include="CropRectangle.cs" />
     <Compile Include="EraserDrawing.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

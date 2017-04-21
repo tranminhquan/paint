@@ -14,7 +14,11 @@ namespace Paint
         protected Color _color;
         protected int _penWidth;
         protected GraphicsPath _grapPath;
-        
+        public Point _startPoint;
+        public Point _endPoint;
+
+
+
         #endregion
 
         #region Method

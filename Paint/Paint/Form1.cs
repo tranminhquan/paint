@@ -18,6 +18,8 @@ namespace Paint
         DRAW_STATUS status;
         bool isSaved = false;
 
+        bool isCrop = false;
+
 
         Panel panelTab; //Dung trong hieu ung slide tab
         PANEL_MODE panelMode = PANEL_MODE.CLOSE;
@@ -71,7 +73,8 @@ namespace Paint
                     
                 }
                 else
-                if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon")
+                 if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
+
                 {
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
                     {
@@ -139,8 +142,32 @@ namespace Paint
 
         public void btnObject_Click(object sender, EventArgs e)
         {
-            Button btnObject = (Button)sender;
-            objectChoose = btnObject.Name.Remove(0, 3).ToLower();
+            
+                Button btnObject = (Button)sender;
+                objectChoose = btnObject.Name.Remove(0, 3).ToLower();
+                
+          
+            if(objectChoose == "crop" && isCrop == true)
+            {
+                int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
+                int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
+                Rectangle ROI = new Rectangle(Shape._startPoint.X, Shape._startPoint.Y, width, height);
+                Bitmap small;
+                
+
+                small = CropImage(doubleBuffer, ROI);
+
+                Renew();
+
+                Graphics gp = Graphics.FromImage(fillImage);
+                gp.Clear(Color.White);
+
+                gp.DrawImage(small, ROI);
+
+                             
+                picPaint.Refresh();
+                isCrop = false;
+            }
         }
 
         private void timerPanel_Tick(object sender, EventArgs e)
@@ -315,6 +342,16 @@ namespace Paint
                 case "star":
                     Shape = new StarDrawing(color, penWidth);
                     break;
+
+                case "crop":
+                    {
+                        Shape = new CropRectangle(); 
+                       
+                       isCrop = true;
+                    }
+                    break;
+
+              
                 case "line":
                     Shape = new LineDrawing(color, penWidth);
                     break;
@@ -335,6 +372,34 @@ namespace Paint
                 default:
                     break;
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+
+        {
+            Shape = null;
+            Renew();
+        }
+
+        private Bitmap CropImage(Bitmap src,Rectangle Roi)
+        {
+            Bitmap croppedImg;
+            
+
+            croppedImg =src.Clone(Roi, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+
+            
+            return croppedImg;
+        }
+        private void Renew()
+        {
+            
+            grapList._list.Clear();
+            fillImage = new Bitmap(1527, 707, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            Graphics g = Graphics.FromImage(fillImage);
+            g.Clear(Color.White);
+            picPaint.Size = fillImage.Size;
+            picPaint.Refresh();
         }
     }
 }
