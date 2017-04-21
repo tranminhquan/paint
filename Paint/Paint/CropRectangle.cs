@@ -32,7 +32,7 @@ namespace Paint
             for (int i = 1; i <= HANDLE_COUNT; i++)
             {
                 g.DrawRectangle(p, GetRectangleHandle(i));
-                g.FillRectangle(brush, GetRectangleHandle(i));
+                //g.FillRectangle(brush, GetRectangleHandle(i));
             }
             p.Dispose();
             brush.Dispose();

@@ -151,7 +151,7 @@ namespace Paint
             {
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
-                Rectangle ROI = new Rectangle(Shape._startPoint.X, Shape._startPoint.Y, width, height);
+                Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height-2);
                 Bitmap small;
                 
 
@@ -246,7 +246,7 @@ namespace Paint
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Shape = null;
+            //Shape = null;
             grapList._list.Clear();
             if (isSaved == false)
             {
@@ -352,21 +352,21 @@ namespace Paint
                     break;
 
               
-                case "line":
-                    Shape = new LineDrawing(color, penWidth);
-                    break;
-                case "triangle":
-                    Shape = new TriangleDrawing(color, penWidth);
-                    break;
-                case "rhombus":
-                    Shape = new RhombusDrawing(color, penWidth);
-                    break;
-                case "pentagon":
-                    Shape = new PentagonDrawing(color, penWidth);
-                    break;
-                case "hexagon":
-                    Shape = new HexagonDrawing(color, penWidth);
-                    break;
+                //case "line":
+                //    Shape = new LineDrawing(color, penWidth);
+                //    break;
+                //case "triangle":
+                //    Shape = new TriangleDrawing(color, penWidth);
+                //    break;
+                //case "rhombus":
+                //    Shape = new RhombusDrawing(color, penWidth);
+                //    break;
+                //case "pentagon":
+                //    Shape = new PentagonDrawing(color, penWidth);
+                //    break;
+                //case "hexagon":
+                //    Shape = new HexagonDrawing(color, penWidth);
+                //    break;
 
 
                 default:
@@ -374,12 +374,7 @@ namespace Paint
             }
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
-
-        {
-            Shape = null;
-            Renew();
-        }
+ 
 
         private Bitmap CropImage(Bitmap src,Rectangle Roi)
         {
