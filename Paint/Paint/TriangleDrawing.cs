@@ -44,6 +44,7 @@ namespace Paint
             PointF p8 = GetHandlePoint(8);
             PointF p2 = GetHandlePoint(2);
 
+            g.SmoothingMode = SmoothingMode.AntiAlias;
             g.DrawLine(new Pen(_color, _penWidth), p2, p6);
             g.DrawLine(new Pen(_color, _penWidth), p2, p8);
             g.DrawLine(new Pen(_color, _penWidth), p6, p8);

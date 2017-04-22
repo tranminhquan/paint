@@ -351,22 +351,22 @@ namespace Paint
                     }
                     break;
 
-              
-                //case "line":
-                //    Shape = new LineDrawing(color, penWidth);
-                //    break;
-                //case "triangle":
-                //    Shape = new TriangleDrawing(color, penWidth);
-                //    break;
-                //case "rhombus":
-                //    Shape = new RhombusDrawing(color, penWidth);
-                //    break;
-                //case "pentagon":
-                //    Shape = new PentagonDrawing(color, penWidth);
-                //    break;
-                //case "hexagon":
-                //    Shape = new HexagonDrawing(color, penWidth);
-                //    break;
+
+                case "line":
+                    Shape = new LineDrawing(color, penWidth);
+                    break;
+                case "triangle":
+                    Shape = new TriangleDrawing(color, penWidth);
+                    break;
+                case "rhombus":
+                    Shape = new RhombusDrawing(color, penWidth);
+                    break;
+                case "pentagon":
+                    Shape = new PentagonDrawing(color, penWidth);
+                    break;
+                case "hexagon":
+                    Shape = new HexagonDrawing(color, penWidth);
+                    break;
 
 
                 default:

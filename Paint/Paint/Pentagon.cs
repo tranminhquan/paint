@@ -47,6 +47,7 @@ namespace Paint
             Point D = new Point(_startPoint.X + (_endPoint.X - _startPoint.X) * 5 / 6, _endPoint.Y);
             Point E = new Point(_endPoint.X, _startPoint.Y + (_endPoint.Y - _startPoint.Y) * 2 / 6);
 
+            g.SmoothingMode = SmoothingMode.AntiAlias;
             g.DrawLine(new Pen(_color, _penWidth), A, B);
             g.DrawLine(new Pen(_color, _penWidth), B, C);
             g.DrawLine(new Pen(_color, _penWidth), C, D);

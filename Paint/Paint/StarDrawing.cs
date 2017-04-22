@@ -36,6 +36,7 @@ namespace Paint
         }
         #endregion
 
+        #region Method
         public override void Draw(Graphics g)
         {
             //base.Draw(g);
@@ -112,6 +113,7 @@ namespace Paint
             PointF p12 = new PointF(p2_Temp.X - _distance_X /2, p2_Temp.Y);
             PointF p23 = new PointF(p2_Temp.X + _distance_X /2, p2_Temp.Y);
 
+            g.SmoothingMode = SmoothingMode.AntiAlias;
             g.DrawLine(new Pen(_color, _penWidth), p2_Temp, p24);
             g.DrawLine(new Pen(_color, _penWidth), p24 , p4);
             g.DrawLine(new Pen(_color, _penWidth), p4, p46);
@@ -153,6 +155,9 @@ namespace Paint
             //Neu con tro nam ngoai region
             return -1;
         }
+        #endregion
+
+        #region Event
         public override void ChangeSize(int handleIndex, Point destiny)
         {
             base.ChangeSize(handleIndex, destiny);
@@ -174,5 +179,6 @@ namespace Paint
         {
             base.Mouse_Up(e);
         }
+        #endregion
     }
 }

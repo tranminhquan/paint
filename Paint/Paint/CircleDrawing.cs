@@ -42,6 +42,7 @@ namespace Paint
             float[] dashValues = { 2, 2, 2, 2 };
             Pen p = new Pen(_color, _penWidth - 1);
             p.DashPattern = dashValues;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
             //g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
             g.DrawEllipse(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));
 
@@ -84,7 +85,6 @@ namespace Paint
             base.ChangeStartAndEndPoint(handleIndex);
         }
         #endregion
-
 
         #region Event
         public override void Mouse_Down(MouseEventArgs e)

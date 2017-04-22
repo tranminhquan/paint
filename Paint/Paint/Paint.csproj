@@ -58,12 +58,17 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsList.cs" />
+    <Compile Include="HexagonDrawing.cs" />
+    <Compile Include="LineDrawing.cs" />
     <Compile Include="ObjectDrawing.cs" />
     <Compile Include="PenDrawing.cs" />
+    <Compile Include="Pentagon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleDrawing.cs" />
+    <Compile Include="RhombusDrawing.cs" />
     <Compile Include="StarDrawing.cs" />
+    <Compile Include="TriangleDrawing.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

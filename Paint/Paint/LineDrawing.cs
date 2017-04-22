@@ -41,6 +41,7 @@ namespace Paint
             //base.Draw(g);
             Pen p = new Pen(_color, _penWidth - 1);
 
+            g.SmoothingMode = SmoothingMode.AntiAlias;
             g.DrawLine(new Pen(_color, _penWidth), _startPoint, _endPoint);
 
             //g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));

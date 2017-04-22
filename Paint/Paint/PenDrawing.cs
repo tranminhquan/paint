@@ -39,6 +39,7 @@ namespace Paint
         public override void Draw(Graphics g)
         { 
                 Pen p = new Pen(_color, _penWidth);
+                g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.DrawCurve(p, _listPoint.ToArray());
                 p.Dispose();
             
