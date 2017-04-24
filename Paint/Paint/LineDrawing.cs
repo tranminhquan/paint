@@ -14,10 +14,10 @@ namespace Paint
             _startPoint = new Point(0, 0);
             _endPoint = new Point(0, 1);
             _grapPath = new GraphicsPath();
-            _grapPath.AddEllipse(new Rectangle(0, 0, 0, 1));
+            _grapPath.AddLine(_startPoint, _endPoint);
             _grapPath.Widen(new Pen(_color, _penWidth));
-            _region = new Region(new Rectangle(0, 0, 0, 1));
-            _region.Union(_grapPath);
+            _region = new Region(_grapPath);
+            //_region.Union(_grapPath);
             _PaintMode = MODE.IDLE;
         }
         public LineDrawing(Color color, int penWidth) : base()
@@ -27,10 +27,10 @@ namespace Paint
             _startPoint = new Point(0, 0);
             _endPoint = new Point(0, 1);
             _grapPath = new GraphicsPath();
-            _grapPath.AddEllipse(new Rectangle(0, 0, 0, 1));
+            _grapPath.AddLine(_startPoint, _endPoint);
             _grapPath.Widen(new Pen(color, penWidth));
-            _region = new Region(new Rectangle(0, 0, 0, 1));
-            _region.Union(_grapPath);
+            _region = new Region(_grapPath);
+            //_region.Union(_grapPath);
             _PaintMode = MODE.IDLE;
         }
         #endregion
@@ -55,8 +55,11 @@ namespace Paint
             SolidBrush brush = new SolidBrush(Color.Green);
             for (int i = 1; i <= HANDLE_COUNT; i++)
             {
-                g.DrawEllipse(p, GetRectangleHandle(i));
-                g.FillEllipse(brush, GetRectangleHandle(i));
+                if (i == 1 || i == 8)
+                {
+                    g.DrawEllipse(p, GetRectangleHandle(i));
+                    g.FillEllipse(brush, GetRectangleHandle(i));
+                }
             }
             p.Dispose();
             brush.Dispose();
@@ -65,8 +68,11 @@ namespace Paint
         {
             for (int i = 1; i <= HANDLE_COUNT; i++)
             {
-                if (GetRectangleHandle(i).Contains(cursor))
-                    return i;
+                if (i == 1 || i == 8)
+                {
+                    if (GetRectangleHandle(i).Contains(cursor))
+                        return i;
+                }
             }
 
             //Neu con tro thuoc region
@@ -80,6 +86,7 @@ namespace Paint
         {
             base.ChangeSize(handleIndex, destiny);
         }
+
         public override void ChangeStartAndEndPoint(int handleIndex)
         {
             base.ChangeStartAndEndPoint(handleIndex);
@@ -98,6 +105,11 @@ namespace Paint
         public override void Mouse_Up(MouseEventArgs e)
         {
             base.Mouse_Up(e);
+            _grapPath = new GraphicsPath();
+            Pen pen = new Pen(_color, _penWidth);
+            _grapPath.AddLine(_startPoint, _endPoint);
+            _grapPath.Widen(new Pen(_color, _penWidth));
+            _region = new Region(_grapPath);
         }
         #endregion
     }
