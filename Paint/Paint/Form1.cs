@@ -278,7 +278,7 @@ namespace Paint
                 }
                 else
                 {
-                    fillImage = new Bitmap(_size.Width, _size.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                    fillImage = new Bitmap(1145, 526, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                     Graphics g = Graphics.FromImage(fillImage);
                     g.Clear(Color.White);
                     picPaint.Size = fillImage.Size;
