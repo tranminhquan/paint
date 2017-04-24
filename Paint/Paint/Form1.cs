@@ -7,7 +7,7 @@ namespace Paint
     public partial class frmPaint : Form
     {
         enum PANEL_MODE { OPEN, CLOSE }
-
+        
         enum DRAW_STATUS { COMPLETE, INCOMPLETE };
         Color color = Color.Black;
         int penWidth = 1;
@@ -50,7 +50,6 @@ namespace Paint
                 grapList.Draw(g);
             }
             if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket")
-                Shape.DrawHandlePoint(g);
 
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
         }
@@ -383,6 +382,8 @@ namespace Paint
                     break;
                 
                 default:
+                    objectChoose = "none";
+                    Shape = new NoneShapeDrawing();
                     break;
             }
         }

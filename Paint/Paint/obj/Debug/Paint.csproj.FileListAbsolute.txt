@@ -43,3 +43,12 @@ C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.Properties.Resour
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.exe
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.exe.config
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.exe
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.exe
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.frmPaint.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache

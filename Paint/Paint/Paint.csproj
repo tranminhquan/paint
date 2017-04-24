@@ -60,6 +60,7 @@
     <Compile Include="GraphicsList.cs" />
     <Compile Include="HexagonDrawing.cs" />
     <Compile Include="LineDrawing.cs" />
+    <Compile Include="NoneShapeDrawing.cs" />
     <Compile Include="ObjectDrawing.cs" />
     <Compile Include="PenDrawing.cs" />
     <Compile Include="Pentagon.cs" />
