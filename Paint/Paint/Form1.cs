@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
@@ -18,7 +18,9 @@ namespace Paint
         DRAW_STATUS status;
         bool isSaved = false;
 
+        Graphics pen; // pen width
         bool isCrop = false;
+
 
 
         Panel panelTab; //Dung trong hieu ung slide tab
@@ -28,7 +30,6 @@ namespace Paint
         public frmPaint()
         {
             InitializeComponent();
-
             doubleBuffer = new Bitmap(1527, 707, picPaint.CreateGraphics());
             Graphics g = Graphics.FromImage(doubleBuffer);
             g.Clear(Color.White);
@@ -37,6 +38,7 @@ namespace Paint
             g.Clear(Color.White);
             grapList = new GraphicsList();
 
+            pen = pn_penWidth.CreateGraphics();
         }
 
 
@@ -52,7 +54,6 @@ namespace Paint
                 Shape.DrawHandlePoint(g);
 
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
-
         }
 
         private void picPaint_MouseDown(object sender, MouseEventArgs e)
@@ -64,17 +65,16 @@ namespace Paint
                 if (objectChoose == "bucket")
                 {
                     //Shape = null;
+                if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star")
 
-                    BucketDrawing bucket = new BucketDrawing(color);
-                  
-                   
-                    fillImage = bucket.Fill(doubleBuffer,fillImage, e.X, e.Y);
+                    //BucketDrawing bucket = new BucketDrawing(color);
+
+                    //fillImage = bucket.Fill(doubleBuffer,fillImage, e.X, e.Y);
                     picPaint.Refresh();
                     
                 }
                 else
                  if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
-
                 {
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
                     {
@@ -95,7 +95,6 @@ namespace Paint
                         grapList._list.Insert(grapList._list.Count, Shape);
                     }
                 }
-
                 else
                 {
                     status = DRAW_STATUS.COMPLETE;
@@ -112,7 +111,6 @@ namespace Paint
             }
 
         }
-
         private void picPaint_MouseMove(object sender, MouseEventArgs e)
         {
 
@@ -130,6 +128,7 @@ namespace Paint
                     Cursor = Cursors.Default;
                 picPaint.Refresh();
             }
+
         }
 
         private void picPaint_MouseUp(object sender, MouseEventArgs e)
@@ -238,6 +237,34 @@ namespace Paint
             }
         }
 
+        private void TB_penWidth_Scroll(object sender, EventArgs e)
+        {
+            penWidth = TB_penWidth.Value;
+            lb_penWidth.Text = TB_penWidth.Value.ToString();
+
+            DrawpenWidth();
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog _Color = new ColorDialog();
+            _Color.ShowDialog();
+
+            color = _Color.Color;
+
+            DrawpenWidth();
+        }
+        public void DrawpenWidth()
+        {
+            pen.Clear(Color.White);
+
+            SolidBrush brush = new SolidBrush(color);
+
+            RectangleF rec = new RectangleF(2, 2, pn_penWidth.Width,
+                                                pn_penWidth.Height);
+
+            pen.DrawLine(new Pen(color, penWidth), new Point(5, pn_penWidth.Height / 2), new Point(pn_penWidth.Width - 5, pn_penWidth.Height / 2));
+        }
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Shape = null;
@@ -344,8 +371,6 @@ namespace Paint
                        isCrop = true;
                     }
                     break;
-
-
                 case "line":
                     Shape = new LineDrawing(color, penWidth);
                     break;
@@ -361,8 +386,6 @@ namespace Paint
                 case "hexagon":
                     Shape = new HexagonDrawing(color, penWidth);
                     break;
-
-
                 default:
                     break;
             }
@@ -380,6 +403,7 @@ namespace Paint
             
             return croppedImg;
         }
+
         private void Renew()
         {
             
