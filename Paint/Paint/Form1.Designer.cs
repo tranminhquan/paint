@@ -468,10 +468,11 @@
             // pn_penWidth
             // 
             this.pn_penWidth.BackColor = System.Drawing.Color.White;
-            this.pn_penWidth.Location = new System.Drawing.Point(285, 14);
+            this.pn_penWidth.Location = new System.Drawing.Point(276, 14);
             this.pn_penWidth.Name = "pn_penWidth";
-            this.pn_penWidth.Size = new System.Drawing.Size(84, 45);
+            this.pn_penWidth.Size = new System.Drawing.Size(93, 45);
             this.pn_penWidth.TabIndex = 4;
+            this.pn_penWidth.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_penWidth_Paint);
             // 
             // lb_penWidth
             // 
