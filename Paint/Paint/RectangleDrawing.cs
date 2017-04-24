@@ -275,6 +275,7 @@ namespace Paint
             _region = new Region(GetRectangle(_startPoint, _endPoint));
             _region.Union(_grapPath);
             _PaintMode = MODE.IDLE;    
+
         }
         #endregion
     }

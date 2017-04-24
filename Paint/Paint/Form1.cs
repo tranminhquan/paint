@@ -10,14 +10,13 @@ namespace Paint
 
         enum DRAW_STATUS { COMPLETE, INCOMPLETE };
         Color color = Color.Black;
-        int penWidth = 3;
+        int penWidth = 1;
         string objectChoose;
         ObjectDrawing Shape;
         Bitmap doubleBuffer, fillImage;
         GraphicsList grapList;
         DRAW_STATUS status;
         bool isSaved = false;
-
         Graphics pen; // pen width
         bool isCrop = false;
 
@@ -279,7 +278,7 @@ namespace Paint
                 }
                 else
                 {
-                    fillImage = new Bitmap(1145, 526, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                    fillImage = new Bitmap(_size.Width, _size.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                     Graphics g = Graphics.FromImage(fillImage);
                     g.Clear(Color.White);
                     picPaint.Size = fillImage.Size;
@@ -363,14 +362,6 @@ namespace Paint
                 case "star":
                     Shape = new StarDrawing(color, penWidth);
                     break;
-
-                case "crop":
-                    {
-                        Shape = new CropRectangle(); 
-                       
-                       isCrop = true;
-                    }
-                    break;
                 case "line":
                     Shape = new LineDrawing(color, penWidth);
                     break;
@@ -386,6 +377,11 @@ namespace Paint
                 case "hexagon":
                     Shape = new HexagonDrawing(color, penWidth);
                     break;
+                case "crop":
+                    Shape = new CropRectangle(); 
+                    isCrop = true;
+                    break;
+                
                 default:
                     break;
             }
@@ -402,6 +398,11 @@ namespace Paint
 
             
             return croppedImg;
+        }
+
+        private void pn_penWidth_Paint(object sender, PaintEventArgs e)
+        {
+            DrawpenWidth();
         }
 
         private void Renew()
