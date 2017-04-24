@@ -152,18 +152,12 @@ namespace Paint
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
                 Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height-2);
-                Bitmap small;
+                
                 
 
-                small = CropImage(doubleBuffer, ROI);
+                fillImage = CropImage(doubleBuffer, ROI);
 
-                Renew();
-
-                Graphics gp = Graphics.FromImage(fillImage);
-                gp.Clear(Color.White);
-
-                gp.DrawImage(small, ROI);
-
+                panelPaint.Size = fillImage.Size;
                              
                 picPaint.Refresh();
                 isCrop = false;
