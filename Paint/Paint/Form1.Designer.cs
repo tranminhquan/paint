@@ -121,7 +121,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1363, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1914, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -439,7 +439,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 716);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1363, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(1914, 25);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -459,7 +459,7 @@
             this.pnlTab.Controls.Add(this.panel2);
             this.pnlTab.Controls.Add(this.panel1);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlTab.Location = new System.Drawing.Point(982, 28);
+            this.pnlTab.Location = new System.Drawing.Point(1533, 28);
             this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.Size = new System.Drawing.Size(381, 688);
@@ -878,7 +878,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Location = new System.Drawing.Point(3, 124);
+            this.panel1.Location = new System.Drawing.Point(343, 135);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 178);
@@ -942,7 +942,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1363, 741);
+            this.ClientSize = new System.Drawing.Size(1914, 741);
             this.Controls.Add(this.pnlTab);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panelPaint);
