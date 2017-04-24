@@ -59,6 +59,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pnlTab = new System.Windows.Forms.Panel();
+            this.pn_penWidth = new System.Windows.Forms.Panel();
+            this.lb_penWidth = new System.Windows.Forms.Label();
+            this.TB_penWidth = new System.Windows.Forms.TrackBar();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnHexagon = new System.Windows.Forms.Button();
@@ -85,27 +88,24 @@
             this.button9 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnColor = new System.Windows.Forms.Button();
             this.btnCrop = new System.Windows.Forms.Button();
             this.timerPanel = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.TB_penWidth = new System.Windows.Forms.TrackBar();
-            this.lb_penWidth = new System.Windows.Forms.Label();
-            this.pn_penWidth = new System.Windows.Forms.Panel();
-            this.btnColor = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelMenuTools.SuspendLayout();
             this.panelPaint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPaint)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.pnlTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TB_penWidth)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TB_penWidth)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -464,6 +464,33 @@
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.Size = new System.Drawing.Size(381, 688);
             this.pnlTab.TabIndex = 6;
+            // 
+            // pn_penWidth
+            // 
+            this.pn_penWidth.BackColor = System.Drawing.Color.White;
+            this.pn_penWidth.Location = new System.Drawing.Point(285, 14);
+            this.pn_penWidth.Name = "pn_penWidth";
+            this.pn_penWidth.Size = new System.Drawing.Size(84, 45);
+            this.pn_penWidth.TabIndex = 4;
+            // 
+            // lb_penWidth
+            // 
+            this.lb_penWidth.AutoSize = true;
+            this.lb_penWidth.Location = new System.Drawing.Point(242, 23);
+            this.lb_penWidth.Name = "lb_penWidth";
+            this.lb_penWidth.Size = new System.Drawing.Size(16, 17);
+            this.lb_penWidth.TabIndex = 3;
+            this.lb_penWidth.Text = "1";
+            // 
+            // TB_penWidth
+            // 
+            this.TB_penWidth.Location = new System.Drawing.Point(13, 14);
+            this.TB_penWidth.Minimum = 1;
+            this.TB_penWidth.Name = "TB_penWidth";
+            this.TB_penWidth.Size = new System.Drawing.Size(223, 56);
+            this.TB_penWidth.TabIndex = 2;
+            this.TB_penWidth.Value = 1;
+            this.TB_penWidth.Scroll += new System.EventHandler(this.TB_penWidth_Scroll);
             // 
             // panel3
             // 
@@ -869,6 +896,22 @@
             this.panel4.Size = new System.Drawing.Size(427, 139);
             this.panel4.TabIndex = 0;
             // 
+            // btnColor
+            // 
+            this.btnColor.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnColor.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnColor.FlatAppearance.BorderSize = 0;
+            this.btnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColor.Location = new System.Drawing.Point(102, 12);
+            this.btnColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(51, 59);
+            this.btnColor.TabIndex = 1;
+            this.btnColor.Tag = "Tool";
+            this.btnColor.UseVisualStyleBackColor = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
             // btnCrop
             // 
             this.btnCrop.BackColor = System.Drawing.Color.DodgerBlue;
@@ -893,49 +936,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // TB_penWidth
-            // 
-            this.TB_penWidth.Location = new System.Drawing.Point(13, 14);
-            this.TB_penWidth.Minimum = 1;
-            this.TB_penWidth.Name = "TB_penWidth";
-            this.TB_penWidth.Size = new System.Drawing.Size(223, 56);
-            this.TB_penWidth.TabIndex = 2;
-            this.TB_penWidth.Value = 1;
-            this.TB_penWidth.Scroll += new System.EventHandler(this.TB_penWidth_Scroll);
-            // 
-            // lb_penWidth
-            // 
-            this.lb_penWidth.AutoSize = true;
-            this.lb_penWidth.Location = new System.Drawing.Point(242, 23);
-            this.lb_penWidth.Name = "lb_penWidth";
-            this.lb_penWidth.Size = new System.Drawing.Size(16, 17);
-            this.lb_penWidth.TabIndex = 3;
-            this.lb_penWidth.Text = "1";
-            // 
-            // pn_penWidth
-            // 
-            this.pn_penWidth.BackColor = System.Drawing.Color.White;
-            this.pn_penWidth.Location = new System.Drawing.Point(285, 14);
-            this.pn_penWidth.Name = "pn_penWidth";
-            this.pn_penWidth.Size = new System.Drawing.Size(84, 45);
-            this.pn_penWidth.TabIndex = 4;
-            // 
-            // btnColor
-            // 
-            this.btnColor.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnColor.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.btnColor.FlatAppearance.BorderSize = 0;
-            this.btnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnColor.Location = new System.Drawing.Point(102, 12);
-            this.btnColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(51, 59);
-            this.btnColor.TabIndex = 1;
-            this.btnColor.Tag = "Tool";
-            this.btnColor.UseVisualStyleBackColor = false;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click_1);
             // 
             // frmPaint
             // 
@@ -962,13 +962,13 @@
             this.statusStrip1.PerformLayout();
             this.pnlTab.ResumeLayout(false);
             this.pnlTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TB_penWidth)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TB_penWidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
