@@ -300,10 +300,17 @@ namespace Paint
                 {
                     saveAsToolStripMenuItem_Click(sender, e);
                     isSaved = true;
+                    panelPaint.Size = new Size(1145, 737);
+                    fillImage = new Bitmap(1145, 737, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                    Graphics g = Graphics.FromImage(fillImage);
+                    g.Clear(Color.White);
+                    picPaint.Size = fillImage.Size;
+                    picPaint.Refresh();
                 }
                 else
                 {
-                    fillImage = new Bitmap(1145, 526, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                    panelPaint.Size = new Size(1145,737);
+                    fillImage = new Bitmap(1145, 737, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                     Graphics g = Graphics.FromImage(fillImage);
                     g.Clear(Color.White);
                     picPaint.Size = fillImage.Size;
@@ -312,7 +319,8 @@ namespace Paint
             }
             else
             {
-                fillImage = new Bitmap(1145, 526, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                panelPaint.Size = new Size(1145, 737);
+                fillImage = new Bitmap(1145, 737, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 Graphics g = Graphics.FromImage(fillImage);
                 g.Clear(Color.White);
                 picPaint.Size = fillImage.Size;
