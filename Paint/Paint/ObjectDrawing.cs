@@ -17,6 +17,8 @@ namespace Paint
         public Point _startPoint;
         public Point _endPoint;
 
+        
+
 
 
         #endregion

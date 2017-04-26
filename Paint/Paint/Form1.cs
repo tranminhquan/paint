@@ -19,6 +19,7 @@ namespace Paint
         bool isSaved = false;
         Graphics pen; // pen width
         bool isCrop = false;
+       
 
 
 
@@ -51,7 +52,7 @@ namespace Paint
             }
             if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket")
 
-            e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
+                e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
         }
 
         private void picPaint_MouseDown(object sender, MouseEventArgs e)
@@ -63,35 +64,56 @@ namespace Paint
                 if (objectChoose == "bucket")
                 {
                     //Shape = null;
-                if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star")
+                
+                    BucketDrawing bucket = new BucketDrawing(color);
 
-                    //BucketDrawing bucket = new BucketDrawing(color);
-
-                    //fillImage = bucket.Fill(doubleBuffer,fillImage, e.X, e.Y);
+                    fillImage = bucket.Fill(doubleBuffer,fillImage, e.X, e.Y);
                     picPaint.Refresh();
                     
                 }
                 else
                  if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
                 {
-                    if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
-                    {
-                        Shape.Mouse_Down(e);
-                        status = DRAW_STATUS.INCOMPLETE;
+                  
+                    
+                        if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
+                        {
+                            Shape.Mouse_Down(e);
+                            status = DRAW_STATUS.INCOMPLETE;
 
-                        if (Shape.CheckLocation(e.Location) == 0)
-                            Cursor = Cursors.SizeAll;
-                        if (Shape.CheckLocation(e.Location) > 0)
-                            Cursor = Cursors.Cross;
-                    }
+                            if (Shape.CheckLocation(e.Location) == 0)
+                                Cursor = Cursors.SizeAll;
+                            if (Shape.CheckLocation(e.Location) > 0)
+                                Cursor = Cursors.Cross;
+                        }
 
-                    else
-                    {
-                        status = DRAW_STATUS.COMPLETE;
-                        ChooseObject();
-                        Shape.Mouse_Down(e);
-                        grapList._list.Insert(grapList._list.Count, Shape);
-                    }
+                        else
+                        {
+                        if (objectChoose != "crop")
+                        {
+                            status = DRAW_STATUS.COMPLETE;
+                            ChooseObject();
+                            Shape.Mouse_Down(e);
+                            grapList._list.Insert(grapList._list.Count, Shape);
+
+                        }
+                        else
+                        {
+                            if (isCrop == true)
+                            {
+                                if (grapList._list.Count != 0)
+                                    grapList._list.RemoveAt(grapList._list.Count - 1);
+                                picPaint.Refresh();
+                            }
+                         
+                                status = DRAW_STATUS.COMPLETE;
+                                ChooseObject();
+                                Shape.Mouse_Down(e);
+                                grapList._list.Insert(grapList._list.Count, Shape);
+                            
+                        }
+                        }
+                    
                 }
                 else
                 {
@@ -142,10 +164,14 @@ namespace Paint
             
                 Button btnObject = (Button)sender;
                 objectChoose = btnObject.Name.Remove(0, 3).ToLower();
-                
+            if (objectChoose != "crop")
+                isCrop = false;
+        
           
             if(objectChoose == "crop" && isCrop == true)
             {
+                status = DRAW_STATUS.COMPLETE;
+
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
                 Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height-2);
@@ -377,8 +403,10 @@ namespace Paint
                     Shape = new HexagonDrawing(color, penWidth);
                     break;
                 case "crop":
-                    Shape = new CropRectangle(); 
-                    isCrop = true;
+                    {
+                       Shape = new CropRectangle();
+                       isCrop = true;
+                    }
                     break;
                 
                 default:

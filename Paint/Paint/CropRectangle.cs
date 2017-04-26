@@ -12,6 +12,7 @@ namespace Paint
     class CropRectangle : RectangleDrawing
 
     { 
+       
         public CropRectangle()
         {
 
@@ -67,7 +68,7 @@ namespace Paint
         public override void Mouse_Down(MouseEventArgs e)
         {
            
-            base.Mouse_Down(e);
+                base.Mouse_Down(e);
         }
         public override void Mouse_Move(MouseEventArgs e)
         {
