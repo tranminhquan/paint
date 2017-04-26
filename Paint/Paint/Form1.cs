@@ -7,7 +7,6 @@ namespace Paint
     public partial class frmPaint : Form
     {
         enum PANEL_MODE { OPEN, CLOSE }
-        
         enum DRAW_STATUS { COMPLETE, INCOMPLETE };
         Color color = Color.Black;
         int penWidth = 1;
@@ -19,13 +18,9 @@ namespace Paint
         bool isSaved = false;
         Graphics pen; // pen width
         bool isCrop = false;
-       
-
-
 
         Panel panelTab; //Dung trong hieu ung slide tab
         PANEL_MODE panelMode = PANEL_MODE.CLOSE;
-
 
         public frmPaint()
         {
@@ -50,7 +45,7 @@ namespace Paint
             {
                 grapList.Draw(g);
             }
-            if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket")
+            if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" && objectChoose != "none") 
                 Shape.DrawHandlePoint(g);
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
         }
@@ -63,13 +58,10 @@ namespace Paint
                 //Neu da chon doi tuong
                 if (objectChoose == "bucket")
                 {
-                    //Shape = null;
-                
+                    //Shape = null;    
                     BucketDrawing bucket = new BucketDrawing(color);
-
                     fillImage = bucket.Fill(doubleBuffer,fillImage, e.X, e.Y);
                     picPaint.Refresh();
-                    
                 }
                 else
                  if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
@@ -248,7 +240,7 @@ namespace Paint
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
-                {
+                {                 
                     fillImage = new Bitmap(openFileDialog1.FileName);
                     picPaint.Image = fillImage;
                     picPaint.Refresh();

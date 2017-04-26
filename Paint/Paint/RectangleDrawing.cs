@@ -111,8 +111,8 @@ namespace Paint
 
         public override void DrawHandlePoint(Graphics g)
         {
-            Pen p = new Pen(Color.Green, 2);
-            SolidBrush brush = new SolidBrush(Color.Green);
+            Pen p = new Pen(Color.Blue, 2);
+            SolidBrush brush = new SolidBrush(Color.Blue);
             for (int i = 1; i <= HANDLE_COUNT; i++)
             {
                 g.DrawRectangle(p, GetRectangleHandle(i));
@@ -219,8 +219,8 @@ namespace Paint
                 {
                     _PaintMode = MODE.DRAW;
                     _startPoint = e.Location;
-                    _endPoint.X = e.Location.X + 1;
-                    _endPoint.Y = e.Location.Y + 1;
+                    _endPoint.X = e.Location.X;
+                    _endPoint.Y = e.Location.Y;
 
                 }
                 else if (posOfLocation == 0)

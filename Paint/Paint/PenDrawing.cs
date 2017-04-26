@@ -37,13 +37,14 @@ namespace Paint
             _listPoint.Clear();
         }
         public override void Draw(Graphics g)
-        { 
-                Pen p = new Pen(_color, _penWidth);
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.DrawCurve(p, _listPoint.ToArray());
-                p.Dispose();
-            
-            
+        {
+            Pen p = new Pen(_color, _penWidth);
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            if (_listPoint.Count == 1)
+                g.DrawLine(p, _listPoint[0], _listPoint[0]);    
+            else
+                g.DrawLines(p, _listPoint.ToArray());
+            p.Dispose();
         }
         #endregion
 
