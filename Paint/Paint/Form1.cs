@@ -171,7 +171,7 @@ namespace Paint
                 grapList._list.RemoveAt(grapList._list.Count - 1);
                 picPaint.Refresh();
 
-                fillImage = CropImage(fillImage, ROI);
+                fillImage = CropImage(doubleBuffer, ROI);
 
                 panelPaint.Size = fillImage.Size;
                              
