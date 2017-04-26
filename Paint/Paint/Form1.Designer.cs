@@ -212,7 +212,7 @@
             this.panelMenuTools.Location = new System.Drawing.Point(0, 28);
             this.panelMenuTools.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenuTools.Name = "panelMenuTools";
-            this.panelMenuTools.Size = new System.Drawing.Size(1527, 70);
+            this.panelMenuTools.Size = new System.Drawing.Size(1527, 62);
             this.panelMenuTools.TabIndex = 1;
             // 
             // button8

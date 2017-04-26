@@ -51,8 +51,8 @@ namespace Paint
                 grapList.Draw(g);
             }
             if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket")
-
-                e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
+                Shape.DrawHandlePoint(g);
+            e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
         }
 
         private void picPaint_MouseDown(object sender, MouseEventArgs e)
