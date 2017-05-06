@@ -110,7 +110,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Navy;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -196,7 +196,7 @@
             // 
             // panelMenuTools
             // 
-            this.panelMenuTools.BackColor = System.Drawing.Color.MediumBlue;
+            this.panelMenuTools.BackColor = System.Drawing.Color.Navy;
             this.panelMenuTools.Controls.Add(this.button8);
             this.panelMenuTools.Controls.Add(this.button7);
             this.panelMenuTools.Controls.Add(this.btnEraser);
@@ -217,7 +217,7 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.MediumBlue;
+            this.button8.BackColor = System.Drawing.Color.Navy;
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -232,7 +232,7 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.MediumBlue;
+            this.button7.BackColor = System.Drawing.Color.Navy;
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -247,7 +247,7 @@
             // 
             // btnEraser
             // 
-            this.btnEraser.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnEraser.BackColor = System.Drawing.Color.Navy;
             this.btnEraser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEraser.BackgroundImage")));
             this.btnEraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEraser.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -264,7 +264,7 @@
             // 
             // btnPencil
             // 
-            this.btnPencil.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnPencil.BackColor = System.Drawing.Color.Navy;
             this.btnPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPencil.BackgroundImage")));
             this.btnPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPencil.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -281,7 +281,7 @@
             // 
             // btnBucket
             // 
-            this.btnBucket.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnBucket.BackColor = System.Drawing.Color.Navy;
             this.btnBucket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBucket.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
             this.btnBucket.FlatAppearance.BorderSize = 0;
@@ -296,7 +296,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.MediumBlue;
+            this.button5.BackColor = System.Drawing.Color.Navy;
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -311,7 +311,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.MediumBlue;
+            this.button4.BackColor = System.Drawing.Color.Navy;
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -326,7 +326,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumBlue;
+            this.button3.BackColor = System.Drawing.Color.Navy;
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -341,7 +341,7 @@
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.MediumBlue;
+            this.button10.BackColor = System.Drawing.Color.Navy;
             this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -357,7 +357,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumBlue;
+            this.button2.BackColor = System.Drawing.Color.Navy;
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -373,7 +373,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumBlue;
+            this.button1.BackColor = System.Drawing.Color.Navy;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
@@ -432,7 +432,7 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.BackColor = System.Drawing.Color.Navy;
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
@@ -467,7 +467,7 @@
             // 
             // pn_penWidth
             // 
-            this.pn_penWidth.BackColor = System.Drawing.Color.White;
+            this.pn_penWidth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.pn_penWidth.Location = new System.Drawing.Point(276, 14);
             this.pn_penWidth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn_penWidth.Name = "pn_penWidth";

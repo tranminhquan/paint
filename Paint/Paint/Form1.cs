@@ -167,9 +167,8 @@ namespace Paint
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
                 Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height-2);
-
-                grapList._list.RemoveAt(grapList._list.Count - 1);
-                picPaint.Refresh();
+                
+                
 
                 fillImage = CropImage(doubleBuffer, ROI);
 
@@ -273,7 +272,7 @@ namespace Paint
         }
         public void DrawpenWidth()
         {
-            pen.Clear(Color.White);
+            pen.Clear(Color.FromArgb(128,128,255));
 
             SolidBrush brush = new SolidBrush(color);
 
