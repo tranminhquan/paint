@@ -60,7 +60,9 @@ namespace Paint
                 {
                     //Shape = null;    
                     BucketDrawing bucket = new BucketDrawing(color);
+                    
                     fillImage = bucket.Fill(doubleBuffer,fillImage, e.X, e.Y);
+
                     picPaint.Refresh();
                 }
                 else
