@@ -56,3 +56,7 @@ C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.xml
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.pdb
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\AForge.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\AForge.Imaging.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\AForge.Imaging.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\AForge.Math.xml

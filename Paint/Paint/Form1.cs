@@ -6,6 +6,7 @@ namespace Paint
 {
     public partial class frmPaint : Form
     {
+        #region Declare
         enum PANEL_MODE { OPEN, CLOSE }
         enum DRAW_STATUS { COMPLETE, INCOMPLETE };
         Color color = Color.Black;
@@ -21,7 +22,7 @@ namespace Paint
 
         Panel panelTab; //Dung trong hieu ung slide tab
         PANEL_MODE panelMode = PANEL_MODE.CLOSE;
-
+        #endregion
         public frmPaint()
         {
             InitializeComponent();
@@ -43,7 +44,12 @@ namespace Paint
             Graphics g = Graphics.FromImage(doubleBuffer);
             if (grapList._list.Count > 0)
             {
+                btnUndo.Enabled = true;
                 grapList.Draw(g);
+            }
+            else
+            {
+                btnUndo.Enabled = false;
             }
             if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" && objectChoose != "none") 
                 Shape.DrawHandlePoint(g);
@@ -148,8 +154,12 @@ namespace Paint
         private void picPaint_MouseUp(object sender, MouseEventArgs e)
         {
             if (objectChoose == "pencil" || objectChoose == "eraser")
+            {
                 Shape = null;
+                status = DRAW_STATUS.COMPLETE;
+            }
             if (Shape != null)
+
                 Shape.Mouse_Up(e);
         }
 
@@ -418,8 +428,6 @@ namespace Paint
             }
         }
 
- 
-
         private Bitmap CropImage(Bitmap src,Rectangle Roi)
         {
             Bitmap croppedImg;
@@ -434,6 +442,13 @@ namespace Paint
         private void pn_penWidth_Paint(object sender, PaintEventArgs e)
         {
             DrawpenWidth();
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            status = DRAW_STATUS.COMPLETE;
+            grapList.RemoveLast();
+            picPaint.Refresh();
         }
 
         private void Renew()

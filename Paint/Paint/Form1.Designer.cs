@@ -41,8 +41,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenuTools = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnUndo = new System.Windows.Forms.Button();
             this.btnEraser = new System.Windows.Forms.Button();
             this.btnPencil = new System.Windows.Forms.Button();
             this.btnBucket = new System.Windows.Forms.Button();
@@ -121,7 +120,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1914, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1906, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -197,8 +196,7 @@
             // panelMenuTools
             // 
             this.panelMenuTools.BackColor = System.Drawing.Color.Navy;
-            this.panelMenuTools.Controls.Add(this.button8);
-            this.panelMenuTools.Controls.Add(this.button7);
+            this.panelMenuTools.Controls.Add(this.btnUndo);
             this.panelMenuTools.Controls.Add(this.btnEraser);
             this.panelMenuTools.Controls.Add(this.btnPencil);
             this.panelMenuTools.Controls.Add(this.btnBucket);
@@ -215,35 +213,21 @@
             this.panelMenuTools.Size = new System.Drawing.Size(1527, 62);
             this.panelMenuTools.TabIndex = 1;
             // 
-            // button8
+            // btnUndo
             // 
-            this.button8.BackColor = System.Drawing.Color.Navy;
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(1451, 2);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(51, 59);
-            this.button8.TabIndex = 0;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Navy;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(1395, 2);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(51, 59);
-            this.button7.TabIndex = 0;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnUndo.BackColor = System.Drawing.Color.Navy;
+            this.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUndo.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnUndo.FlatAppearance.BorderSize = 0;
+            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.Image")));
+            this.btnUndo.Location = new System.Drawing.Point(1395, 2);
+            this.btnUndo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(51, 59);
+            this.btnUndo.TabIndex = 0;
+            this.btnUndo.UseVisualStyleBackColor = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnEraser
             // 
@@ -439,7 +423,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 716);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1914, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(1906, 25);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -459,7 +443,7 @@
             this.pnlTab.Controls.Add(this.panel2);
             this.pnlTab.Controls.Add(this.panel1);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlTab.Location = new System.Drawing.Point(1533, 28);
+            this.pnlTab.Location = new System.Drawing.Point(1525, 28);
             this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.Size = new System.Drawing.Size(381, 688);
@@ -945,7 +929,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1914, 741);
+            this.ClientSize = new System.Drawing.Size(1906, 741);
             this.Controls.Add(this.pnlTab);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panelPaint);
@@ -998,8 +982,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.Button btnPencil;
         private System.Windows.Forms.Button btnEraser;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
