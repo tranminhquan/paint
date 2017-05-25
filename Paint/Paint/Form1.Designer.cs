@@ -41,19 +41,9 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenuTools = new System.Windows.Forms.Panel();
-            this.btnUndo = new System.Windows.Forms.Button();
-            this.btnEraser = new System.Windows.Forms.Button();
-            this.btnPencil = new System.Windows.Forms.Button();
             this.btnBucket = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.panelPaint = new System.Windows.Forms.Panel();
-            this.picPaint = new System.Windows.Forms.PictureBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -69,8 +59,6 @@
             this.btnLine = new System.Windows.Forms.Button();
             this.btnTriangle = new System.Windows.Forms.Button();
             this.btnStar = new System.Windows.Forms.Button();
-            this.btnCircle = new System.Windows.Forms.Button();
-            this.btnRectangle = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button22 = new System.Windows.Forms.Button();
@@ -92,10 +80,21 @@
             this.timerPanel = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btnCircle = new System.Windows.Forms.Button();
+            this.btnRectangle = new System.Windows.Forms.Button();
+            this.picPaint = new System.Windows.Forms.PictureBox();
+            this.btnUndo = new System.Windows.Forms.Button();
+            this.btnEraser = new System.Windows.Forms.Button();
+            this.btnPencil = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelMenuTools.SuspendLayout();
             this.panelPaint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPaint)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.pnlTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TB_penWidth)).BeginInit();
@@ -105,6 +104,7 @@
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPaint)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -213,56 +213,6 @@
             this.panelMenuTools.Size = new System.Drawing.Size(1527, 62);
             this.panelMenuTools.TabIndex = 1;
             // 
-            // btnUndo
-            // 
-            this.btnUndo.BackColor = System.Drawing.Color.Navy;
-            this.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUndo.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.btnUndo.FlatAppearance.BorderSize = 0;
-            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.Image")));
-            this.btnUndo.Location = new System.Drawing.Point(1395, 2);
-            this.btnUndo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(51, 59);
-            this.btnUndo.TabIndex = 0;
-            this.btnUndo.UseVisualStyleBackColor = false;
-            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
-            // 
-            // btnEraser
-            // 
-            this.btnEraser.BackColor = System.Drawing.Color.Navy;
-            this.btnEraser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEraser.BackgroundImage")));
-            this.btnEraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEraser.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.btnEraser.FlatAppearance.BorderSize = 0;
-            this.btnEraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEraser.Location = new System.Drawing.Point(1283, 2);
-            this.btnEraser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEraser.Name = "btnEraser";
-            this.btnEraser.Size = new System.Drawing.Size(51, 59);
-            this.btnEraser.TabIndex = 0;
-            this.btnEraser.Tag = "Tool";
-            this.btnEraser.UseVisualStyleBackColor = false;
-            this.btnEraser.Click += new System.EventHandler(this.btnObject_Click);
-            // 
-            // btnPencil
-            // 
-            this.btnPencil.BackColor = System.Drawing.Color.Navy;
-            this.btnPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPencil.BackgroundImage")));
-            this.btnPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPencil.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.btnPencil.FlatAppearance.BorderSize = 0;
-            this.btnPencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPencil.Location = new System.Drawing.Point(1188, 2);
-            this.btnPencil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPencil.Name = "btnPencil";
-            this.btnPencil.Size = new System.Drawing.Size(51, 59);
-            this.btnPencil.TabIndex = 0;
-            this.btnPencil.Tag = "Tool";
-            this.btnPencil.UseVisualStyleBackColor = false;
-            this.btnPencil.Click += new System.EventHandler(this.btnObject_Click);
-            // 
             // btnBucket
             // 
             this.btnBucket.BackColor = System.Drawing.Color.Navy;
@@ -277,99 +227,6 @@
             this.btnBucket.TabIndex = 0;
             this.btnBucket.UseVisualStyleBackColor = false;
             this.btnBucket.Click += new System.EventHandler(this.btnObject_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Navy;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(437, 2);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(51, 59);
-            this.button5.TabIndex = 0;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Navy;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(359, 2);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(51, 59);
-            this.button4.TabIndex = 0;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Navy;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(273, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(51, 59);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Navy;
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(101, 2);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(51, 59);
-            this.button10.TabIndex = 0;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Navy;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(189, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 59);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Navy;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(21, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 59);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // panelInfo
             // 
@@ -394,20 +251,6 @@
             this.panelPaint.Name = "panelPaint";
             this.panelPaint.Size = new System.Drawing.Size(1527, 647);
             this.panelPaint.TabIndex = 3;
-            // 
-            // picPaint
-            // 
-            this.picPaint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPaint.Location = new System.Drawing.Point(0, 0);
-            this.picPaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picPaint.Name = "picPaint";
-            this.picPaint.Size = new System.Drawing.Size(1527, 647);
-            this.picPaint.TabIndex = 0;
-            this.picPaint.TabStop = false;
-            this.picPaint.Paint += new System.Windows.Forms.PaintEventHandler(this.picPaint_Paint);
-            this.picPaint.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picPaint_MouseDown);
-            this.picPaint.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picPaint_MouseMove);
-            this.picPaint.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picPaint_MouseUp);
             // 
             // notifyIcon1
             // 
@@ -443,10 +286,10 @@
             this.pnlTab.Controls.Add(this.panel2);
             this.pnlTab.Controls.Add(this.panel1);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlTab.Location = new System.Drawing.Point(1525, 28);
+            this.pnlTab.Location = new System.Drawing.Point(1533, 28);
             this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
-            this.pnlTab.Size = new System.Drawing.Size(381, 688);
+            this.pnlTab.Size = new System.Drawing.Size(373, 688);
             this.pnlTab.TabIndex = 6;
             // 
             // pn_penWidth
@@ -602,40 +445,6 @@
             this.btnStar.Tag = "Tool";
             this.btnStar.UseVisualStyleBackColor = false;
             this.btnStar.Click += new System.EventHandler(this.btnObject_Click);
-            // 
-            // btnCircle
-            // 
-            this.btnCircle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCircle.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.btnCircle.FlatAppearance.BorderSize = 0;
-            this.btnCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCircle.Image = ((System.Drawing.Image)(resources.GetObject("btnCircle.Image")));
-            this.btnCircle.Location = new System.Drawing.Point(89, 0);
-            this.btnCircle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCircle.Name = "btnCircle";
-            this.btnCircle.Size = new System.Drawing.Size(69, 69);
-            this.btnCircle.TabIndex = 1;
-            this.btnCircle.Tag = "Tool";
-            this.btnCircle.UseVisualStyleBackColor = false;
-            this.btnCircle.Click += new System.EventHandler(this.btnObject_Click);
-            // 
-            // btnRectangle
-            // 
-            this.btnRectangle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnRectangle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRectangle.BackgroundImage")));
-            this.btnRectangle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRectangle.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
-            this.btnRectangle.FlatAppearance.BorderSize = 0;
-            this.btnRectangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRectangle.Location = new System.Drawing.Point(3, 0);
-            this.btnRectangle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRectangle.Name = "btnRectangle";
-            this.btnRectangle.Size = new System.Drawing.Size(69, 69);
-            this.btnRectangle.TabIndex = 1;
-            this.btnRectangle.Tag = "Tool";
-            this.btnRectangle.UseVisualStyleBackColor = false;
-            this.btnRectangle.Click += new System.EventHandler(this.btnObject_Click);
             // 
             // panel2
             // 
@@ -924,6 +733,197 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnCircle
+            // 
+            this.btnCircle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCircle.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnCircle.FlatAppearance.BorderSize = 0;
+            this.btnCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCircle.Image = ((System.Drawing.Image)(resources.GetObject("btnCircle.Image")));
+            this.btnCircle.Location = new System.Drawing.Point(89, 0);
+            this.btnCircle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCircle.Name = "btnCircle";
+            this.btnCircle.Size = new System.Drawing.Size(69, 69);
+            this.btnCircle.TabIndex = 1;
+            this.btnCircle.Tag = "Tool";
+            this.btnCircle.UseVisualStyleBackColor = false;
+            this.btnCircle.Click += new System.EventHandler(this.btnObject_Click);
+            // 
+            // btnRectangle
+            // 
+            this.btnRectangle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRectangle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRectangle.BackgroundImage")));
+            this.btnRectangle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRectangle.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnRectangle.FlatAppearance.BorderSize = 0;
+            this.btnRectangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRectangle.Location = new System.Drawing.Point(3, 0);
+            this.btnRectangle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRectangle.Name = "btnRectangle";
+            this.btnRectangle.Size = new System.Drawing.Size(69, 69);
+            this.btnRectangle.TabIndex = 1;
+            this.btnRectangle.Tag = "Tool";
+            this.btnRectangle.UseVisualStyleBackColor = false;
+            this.btnRectangle.Click += new System.EventHandler(this.btnObject_Click);
+            // 
+            // picPaint
+            // 
+            this.picPaint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picPaint.Location = new System.Drawing.Point(0, 0);
+            this.picPaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picPaint.Name = "picPaint";
+            this.picPaint.Size = new System.Drawing.Size(1527, 647);
+            this.picPaint.TabIndex = 0;
+            this.picPaint.TabStop = false;
+            this.picPaint.Paint += new System.Windows.Forms.PaintEventHandler(this.picPaint_Paint);
+            this.picPaint.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picPaint_MouseDown);
+            this.picPaint.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picPaint_MouseMove);
+            this.picPaint.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picPaint_MouseUp);
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.BackColor = System.Drawing.Color.Navy;
+            this.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUndo.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnUndo.FlatAppearance.BorderSize = 0;
+            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.Image")));
+            this.btnUndo.Location = new System.Drawing.Point(1395, 2);
+            this.btnUndo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(51, 59);
+            this.btnUndo.TabIndex = 0;
+            this.btnUndo.UseVisualStyleBackColor = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
+            // btnEraser
+            // 
+            this.btnEraser.BackColor = System.Drawing.Color.Navy;
+            this.btnEraser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEraser.BackgroundImage")));
+            this.btnEraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEraser.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnEraser.FlatAppearance.BorderSize = 0;
+            this.btnEraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEraser.Location = new System.Drawing.Point(1283, 2);
+            this.btnEraser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEraser.Name = "btnEraser";
+            this.btnEraser.Size = new System.Drawing.Size(51, 59);
+            this.btnEraser.TabIndex = 0;
+            this.btnEraser.Tag = "Tool";
+            this.btnEraser.UseVisualStyleBackColor = false;
+            this.btnEraser.Click += new System.EventHandler(this.btnObject_Click);
+            // 
+            // btnPencil
+            // 
+            this.btnPencil.BackColor = System.Drawing.Color.Navy;
+            this.btnPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPencil.BackgroundImage")));
+            this.btnPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPencil.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnPencil.FlatAppearance.BorderSize = 0;
+            this.btnPencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPencil.Location = new System.Drawing.Point(1188, 2);
+            this.btnPencil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPencil.Name = "btnPencil";
+            this.btnPencil.Size = new System.Drawing.Size(51, 59);
+            this.btnPencil.TabIndex = 0;
+            this.btnPencil.Tag = "Tool";
+            this.btnPencil.UseVisualStyleBackColor = false;
+            this.btnPencil.Click += new System.EventHandler(this.btnObject_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Navy;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(437, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(51, 59);
+            this.button5.TabIndex = 0;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Navy;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(359, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(51, 59);
+            this.button4.TabIndex = 0;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Navy;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(273, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(51, 59);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Navy;
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Location = new System.Drawing.Point(101, 2);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(51, 59);
+            this.button10.TabIndex = 0;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Navy;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(189, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(51, 59);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Navy;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(21, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 59);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
             // frmPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -944,7 +944,6 @@
             this.menuStrip1.PerformLayout();
             this.panelMenuTools.ResumeLayout(false);
             this.panelPaint.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picPaint)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.pnlTab.ResumeLayout(false);
@@ -956,6 +955,7 @@
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPaint)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

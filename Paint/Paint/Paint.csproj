@@ -49,6 +49,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -78,6 +90,12 @@
     <Compile Include="LineDrawing.cs" />
     <Compile Include="NoneShapeDrawing.cs" />
     <Compile Include="ObjectDrawing.cs" />
+    <Compile Include="Paint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paint.Designer.cs">
+      <DependentUpon>Paint.cs</DependentUpon>
+    </Compile>
     <Compile Include="PenDrawing.cs" />
     <Compile Include="Pentagon.cs" />
     <Compile Include="Program.cs" />
@@ -89,6 +107,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Paint.resx">
+      <DependentUpon>Paint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -97,8 +118,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Diagram.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,9 +138,25 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Icon\1490873152_add.ico" />
+    <None Include="Icon\1495289914_add.png" />
+    <None Include="Icon\1495659848_editor-undo-arrow-outline-stroke.png" />
+    <None Include="Icon\1495660053_create.png" />
+    <None Include="Icon\1495660439_eraser.png" />
+    <None Include="Icon\1495660681_Paint.png" />
+    <None Include="Icon\1495707482_button_shape_rectangle.png" />
+    <None Include="Icon\1495707665_check-circle-outline-blank.png" />
+    <None Include="Icon\1495707618_star.png" />
+    <None Include="Icon\1495707637_button_shape_line.png" />
+    <None Include="Icon\1495707493_button_shape_triangle.png" />
+    <None Include="Icon\1495707501_button_shape_polygon.png" />
+    <None Include="Icon\1495708677_new10.png" />
+    <None Include="Icon\1495708725_BT_folder_file_open.png" />
+    <None Include="Icon\1495708747_save.png" />
+    <None Include="Icon\1495724957_icon_27_one_finger_click.png" />
     <Content Include="Icon\Circle.png" />
     <Content Include="Icon\newIcon.png" />
     <Content Include="Icon\saveIcon.png" />
+    <None Include="Icon\voiceIcon.png" />
     <Content Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
