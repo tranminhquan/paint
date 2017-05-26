@@ -28,16 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paint));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
             this.metroToggle2 = new MetroFramework.Controls.MetroToggle();
             this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel10 = new MetroFramework.Controls.MetroPanel();
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.MetroTab = new MetroFramework.Controls.MetroTabControl();
+            this.mtTheme = new MetroFramework.Controls.MetroTabPage();
+            this.MLEditColor = new MetroFramework.Controls.MetroLink();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.lbCurrentColor = new MetroFramework.Controls.MetroLabel();
+            this.flColors = new System.Windows.Forms.FlowLayoutPanel();
+            this.mtTools = new MetroFramework.Controls.MetroTabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.mtShapes = new MetroFramework.Controls.MetroTabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel9 = new MetroFramework.Controls.MetroPanel();
@@ -46,34 +65,23 @@
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel12 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.metroPanel14 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel13 = new MetroFramework.Controls.MetroPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.mtitleCurrentColor = new MetroFramework.Controls.MetroTile();
             this.metroPanel1.SuspendLayout();
             this.metroPanel11.SuspendLayout();
             this.metroPanel10.SuspendLayout();
-            this.metroTabControl1.SuspendLayout();
-            this.metroTabPage1.SuspendLayout();
-            this.metroTabPage3.SuspendLayout();
+            this.MetroTab.SuspendLayout();
+            this.mtTheme.SuspendLayout();
+            this.mtTools.SuspendLayout();
+            this.mtShapes.SuspendLayout();
             this.metroPanel8.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -120,6 +128,36 @@
             this.metroPanel11.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel11.VerticalScrollbarSize = 10;
             // 
+            // metroPanel14
+            // 
+            this.metroPanel14.BackgroundImage = global::Paint.Properties.Resources._1495724957_icon_27_one_finger_click;
+            this.metroPanel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.metroPanel14.HorizontalScrollbarBarColor = true;
+            this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel14.HorizontalScrollbarSize = 10;
+            this.metroPanel14.Location = new System.Drawing.Point(30, 124);
+            this.metroPanel14.Name = "metroPanel14";
+            this.metroPanel14.Size = new System.Drawing.Size(61, 53);
+            this.metroPanel14.TabIndex = 7;
+            this.metroPanel14.VerticalScrollbarBarColor = true;
+            this.metroPanel14.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel14.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel13
+            // 
+            this.metroPanel13.BackgroundImage = global::Paint.Properties.Resources.voiceIcon;
+            this.metroPanel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.metroPanel13.HorizontalScrollbarBarColor = true;
+            this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel13.HorizontalScrollbarSize = 10;
+            this.metroPanel13.Location = new System.Drawing.Point(30, 55);
+            this.metroPanel13.Name = "metroPanel13";
+            this.metroPanel13.Size = new System.Drawing.Size(61, 53);
+            this.metroPanel13.TabIndex = 7;
+            this.metroPanel13.VerticalScrollbarBarColor = true;
+            this.metroPanel13.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel13.VerticalScrollbarSize = 10;
+            // 
             // metroToggle2
             // 
             this.metroToggle2.AutoSize = true;
@@ -162,7 +200,7 @@
             // 
             // metroPanel10
             // 
-            this.metroPanel10.Controls.Add(this.metroTabControl1);
+            this.metroPanel10.Controls.Add(this.MetroTab);
             this.metroPanel10.Controls.Add(this.metroLabel2);
             this.metroPanel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel10.HorizontalScrollbarBarColor = true;
@@ -177,84 +215,261 @@
             this.metroPanel10.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel10.VerticalScrollbarSize = 10;
             // 
-            // metroTabControl1
+            // MetroTab
             // 
-            this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage2);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
-            this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 55);
-            this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(409, 235);
-            this.metroTabControl1.TabIndex = 3;
-            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabControl1.UseCustomBackColor = true;
-            this.metroTabControl1.UseCustomForeColor = true;
-            this.metroTabControl1.UseSelectable = true;
-            this.metroTabControl1.UseStyleColors = true;
+            this.MetroTab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.MetroTab.Controls.Add(this.mtTheme);
+            this.MetroTab.Controls.Add(this.mtTools);
+            this.MetroTab.Controls.Add(this.mtShapes);
+            this.MetroTab.Location = new System.Drawing.Point(6, 44);
+            this.MetroTab.Name = "MetroTab";
+            this.MetroTab.SelectedIndex = 0;
+            this.MetroTab.Size = new System.Drawing.Size(403, 243);
+            this.MetroTab.TabIndex = 4;
+            this.MetroTab.UseSelectable = true;
             // 
-            // metroTabPage1
+            // mtTheme
             // 
-            this.metroTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
-            this.metroTabPage1.Controls.Add(this.button4);
-            this.metroTabPage1.Controls.Add(this.button3);
-            this.metroTabPage1.Controls.Add(this.button2);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(401, 193);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Tools";
-            this.metroTabPage1.UseCustomBackColor = true;
-            this.metroTabPage1.UseCustomForeColor = true;
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.mtTheme.Controls.Add(this.MLEditColor);
+            this.mtTheme.Controls.Add(this.metroLabel5);
+            this.mtTheme.Controls.Add(this.mtitleCurrentColor);
+            this.mtTheme.Controls.Add(this.metroLabel4);
+            this.mtTheme.Controls.Add(this.lbCurrentColor);
+            this.mtTheme.Controls.Add(this.flColors);
+            this.mtTheme.HorizontalScrollbarBarColor = true;
+            this.mtTheme.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtTheme.HorizontalScrollbarSize = 10;
+            this.mtTheme.Location = new System.Drawing.Point(4, 38);
+            this.mtTheme.Name = "mtTheme";
+            this.mtTheme.Padding = new System.Windows.Forms.Padding(0, 100, 0, 0);
+            this.mtTheme.Size = new System.Drawing.Size(395, 201);
+            this.mtTheme.TabIndex = 0;
+            this.mtTheme.Text = "Theme";
+            this.mtTheme.VerticalScrollbarBarColor = true;
+            this.mtTheme.VerticalScrollbarHighlightOnWheel = false;
+            this.mtTheme.VerticalScrollbarSize = 10;
             // 
-            // metroTabPage2
+            // MLEditColor
             // 
-            this.metroTabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(401, 193);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Colors";
-            this.metroTabPage2.UseCustomBackColor = true;
-            this.metroTabPage2.UseCustomForeColor = true;
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.MLEditColor.BackColor = System.Drawing.Color.Transparent;
+            this.MLEditColor.Image = ((System.Drawing.Image)(resources.GetObject("MLEditColor.Image")));
+            this.MLEditColor.ImageSize = 45;
+            this.MLEditColor.Location = new System.Drawing.Point(322, 0);
+            this.MLEditColor.Name = "MLEditColor";
+            this.MLEditColor.Size = new System.Drawing.Size(70, 49);
+            this.MLEditColor.TabIndex = 9;
+            this.MLEditColor.UseCustomBackColor = true;
+            this.MLEditColor.UseSelectable = true;
+            this.MLEditColor.Click += new System.EventHandler(this.MLEditColor_Click);
             // 
-            // metroTabPage3
+            // metroLabel5
             // 
-            this.metroTabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
-            this.metroTabPage3.Controls.Add(this.button12);
-            this.metroTabPage3.Controls.Add(this.button6);
-            this.metroTabPage3.Controls.Add(this.button11);
-            this.metroTabPage3.Controls.Add(this.button7);
-            this.metroTabPage3.Controls.Add(this.button10);
-            this.metroTabPage3.Controls.Add(this.button9);
-            this.metroTabPage3.Controls.Add(this.button8);
-            this.metroTabPage3.Controls.Add(this.button5);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(401, 193);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "Shapes";
-            this.metroTabPage3.UseCustomBackColor = true;
-            this.metroTabPage3.UseCustomForeColor = true;
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
+            this.metroLabel5.Location = new System.Drawing.Point(199, 21);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(78, 31);
+            this.metroLabel5.TabIndex = 8;
+            this.metroLabel5.Text = "Edit color";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(5, 62);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel4.TabIndex = 6;
+            this.metroLabel4.Text = "Colors";
+            // 
+            // lbCurrentColor
+            // 
+            this.lbCurrentColor.AutoSize = true;
+            this.lbCurrentColor.Location = new System.Drawing.Point(5, 21);
+            this.lbCurrentColor.Name = "lbCurrentColor";
+            this.lbCurrentColor.Size = new System.Drawing.Size(98, 20);
+            this.lbCurrentColor.TabIndex = 4;
+            this.lbCurrentColor.Text = "Current color :";
+            // 
+            // flColors
+            // 
+            this.flColors.BackColor = System.Drawing.Color.Transparent;
+            this.flColors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flColors.ForeColor = System.Drawing.Color.Transparent;
+            this.flColors.Location = new System.Drawing.Point(0, 100);
+            this.flColors.Name = "flColors";
+            this.flColors.Size = new System.Drawing.Size(395, 101);
+            this.flColors.TabIndex = 2;
+            // 
+            // mtTools
+            // 
+            this.mtTools.Controls.Add(this.button4);
+            this.mtTools.Controls.Add(this.button3);
+            this.mtTools.Controls.Add(this.button2);
+            this.mtTools.HorizontalScrollbarBarColor = true;
+            this.mtTools.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtTools.HorizontalScrollbarSize = 10;
+            this.mtTools.Location = new System.Drawing.Point(4, 38);
+            this.mtTools.Name = "mtTools";
+            this.mtTools.Size = new System.Drawing.Size(395, 201);
+            this.mtTools.TabIndex = 1;
+            this.mtTools.Text = "Tools";
+            this.mtTools.VerticalScrollbarBarColor = true;
+            this.mtTools.VerticalScrollbarHighlightOnWheel = false;
+            this.mtTools.VerticalScrollbarSize = 10;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::Paint.Properties.Resources._1495660681_Paint;
+            this.button4.Location = new System.Drawing.Point(20, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(102, 191);
+            this.button4.TabIndex = 2;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = global::Paint.Properties.Resources._1495660439_eraser;
+            this.button3.Location = new System.Drawing.Point(145, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(102, 191);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Paint.Properties.Resources._1495660053_create;
+            this.button2.Location = new System.Drawing.Point(271, -3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(104, 193);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // mtShapes
+            // 
+            this.mtShapes.BackColor = System.Drawing.Color.Transparent;
+            this.mtShapes.Controls.Add(this.button6);
+            this.mtShapes.Controls.Add(this.button7);
+            this.mtShapes.Controls.Add(this.button12);
+            this.mtShapes.Controls.Add(this.button8);
+            this.mtShapes.Controls.Add(this.button11);
+            this.mtShapes.Controls.Add(this.button9);
+            this.mtShapes.Controls.Add(this.button5);
+            this.mtShapes.Controls.Add(this.button10);
+            this.mtShapes.HorizontalScrollbarBarColor = true;
+            this.mtShapes.HorizontalScrollbarHighlightOnWheel = false;
+            this.mtShapes.HorizontalScrollbarSize = 10;
+            this.mtShapes.Location = new System.Drawing.Point(4, 38);
+            this.mtShapes.Name = "mtShapes";
+            this.mtShapes.Size = new System.Drawing.Size(395, 201);
+            this.mtShapes.TabIndex = 2;
+            this.mtShapes.Text = "Shapes";
+            this.mtShapes.VerticalScrollbarBarColor = true;
+            this.mtShapes.VerticalScrollbarHighlightOnWheel = false;
+            this.mtShapes.VerticalScrollbarSize = 10;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Image = global::Paint.Properties.Resources._1495707665_check_circle_outline_blank;
+            this.button6.Location = new System.Drawing.Point(103, 19);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(79, 78);
+            this.button6.TabIndex = 5;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Image = global::Paint.Properties.Resources._1495707618_star;
+            this.button7.Location = new System.Drawing.Point(198, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(79, 78);
+            this.button7.TabIndex = 7;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.Transparent;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Image = global::Paint.Properties.Resources._1495707665_check_circle_outline_blank;
+            this.button12.Location = new System.Drawing.Point(103, 98);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(79, 78);
+            this.button12.TabIndex = 4;
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = global::Paint.Properties.Resources._1495707637_button_shape_line;
+            this.button8.Location = new System.Drawing.Point(300, 19);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(79, 78);
+            this.button8.TabIndex = 10;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Transparent;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Image = global::Paint.Properties.Resources._1495707501_button_shape_polygon;
+            this.button11.Location = new System.Drawing.Point(198, 98);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(79, 78);
+            this.button11.TabIndex = 6;
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Image = global::Paint.Properties.Resources._1495707493_button_shape_triangle;
+            this.button9.Location = new System.Drawing.Point(8, 98);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(79, 78);
+            this.button9.TabIndex = 9;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Image = global::Paint.Properties.Resources._1495707482_button_shape_rectangle;
+            this.button5.Location = new System.Drawing.Point(8, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(79, 78);
+            this.button5.TabIndex = 11;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Image = global::Paint.Properties.Resources._1495707637_button_shape_line;
+            this.button10.Location = new System.Drawing.Point(300, 98);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(79, 78);
+            this.button10.TabIndex = 8;
+            this.button10.UseVisualStyleBackColor = false;
             // 
             // metroLabel2
             // 
@@ -378,6 +593,51 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Image = global::Paint.Properties.Resources._1495708747_save;
+            this.button15.Location = new System.Drawing.Point(202, 12);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(73, 52);
+            this.button15.TabIndex = 2;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Image = global::Paint.Properties.Resources._1495708725_BT_folder_file_open;
+            this.button14.Location = new System.Drawing.Point(110, 12);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(73, 52);
+            this.button14.TabIndex = 2;
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Image = global::Paint.Properties.Resources._1495708677_new10;
+            this.button13.Location = new System.Drawing.Point(14, 12);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(73, 52);
+            this.button13.TabIndex = 2;
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Paint.Properties.Resources._1495659848_editor_undo_arrow_outline_stroke;
+            this.button1.Location = new System.Drawing.Point(658, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 80);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // metroPanel4
             // 
             this.metroPanel4.BackColor = System.Drawing.Color.Black;
@@ -460,201 +720,14 @@
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel5.VerticalScrollbarSize = 10;
             // 
-            // button15
+            // mtitleCurrentColor
             // 
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Image = global::Paint.Properties.Resources._1495708747_save;
-            this.button15.Location = new System.Drawing.Point(202, 12);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(73, 52);
-            this.button15.TabIndex = 2;
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Image = global::Paint.Properties.Resources._1495708725_BT_folder_file_open;
-            this.button14.Location = new System.Drawing.Point(110, 12);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(73, 52);
-            this.button14.TabIndex = 2;
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = global::Paint.Properties.Resources._1495708677_new10;
-            this.button13.Location = new System.Drawing.Point(14, 12);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(73, 52);
-            this.button13.TabIndex = 2;
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Paint.Properties.Resources._1495659848_editor_undo_arrow_outline_stroke;
-            this.button1.Location = new System.Drawing.Point(658, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 80);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // metroPanel14
-            // 
-            this.metroPanel14.BackgroundImage = global::Paint.Properties.Resources._1495724957_icon_27_one_finger_click;
-            this.metroPanel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.metroPanel14.HorizontalScrollbarBarColor = true;
-            this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel14.HorizontalScrollbarSize = 10;
-            this.metroPanel14.Location = new System.Drawing.Point(30, 124);
-            this.metroPanel14.Name = "metroPanel14";
-            this.metroPanel14.Size = new System.Drawing.Size(61, 53);
-            this.metroPanel14.TabIndex = 7;
-            this.metroPanel14.VerticalScrollbarBarColor = true;
-            this.metroPanel14.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel14.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel13
-            // 
-            this.metroPanel13.BackgroundImage = global::Paint.Properties.Resources.voiceIcon;
-            this.metroPanel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.metroPanel13.HorizontalScrollbarBarColor = true;
-            this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel13.HorizontalScrollbarSize = 10;
-            this.metroPanel13.Location = new System.Drawing.Point(30, 55);
-            this.metroPanel13.Name = "metroPanel13";
-            this.metroPanel13.Size = new System.Drawing.Size(61, 53);
-            this.metroPanel13.TabIndex = 7;
-            this.metroPanel13.VerticalScrollbarBarColor = true;
-            this.metroPanel13.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel13.VerticalScrollbarSize = 10;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Paint.Properties.Resources._1495660681_Paint;
-            this.button4.Location = new System.Drawing.Point(274, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 191);
-            this.button4.TabIndex = 2;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::Paint.Properties.Resources._1495660439_eraser;
-            this.button3.Location = new System.Drawing.Point(140, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 191);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Paint.Properties.Resources._1495660053_create;
-            this.button2.Location = new System.Drawing.Point(12, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 193);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Image = global::Paint.Properties.Resources._1495707665_check_circle_outline_blank;
-            this.button12.Location = new System.Drawing.Point(110, 97);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(79, 78);
-            this.button12.TabIndex = 4;
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Paint.Properties.Resources._1495707665_check_circle_outline_blank;
-            this.button6.Location = new System.Drawing.Point(110, 18);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(79, 78);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Image = global::Paint.Properties.Resources._1495707501_button_shape_polygon;
-            this.button11.Location = new System.Drawing.Point(205, 97);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(79, 78);
-            this.button11.TabIndex = 6;
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = global::Paint.Properties.Resources._1495707618_star;
-            this.button7.Location = new System.Drawing.Point(205, 18);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(79, 78);
-            this.button7.TabIndex = 7;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = global::Paint.Properties.Resources._1495707637_button_shape_line;
-            this.button10.Location = new System.Drawing.Point(307, 97);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(79, 78);
-            this.button10.TabIndex = 8;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::Paint.Properties.Resources._1495707493_button_shape_triangle;
-            this.button9.Location = new System.Drawing.Point(15, 97);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(79, 78);
-            this.button9.TabIndex = 9;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::Paint.Properties.Resources._1495707637_button_shape_line;
-            this.button8.Location = new System.Drawing.Point(307, 18);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(79, 78);
-            this.button8.TabIndex = 10;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::Paint.Properties.Resources._1495707482_button_shape_rectangle;
-            this.button5.Location = new System.Drawing.Point(15, 18);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(79, 78);
-            this.button5.TabIndex = 11;
-            this.button5.UseVisualStyleBackColor = true;
+            this.mtitleCurrentColor.ActiveControl = null;
+            this.mtitleCurrentColor.Location = new System.Drawing.Point(125, 12);
+            this.mtitleCurrentColor.Name = "mtitleCurrentColor";
+            this.mtitleCurrentColor.Size = new System.Drawing.Size(51, 40);
+            this.mtitleCurrentColor.TabIndex = 7;
+            this.mtitleCurrentColor.UseSelectable = true;
             // 
             // Paint
             // 
@@ -671,9 +744,11 @@
             this.metroPanel11.PerformLayout();
             this.metroPanel10.ResumeLayout(false);
             this.metroPanel10.PerformLayout();
-            this.metroTabControl1.ResumeLayout(false);
-            this.metroTabPage1.ResumeLayout(false);
-            this.metroTabPage3.ResumeLayout(false);
+            this.MetroTab.ResumeLayout(false);
+            this.mtTheme.ResumeLayout(false);
+            this.mtTheme.PerformLayout();
+            this.mtTools.ResumeLayout(false);
+            this.mtShapes.ResumeLayout(false);
             this.metroPanel8.ResumeLayout(false);
             this.metroPanel8.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
@@ -702,10 +777,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroPanel metroPanel11;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage2;
-        private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private MetroFramework.Controls.MetroPanel metroPanel12;
         private MetroFramework.Controls.MetroToggle metroToggle1;
         private MetroFramework.Controls.MetroToggle metroToggle2;
@@ -726,5 +797,15 @@
         private System.Windows.Forms.Button button5;
         private MetroFramework.Controls.MetroPanel metroPanel13;
         private MetroFramework.Controls.MetroPanel metroPanel14;
+        private MetroFramework.Controls.MetroTabControl MetroTab;
+        private MetroFramework.Controls.MetroTabPage mtTheme;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel lbCurrentColor;
+        private System.Windows.Forms.FlowLayoutPanel flColors;
+        private MetroFramework.Controls.MetroTabPage mtTools;
+        private MetroFramework.Controls.MetroTabPage mtShapes;
+        private MetroFramework.Controls.MetroLink MLEditColor;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTile mtitleCurrentColor;
     }
 }

@@ -60,3 +60,20 @@ E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFra
 E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFramework.dll
 E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFramework.Fonts.dll
 E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.Paint.resources
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Paint.exe.config
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Paint.exe
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Paint.pdb
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\MetroFramework.Design.dll
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\MetroFramework.dll
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\MetroFramework.Fonts.dll
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\AForge.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.pdb
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.frmPaint.resources
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.Paint.resources
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.exe
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.pdb

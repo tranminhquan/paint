@@ -154,6 +154,7 @@
     <None Include="Icon\1495708747_save.png" />
     <None Include="Icon\1495724957_icon_27_one_finger_click.png" />
     <Content Include="Icon\Circle.png" />
+    <None Include="Icon\EditColor.png" />
     <Content Include="Icon\newIcon.png" />
     <Content Include="Icon\saveIcon.png" />
     <None Include="Icon\voiceIcon.png" />
