@@ -200,12 +200,6 @@ namespace Paint
             //lb_penWidth.Text = TB_penWidth.Value.ToString();
             DrawpenWidth();
         }
-
-        private void pn_penWidth_Paint(object sender, PaintEventArgs e)
-        {
-            DrawpenWidth();
-        }
-
         public void btnObject_Click(object sender, EventArgs e)
         {
 
@@ -368,6 +362,11 @@ namespace Paint
                     Shape = new NoneShapeDrawing();
                     break;
             }
+        }
+
+        private void pn_penWidth_Paint(object sender, PaintEventArgs e)
+        {
+            DrawpenWidth();
         }
 
         public void DrawpenWidth()

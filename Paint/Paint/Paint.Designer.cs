@@ -60,7 +60,7 @@
             this.btnHexagon = new System.Windows.Forms.Button();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
-            this.pn_penWidth = new MetroFramework.Controls.MetroPanel();
+            this.pn_penWidth = new System.Windows.Forms.Panel();
             this.TB_penWidth = new MetroFramework.Controls.MetroTrackBar();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
@@ -559,18 +559,10 @@
             // 
             // pn_penWidth
             // 
-            this.pn_penWidth.HorizontalScrollbarBarColor = true;
-            this.pn_penWidth.HorizontalScrollbarHighlightOnWheel = false;
-            this.pn_penWidth.HorizontalScrollbarSize = 10;
-            this.pn_penWidth.Location = new System.Drawing.Point(135, 59);
-            this.pn_penWidth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pn_penWidth.Location = new System.Drawing.Point(134, 58);
             this.pn_penWidth.Name = "pn_penWidth";
-            this.pn_penWidth.Size = new System.Drawing.Size(123, 30);
-            this.pn_penWidth.TabIndex = 4;
-            this.pn_penWidth.UseCustomBackColor = true;
-            this.pn_penWidth.VerticalScrollbarBarColor = true;
-            this.pn_penWidth.VerticalScrollbarHighlightOnWheel = false;
-            this.pn_penWidth.VerticalScrollbarSize = 11;
+            this.pn_penWidth.Size = new System.Drawing.Size(95, 30);
+            this.pn_penWidth.TabIndex = 5;
             this.pn_penWidth.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_penWidth_Paint);
             // 
             // TB_penWidth
@@ -767,7 +759,7 @@
             // 
             this.picPaint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picPaint.Location = new System.Drawing.Point(0, 0);
-            this.picPaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPaint.Margin = new System.Windows.Forms.Padding(4);
             this.picPaint.Name = "picPaint";
             this.picPaint.Size = new System.Drawing.Size(754, 588);
             this.picPaint.TabIndex = 2;
@@ -860,7 +852,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel8;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTrackBar TB_penWidth;
-        private MetroFramework.Controls.MetroPanel pn_penWidth;
         private MetroFramework.Controls.MetroPanel metroPanel10;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroPanel metroPanel11;
@@ -899,5 +890,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private MetroFramework.Controls.MetroPanel metroPanel7;
         private System.Windows.Forms.PictureBox picPaint;
+        private System.Windows.Forms.Panel pn_penWidth;
     }
 }
