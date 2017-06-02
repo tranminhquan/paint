@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -21,19 +22,26 @@ namespace Paint
         bool isCrop = false;
         #endregion
 
+        // danh sách màu mặc định
+        List<Color> listColor = new List<Color>() { Color.Black , Color.Black , Color.White , Color.Silver , Color.Blue , Color.Green , Color.Lime , Color.Teal ,Color.Orange
+                                                    , Color.Brown , Color.Pink , Color.Magenta , Color.Purple , Color.Red , Color.Yellow };
         public Paint()
         {
             InitializeComponent();
-            for (int i = 0; i < 15; i++)
+            for (int i = 1; i < 14; i++)
             {
                 MetroFramework.Controls.MetroTile _Tile = new MetroFramework.Controls.MetroTile();
                 _Tile.Size = new Size(30, 30);
                 _Tile.Tag = i;
-                _Tile.Style = (MetroColorStyle)i;
+                _Tile.UseCustomBackColor = true;
+                _Tile.BackColor = listColor[i];
+                //_Tile.Style = (MetroColorStyle)i;
                 _Tile.Click += (sender, e) =>
                 {
-                    mtitleCurrentColor.UseCustomBackColor = false;
-                    mtitleCurrentColor.Style = _Tile.Style;
+                    
+                    mtitleCurrentColor.UseCustomBackColor = true;
+                    mtitleCurrentColor.BackColor = _Tile.BackColor;
+
                     mtitleCurrentColor.Refresh();
                 };
                 flColors.Controls.Add(_Tile);
@@ -49,10 +57,12 @@ namespace Paint
 
             pen = pn_penWidth.CreateGraphics();
         }
-
+        private Color ChooseColor(int index)
+        {
+            return listColor[index];
+        }
         private void MLEditColor_Click(object sender, System.EventArgs e)
         {
-            mtitleCurrentColor.UseCustomBackColor = true;
             ColorDialog EditColor = new ColorDialog();
             EditColor.ShowDialog();
             mtitleCurrentColor.BackColor = EditColor.Color;
