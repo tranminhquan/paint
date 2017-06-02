@@ -26,10 +26,10 @@ namespace Paint
         public frmPaint()
         {
             InitializeComponent();
-            doubleBuffer = new Bitmap(1527, 707, picPaint.CreateGraphics());
+            doubleBuffer = new Bitmap(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y, picPaint.CreateGraphics());
             Graphics g = Graphics.FromImage(doubleBuffer);
             g.Clear(Color.White);
-            fillImage = new Bitmap(1527, 707, picPaint.CreateGraphics());
+            fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y, picPaint.CreateGraphics());
             g = Graphics.FromImage(fillImage);
             g.Clear(Color.White);
             grapList = new GraphicsList();
@@ -273,6 +273,11 @@ namespace Paint
             DrawpenWidth();
         }
 
+        private void pn_penWidth_Paint(object sender, PaintEventArgs e)
+        {
+            DrawpenWidth();
+        }
+
         private void btnColor_Click(object sender, EventArgs e)
         {
             ColorDialog _Color = new ColorDialog();
@@ -288,8 +293,7 @@ namespace Paint
 
             SolidBrush brush = new SolidBrush(color);
 
-            RectangleF rec = new RectangleF(2, 2, pn_penWidth.Width,
-                                                pn_penWidth.Height);
+            RectangleF rec = new RectangleF(2, 2, pn_penWidth.Width, pn_penWidth.Height);
 
             pen.DrawLine(new Pen(color, penWidth), new Point(5, pn_penWidth.Height / 2), new Point(pn_penWidth.Width - 5, pn_penWidth.Height / 2));
         }
@@ -430,18 +434,9 @@ namespace Paint
 
         private Bitmap CropImage(Bitmap src,Rectangle Roi)
         {
-            Bitmap croppedImg;
-            
-
-            croppedImg =src.Clone(Roi, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-
-            
+            Bitmap croppedImg;          
+            croppedImg =src.Clone(Roi, System.Drawing.Imaging.PixelFormat.Format24bppRgb);           
             return croppedImg;
-        }
-
-        private void pn_penWidth_Paint(object sender, PaintEventArgs e)
-        {
-            DrawpenWidth();
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -452,8 +447,7 @@ namespace Paint
         }
 
         private void Renew()
-        {
-            
+        {           
             grapList._list.Clear();
             fillImage = new Bitmap(1527, 707, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             Graphics g = Graphics.FromImage(fillImage);
