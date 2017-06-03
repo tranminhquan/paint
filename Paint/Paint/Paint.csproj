@@ -153,8 +153,14 @@
     <None Include="Icon\1495708725_BT_folder_file_open.png" />
     <None Include="Icon\1495708747_save.png" />
     <None Include="Icon\1495724957_icon_27_one_finger_click.png" />
+    <None Include="Icon\1496504981_paste.png" />
+    <None Include="Icon\aboutIcon.png" />
     <Content Include="Icon\Circle.png" />
     <None Include="Icon\EditColor.png" />
+    <None Include="Icon\cropIcon.png" />
+    <None Include="Icon\copyIcon %282%29.png" />
+    <None Include="Icon\cutIcon %282%29.png" />
+    <None Include="Icon\cursorIcon.png" />
     <Content Include="Icon\newIcon.png" />
     <Content Include="Icon\saveIcon.png" />
     <None Include="Icon\voiceIcon.png" />

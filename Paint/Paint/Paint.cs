@@ -369,6 +369,11 @@ namespace Paint
             DrawpenWidth();
         }
 
+        private void llbAbout_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public void DrawpenWidth()
         {
             pen.Clear(Color.FromArgb(128, 128, 255));
