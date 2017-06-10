@@ -28,12 +28,12 @@ namespace Paint
         }
         public override void DrawHandlePoint(Graphics g)
         {
-            Pen p = new Pen(Color.Black, (float)0.2);
-            SolidBrush brush = new SolidBrush(Color.Black);
+            Pen p = new Pen(Color.Blue, 2);
+            SolidBrush brush = new SolidBrush(Color.Blue);
             for (int i = 1; i <= HANDLE_COUNT; i++)
             {
                 g.DrawRectangle(p, GetRectangleHandle(i));
-                //g.FillRectangle(brush, GetRectangleHandle(i));
+                g.FillRectangle(brush, GetRectangleHandle(i));
             }
             p.Dispose();
             brush.Dispose();

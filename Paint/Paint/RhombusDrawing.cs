@@ -58,12 +58,12 @@ namespace Paint
 
         public override void DrawHandlePoint(Graphics g)
         {
-            Pen p = new Pen(Color.Green, 2);
-            SolidBrush brush = new SolidBrush(Color.Green);
+            Pen p = new Pen(Color.Blue, 2);
+            SolidBrush brush = new SolidBrush(Color.Blue);
             for (int i = 1; i <= HANDLE_COUNT; i++)
             {
-                g.DrawEllipse(p, GetRectangleHandle(i));
-                g.FillEllipse(brush, GetRectangleHandle(i));
+                g.DrawRectangle(p, GetRectangleHandle(i));
+                g.FillRectangle(brush, GetRectangleHandle(i));
             }
             p.Dispose();
             brush.Dispose();
