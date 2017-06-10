@@ -64,6 +64,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,7 +103,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleDrawing.cs" />
     <Compile Include="RhombusDrawing.cs" />
+    <Compile Include="SpeechRecognition.cs" />
     <Compile Include="StarDrawing.cs" />
+    <Compile Include="TestSpeechRecogition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestSpeechRecogition.Designer.cs">
+      <DependentUpon>TestSpeechRecogition.cs</DependentUpon>
+    </Compile>
     <Compile Include="TriangleDrawing.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -120,6 +128,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TestSpeechRecogition.resx">
+      <DependentUpon>TestSpeechRecogition.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Diagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
