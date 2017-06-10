@@ -233,9 +233,7 @@ namespace Paint
 
         private void btnUndo_Click(object sender, EventArgs e)
         {
-            status = DRAW_STATUS.COMPLETE;
-            grapList.RemoveLast();
-            picPaint.Refresh();
+            this.Undo();
         }
 
         private Bitmap CropImage(Bitmap src, Rectangle Roi)
@@ -247,83 +245,17 @@ namespace Paint
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            //Shape = null;
-            grapList._list.Clear();
-            if (isSaved == false)
-            {
-                DialogResult dlr = MessageBox.Show("Do you want to save first?", "Absoluke Paint", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dlr == DialogResult.Yes)
-                {
-                    btnSaveAs_Click(sender, e);
-                    isSaved = true;
-                    //panelPaint.Size = new Size(1145, 737);
-                    fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-                    Graphics g = Graphics.FromImage(fillImage);
-                    g.Clear(Color.White);
-                    picPaint.Size = fillImage.Size;
-                    picPaint.Refresh();
-                    isSaved = true;
-                }
-                else
-                {
-                    //panelPaint.Size = new Size(1145, 737);
-                    fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-                    Graphics g = Graphics.FromImage(fillImage);
-                    g.Clear(Color.White);
-                    picPaint.Size = fillImage.Size;
-                    picPaint.Refresh();
-                    isSaved = true;
-                }
-            }
-            else
-            {
-                //panelPaint.Size = new Size(1145, 737);
-                fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-                Graphics g = Graphics.FromImage(fillImage);
-                g.Clear(Color.White);
-                picPaint.Size = fillImage.Size;
-                picPaint.Refresh();
-            }
+            this.New();
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "All Picture Files|*.bmp;*.ico;*.gif;*.jpeg;*.jpg;*.jfif;*.png;*.tif;*.tiff;*.wmf;*.emf|" +
-                            "Windows Bitmap (*.bmp)|*.bmp|" +
-                            "All Files (*.*)|*.*";
-            openFileDialog1.Title = "Open an Image File";
-
-            btnNew_Click(sender, e);
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    fillImage = new Bitmap(openFileDialog1.FileName);
-                    picPaint.Image = fillImage;
-                    picPaint.Refresh();
-                }
-                catch
-                {
-                    MessageBox.Show("Can't read this file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
+            this.Open();
         }
 
         private void btnSaveAs_Click(object sender, EventArgs e)
         {
-            if (File.Exists(saveFileDialog1.FileName))
-                doubleBuffer.Save(saveFileDialog1.FileName);
-            else
-            {
-                saveFileDialog1.Title = "Save an Image File";
-                saveFileDialog1.Filter = "BMP (*.bmp)|*.bmp|All File (*.*)|*.*";
-                saveFileDialog1.CheckPathExists = true;
-                saveFileDialog1.OverwritePrompt = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    doubleBuffer.Save(saveFileDialog1.FileName);
-                isSaved = true;
-            }          
+            this.SaveAs();
         }
         private void Paint_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -412,6 +344,120 @@ namespace Paint
             RectangleF rec = new RectangleF(2, 2, pn_penWidth.Width, pn_penWidth.Height);
             pen.DrawLine(new Pen(mtitleCurrentColor.BackColor, penWidth), new Point(5, pn_penWidth.Height / 2), new Point(pn_penWidth.Width - 5, pn_penWidth.Height / 2));
         }
+        #region BasicFunctions
+        private void New()
+        {
+            //Shape = null;
+            grapList._list.Clear();
+            if (isSaved == false)
+            {
+                DialogResult dlr = MessageBox.Show("Do you want to save first?", "Absoluke Paint", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    this.SaveAs();
+                    isSaved = true;
+                    //panelPaint.Size = new Size(1145, 737);
+                    fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                    Graphics g = Graphics.FromImage(fillImage);
+                    g.Clear(Color.White);
+                    picPaint.Size = fillImage.Size;
+                    picPaint.Refresh();
+                    isSaved = true;
+                }
+                else
+                {
+                    //panelPaint.Size = new Size(1145, 737);
+                    fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                    Graphics g = Graphics.FromImage(fillImage);
+                    g.Clear(Color.White);
+                    picPaint.Size = fillImage.Size;
+                    picPaint.Refresh();
+                    isSaved = true;
+                }
+            }
+            else
+            {
+                //panelPaint.Size = new Size(1145, 737);
+                fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                Graphics g = Graphics.FromImage(fillImage);
+                g.Clear(Color.White);
+                picPaint.Size = fillImage.Size;
+                picPaint.Refresh();
+            }
+        }
+        private void SaveAs()
+        {
+            if (File.Exists(saveFileDialog1.FileName))
+                doubleBuffer.Save(saveFileDialog1.FileName);
+            else
+            {
+                saveFileDialog1.Title = "Save an Image File";
+                saveFileDialog1.Filter = "BMP (*.bmp)|*.bmp|All File (*.*)|*.*";
+                saveFileDialog1.CheckPathExists = true;
+                saveFileDialog1.OverwritePrompt = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    doubleBuffer.Save(saveFileDialog1.FileName);
+                isSaved = true;
+            }
+        }
+        private void Open()
+        {
+            openFileDialog1.Filter = "All Picture Files|*.bmp;*.ico;*.gif;*.jpeg;*.jpg;*.jfif;*.png;*.tif;*.tiff;*.wmf;*.emf|" +
+                            "Windows Bitmap (*.bmp)|*.bmp|" +
+                            "All Files (*.*)|*.*";
+            openFileDialog1.Title = "Open an Image File";
+
+            this.New();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    fillImage = new Bitmap(openFileDialog1.FileName);
+                    picPaint.Image = fillImage;
+                    picPaint.Refresh();
+                }
+                catch
+                {
+                    MessageBox.Show("Can't read this file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+        private void Undo()
+        {
+            status = DRAW_STATUS.COMPLETE;
+            grapList.RemoveLast();
+            picPaint.Refresh();
+        }
+        #endregion
+
+        #region Hot keys for form
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.N))
+            {
+                this.New();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.S))
+            {
+                this.Open();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.O))
+            {
+                this.SaveAs();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.U))
+            {
+                this.Undo();
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        #endregion
 
         #region Methods RECOGNITION
         private void tgSpeechRecog_CheckedChanged(object sender, EventArgs e)

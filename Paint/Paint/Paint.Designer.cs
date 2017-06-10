@@ -279,10 +279,11 @@
             // tgHand
             // 
             this.tgHand.AutoSize = true;
-            this.tgHand.Location = new System.Drawing.Point(300, 66);
+            this.tgHand.DisplayStatus = false;
+            this.tgHand.Location = new System.Drawing.Point(309, 66);
             this.tgHand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tgHand.Name = "tgHand";
-            this.tgHand.Size = new System.Drawing.Size(80, 21);
+            this.tgHand.Size = new System.Drawing.Size(50, 21);
             this.tgHand.TabIndex = 6;
             this.tgHand.Text = "Off";
             this.tgHand.UseCustomBackColor = true;
@@ -292,10 +293,11 @@
             // tgSpeechRecog
             // 
             this.tgSpeechRecog.AutoSize = true;
-            this.tgSpeechRecog.Location = new System.Drawing.Point(92, 66);
+            this.tgSpeechRecog.DisplayStatus = false;
+            this.tgSpeechRecog.Location = new System.Drawing.Point(101, 66);
             this.tgSpeechRecog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tgSpeechRecog.Name = "tgSpeechRecog";
-            this.tgSpeechRecog.Size = new System.Drawing.Size(80, 21);
+            this.tgSpeechRecog.Size = new System.Drawing.Size(50, 21);
             this.tgSpeechRecog.TabIndex = 5;
             this.tgSpeechRecog.Text = "Off";
             this.tgSpeechRecog.UseCustomBackColor = true;
