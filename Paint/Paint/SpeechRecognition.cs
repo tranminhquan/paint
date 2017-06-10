@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Speech.Recognition;
 using System.IO;
-using System.Windows.Forms;
+using System.Speech.Synthesis;
 
 namespace Paint
 {
@@ -18,10 +18,14 @@ namespace Paint
         public delegate void SEND(string s);
         public SEND _sender;
 
+        //speaker
+        private SpeechSynthesizer speaker;
+
         public string ResultText { get; set; }
         public float Confindence { get; set; }
         public SpeechRecognition()
         {
+            #region Set for speech reconition
             //Add grammar
             string[] dataGram =  File.ReadAllLines(@".\Grammar.txt");
             Choices basic = new Choices();
@@ -42,27 +46,37 @@ namespace Paint
                 recognizer.LoadGrammar(grammar);
                 recognizer.SpeechRecognized += Recognizer_SpeechRecognized; // Recoginized success
                 //recognizer.SpeechDetected += Recognizer_SpeechDetected; //  Not sure
-                //recognizer.SpeechRecognitionRejected += Recognizer_SpeechRecognitionRejected;  //Failed
+                recognizer.SpeechRecognitionRejected += Recognizer_SpeechRecognitionRejected;  //Failed
                // recognizer.SpeechHypothesized += Recognizer_SpeechHypothesized;
 
                 //Set confidence
                 confidence = 0.5f;
             }
+            #endregion
+
+            #region Set for speaker
+            //Init speaker
+            speaker = new SpeechSynthesizer();
+            speaker.SetOutputToDefaultAudioDevice();
+            speaker.SelectVoiceByHints(VoiceGender.Female);
+            speaker.Volume = 100;
+            speaker.Rate = 2;
+            #endregion
         }
 
         //private void Recognizer_SpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)
         //{
-                  
+
         //}
 
-        //private void Recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)
-        //{
-            
-        //}
+        private void Recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)
+        {
+            speaker.Speak("Sorry! I can't detect");
+        }
 
         //private void Recognizer_SpeechDetected(object sender, SpeechDetectedEventArgs e)
         //{
-            
+
         //}
 
         public void Recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
@@ -77,6 +91,7 @@ namespace Paint
         public void Start()
         {
             recognizer.RecognizeAsync(RecognizeMode.Multiple);
+            speaker.Speak("Hello! How can I help you?");
         }
 
         public void Stop()

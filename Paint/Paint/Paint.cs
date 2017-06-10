@@ -21,6 +21,8 @@ namespace Paint
         bool isSaved = true;
         Graphics pen; // pen width
         bool isCrop = false;
+
+        SpeechRecognition speechReg;
         #endregion
 
         // danh sách màu mặc định
@@ -57,6 +59,10 @@ namespace Paint
             grapList = new GraphicsList();
 
             pen = pn_penWidth.CreateGraphics();
+
+            #region Set for recognizer
+            speechReg = new SpeechRecognition();
+            #endregion
         }
         private Color ChooseColor(int index)
         {
@@ -399,7 +405,6 @@ namespace Paint
         {
             MessageBox.Show("A gift to Vuong-sama");
         }
-
         public void DrawpenWidth()
         {
             pen.Clear(Color.FromArgb(128, 128, 255));
@@ -407,5 +412,49 @@ namespace Paint
             RectangleF rec = new RectangleF(2, 2, pn_penWidth.Width, pn_penWidth.Height);
             pen.DrawLine(new Pen(mtitleCurrentColor.BackColor, penWidth), new Point(5, pn_penWidth.Height / 2), new Point(pn_penWidth.Width - 5, pn_penWidth.Height / 2));
         }
+
+        #region Methods RECOGNITION
+        private void tgSpeechRecog_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tgSpeechRecog.Checked)
+            {
+                pnlReconizer.Visible = true;
+                speechReg.Start();
+                speechReg._sender = new SpeechRecognition.SEND(GetString);
+            }
+            else
+            {
+                pnlReconizer.Visible = false;
+                speechReg.Stop();
+            }
+           
+        }
+
+        public void GetString(string s)
+        {
+            SetText(s);
+
+            //Xu ly cac lenh tai day
+            //...
+        }
+
+        delegate void SetTextCallback(string text);
+        private void SetText(string text)
+        {
+
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.lblSpeechResult.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetText);
+                this.lblSpeechResult.Invoke(d, text);
+            }
+            else
+            {
+                this.lblSpeechResult.Text = text;
+            }
+        }
+        #endregion
     }
 }
