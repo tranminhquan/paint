@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Speech.Recognition;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Paint
 {
@@ -14,11 +15,23 @@ namespace Paint
         private Grammar grammar;
         private string resultText;
         private float confidence;
+        public delegate void SEND(string s);
+        public SEND _sender;
 
         public string ResultText { get; set; }
         public float Confindence { get; set; }
         public SpeechRecognition()
         {
+            //Add grammar
+            string[] dataGram = new string[] { "one", "two", "three", "four" };  // File.ReadAllLines(@"E:\Courses\4th - Semester\Truc quan\Projects\DataGrammar\Grammar.txt");
+            Choices basic = new Choices();
+            foreach(string i in dataGram)
+            {
+                basic.Add(i);
+            }
+            GrammarBuilder builder = this.CreateStructure(basic);
+            grammar = new Grammar(builder);
+
             //Init recognizer
             recognizer = new SpeechRecognitionEngine();
             recognizer.SetInputToDefaultAudioDevice();       
@@ -26,44 +39,42 @@ namespace Paint
             {
                 recognizer.LoadGrammar(grammar);
                 recognizer.SpeechRecognized += Recognizer_SpeechRecognized; // Recoginized success
-                recognizer.SpeechDetected += Recognizer_SpeechDetected; //  Not sure
-                recognizer.SpeechRecognitionRejected += Recognizer_SpeechRecognitionRejected;  //Failed
-                recognizer.SpeechHypothesized += Recognizer_SpeechHypothesized;
+                //recognizer.SpeechDetected += Recognizer_SpeechDetected; //  Not sure
+                //recognizer.SpeechRecognitionRejected += Recognizer_SpeechRecognitionRejected;  //Failed
+               // recognizer.SpeechHypothesized += Recognizer_SpeechHypothesized;
 
                 //Set confidence
                 confidence = 0.5f;
             }
         }
 
-        private void Recognizer_SpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)
-        {
-            throw new NotImplementedException();      
-        }
+        //private void Recognizer_SpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)
+        //{
+                  
+        //}
 
-        private void Recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)
-        {
-            throw new NotImplementedException();   
-        }
+        //private void Recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)
+        //{
+            
+        //}
 
-        private void Recognizer_SpeechDetected(object sender, SpeechDetectedEventArgs e)
-        {
-            throw new NotImplementedException();   
-        }
+        //private void Recognizer_SpeechDetected(object sender, SpeechDetectedEventArgs e)
+        //{
+            
+        //}
 
-        private void Recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        public void Recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             if (e.Result.Confidence >= confidence)
             {
                 resultText = e.Result.Text;
+                _sender(resultText);
             }       
         }
 
         public void Start()
         {
-            while (true)
-            {
-                recognizer.Recognize();
-            } 
+            recognizer.RecognizeAsync(RecognizeMode.Multiple);
         }
 
         public void Stop()

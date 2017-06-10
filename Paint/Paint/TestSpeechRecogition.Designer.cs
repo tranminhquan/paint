@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtResult = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtResult
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 114);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(413, 226);
-            this.textBox1.TabIndex = 0;
+            this.txtResult.Location = new System.Drawing.Point(72, 114);
+            this.txtResult.Multiline = true;
+            this.txtResult.Name = "txtResult";
+            this.txtResult.Size = new System.Drawing.Size(413, 226);
+            this.txtResult.TabIndex = 0;
+            this.txtResult.TextChanged += new System.EventHandler(this.txtResult_TextChanged);
             // 
             // btnStart
             // 
@@ -60,6 +61,7 @@
             this.btnStop.TabIndex = 2;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // TestSpeechRecogition
             // 
@@ -68,9 +70,10 @@
             this.ClientSize = new System.Drawing.Size(580, 352);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtResult);
             this.Name = "TestSpeechRecogition";
             this.Text = "TestSpeechRecogition";
+            this.Load += new System.EventHandler(this.TestSpeechRecogition_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,7 +81,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
     }

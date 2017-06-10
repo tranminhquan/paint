@@ -281,6 +281,20 @@ namespace Paint.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to new
+        ///open
+        ///pencil
+        ///eraser
+        ///undo
+        ///.
+        /// </summary>
+        internal static string Grammar {
+            get {
+                return ResourceManager.GetString("Grammar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap voiceIcon {
