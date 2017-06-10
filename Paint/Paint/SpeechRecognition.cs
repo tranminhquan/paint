@@ -23,12 +23,14 @@ namespace Paint
         public SpeechRecognition()
         {
             //Add grammar
-            string[] dataGram = new string[] { "one", "two", "three", "four" };  // File.ReadAllLines(@"E:\Courses\4th - Semester\Truc quan\Projects\DataGrammar\Grammar.txt");
+            string[] dataGram =  File.ReadAllLines(@".\Grammar.txt");
             Choices basic = new Choices();
             foreach(string i in dataGram)
             {
                 basic.Add(i);
+
             }
+           
             GrammarBuilder builder = this.CreateStructure(basic);
             grammar = new Grammar(builder);
 
