@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Paint
 {
@@ -47,6 +48,7 @@ namespace Paint
                 flColors.Controls.Add(_Tile);
             }
 
+            mtitleCurrentColor.BackColor = Color.Black;
             doubleBuffer = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, picPaint.CreateGraphics());
             Graphics g = Graphics.FromImage(doubleBuffer);
             g.Clear(Color.White);
@@ -164,8 +166,7 @@ namespace Paint
         }
         private void picPaint_MouseMove(object sender, MouseEventArgs e)
         {
-
-            //toolStripStatusLabel1.Text = "Cursor: " + e.Location.X + " x " + e.Location.Y;
+            label2.Text = e.Location.X + " x " + e.Location.Y;
 
             if (Shape != null)
             {
@@ -229,7 +230,7 @@ namespace Paint
         {
             status = DRAW_STATUS.COMPLETE;
             grapList.RemoveLast();
-            //picPaint.Refresh();
+            picPaint.Refresh();
         }
 
         private Bitmap CropImage(Bitmap src, Rectangle Roi)
@@ -306,13 +307,39 @@ namespace Paint
 
         private void btnSaveAs_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Title = "Save an Image File";
-            saveFileDialog1.Filter = "BMP (*.bmp)|*.bmp|All File (*.*)|*.*";
-            saveFileDialog1.CheckPathExists = true;
-            saveFileDialog1.OverwritePrompt = true;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (File.Exists(saveFileDialog1.FileName))
                 doubleBuffer.Save(saveFileDialog1.FileName);
-            isSaved = true;
+            else
+            {
+                saveFileDialog1.Title = "Save an Image File";
+                saveFileDialog1.Filter = "BMP (*.bmp)|*.bmp|All File (*.*)|*.*";
+                saveFileDialog1.CheckPathExists = true;
+                saveFileDialog1.OverwritePrompt = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    doubleBuffer.Save(saveFileDialog1.FileName);
+                isSaved = true;
+            }          
+        }
+        private void Paint_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (isSaved == false)
+            {
+                DialogResult dlr = MessageBox.Show("Do you want to save first?", "Absoluke Paint", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    btnSaveAs_Click(sender, e);
+                    isSaved = true;
+                    this.Dispose();
+                }
+                else
+                {
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                this.Dispose();
+            };
         }
 
         private void ChooseObject()
@@ -371,7 +398,7 @@ namespace Paint
 
         private void llbAbout_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("A gift to Vuong-sama");
         }
 
         public void DrawpenWidth()
