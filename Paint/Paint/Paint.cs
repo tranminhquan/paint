@@ -472,9 +472,24 @@ namespace Paint
                 this.SaveAs();
                 return true;
             }
-            if (keyData == (Keys.Control | Keys.U))
+            if (keyData == (Keys.Control | Keys.Z))
             {
                 this.Undo();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.P))
+            {
+                objectChoose = "pencil";
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.E))
+            {
+                objectChoose = "eraser";
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.F))
+            {
+                objectChoose = "bucket";
                 return true;
             }
             if (keyData == (Keys.F1))

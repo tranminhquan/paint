@@ -90,6 +90,7 @@
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.metroPanel1.SuspendLayout();
             this.pnlReconizer.SuspendLayout();
             this.metroPanel11.SuspendLayout();
@@ -146,6 +147,7 @@
             this.pnlReconizer.VerticalScrollbarBarColor = true;
             this.pnlReconizer.VerticalScrollbarHighlightOnWheel = false;
             this.pnlReconizer.VerticalScrollbarSize = 11;
+            this.pnlReconizer.Visible = false;
             // 
             // llblDicInfo
             // 
@@ -304,6 +306,7 @@
             this.metroPanel13.Name = "metroPanel13";
             this.metroPanel13.Size = new System.Drawing.Size(53, 41);
             this.metroPanel13.TabIndex = 7;
+            this.metroToolTip1.SetToolTip(this.metroPanel13, "Press F1");
             this.metroPanel13.VerticalScrollbarBarColor = true;
             this.metroPanel13.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel13.VerticalScrollbarSize = 11;
@@ -332,6 +335,7 @@
             this.tgSpeechRecog.Size = new System.Drawing.Size(50, 21);
             this.tgSpeechRecog.TabIndex = 5;
             this.tgSpeechRecog.Text = "Off";
+            this.metroToolTip1.SetToolTip(this.tgSpeechRecog, "Press F1");
             this.tgSpeechRecog.UseCustomBackColor = true;
             this.tgSpeechRecog.UseCustomForeColor = true;
             this.tgSpeechRecog.UseSelectable = true;
@@ -380,7 +384,7 @@
             this.tabOptions.Location = new System.Drawing.Point(0, 48);
             this.tabOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabOptions.Name = "tabOptions";
-            this.tabOptions.SelectedIndex = 2;
+            this.tabOptions.SelectedIndex = 1;
             this.tabOptions.Size = new System.Drawing.Size(409, 242);
             this.tabOptions.TabIndex = 4;
             this.tabOptions.UseSelectable = true;
@@ -499,6 +503,7 @@
             this.btnBucket.Name = "btnBucket";
             this.btnBucket.Size = new System.Drawing.Size(85, 191);
             this.btnBucket.TabIndex = 2;
+            this.metroToolTip1.SetToolTip(this.btnBucket, "CTRL + F");
             this.btnBucket.UseVisualStyleBackColor = false;
             this.btnBucket.Click += new System.EventHandler(this.btnObject_Click);
             // 
@@ -513,6 +518,7 @@
             this.btnEraser.Name = "btnEraser";
             this.btnEraser.Size = new System.Drawing.Size(85, 191);
             this.btnEraser.TabIndex = 2;
+            this.metroToolTip1.SetToolTip(this.btnEraser, "CTRL + E");
             this.btnEraser.UseVisualStyleBackColor = false;
             this.btnEraser.Click += new System.EventHandler(this.btnObject_Click);
             // 
@@ -541,6 +547,7 @@
             this.btnPencil.Name = "btnPencil";
             this.btnPencil.Size = new System.Drawing.Size(88, 193);
             this.btnPencil.TabIndex = 2;
+            this.metroToolTip1.SetToolTip(this.btnPencil, "CTRL + P");
             this.btnPencil.UseVisualStyleBackColor = false;
             this.btnPencil.Click += new System.EventHandler(this.btnObject_Click);
             // 
@@ -663,6 +670,7 @@
             this.btnRectangle.Name = "btnRectangle";
             this.btnRectangle.Size = new System.Drawing.Size(79, 78);
             this.btnRectangle.TabIndex = 11;
+            this.metroToolTip1.SetToolTip(this.btnRectangle, "CTRL + R");
             this.btnRectangle.UseVisualStyleBackColor = false;
             this.btnRectangle.Click += new System.EventHandler(this.btnObject_Click);
             // 
@@ -854,6 +862,7 @@
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(73, 52);
             this.btnSaveAs.TabIndex = 2;
+            this.metroToolTip1.SetToolTip(this.btnSaveAs, "CTRL + S");
             this.btnSaveAs.UseVisualStyleBackColor = true;
             this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
             // 
@@ -867,6 +876,7 @@
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(73, 52);
             this.btnOpen.TabIndex = 2;
+            this.metroToolTip1.SetToolTip(this.btnOpen, "CTRL + O");
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
@@ -880,6 +890,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(73, 52);
             this.btnNew.TabIndex = 2;
+            this.metroToolTip1.SetToolTip(this.btnNew, "CTRL + N");
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -894,6 +905,7 @@
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(91, 80);
             this.btnUndo.TabIndex = 2;
+            this.metroToolTip1.SetToolTip(this.btnUndo, "CTRL + Z");
             this.btnUndo.UseVisualStyleBackColor = true;
             this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
@@ -1004,6 +1016,12 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1105,5 +1123,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel16;
         private MetroFramework.Controls.MetroLabel lblSpeechResult;
         private MetroFramework.Controls.MetroLink llblDicInfo;
+        private MetroFramework.Components.MetroToolTip metroToolTip1;
     }
 }
