@@ -21,7 +21,8 @@ namespace Paint
         bool isSaved = true;
         Graphics pen; // pen width
         bool isCrop = false;
-
+        bool isCropRectDraw = false;
+        int posOfCrop;
         SpeechRecognition speechReg;
         #endregion
 
@@ -130,14 +131,21 @@ namespace Paint
                     {
                         if (objectChoose != "crop")
                         {
+                            
                             status = DRAW_STATUS.COMPLETE;
                             ChooseObject();
                             Shape.Mouse_Down(e);
+
                             grapList._list.Insert(grapList._list.Count, Shape);
+                            if (isCropRectDraw == true)
+                            {
+                                grapList._list.RemoveAt(posOfCrop);
+                            }
 
                         }
                         else
                         {
+                            isCropRectDraw = true;
                             if (isCrop == true)
                             {
                                 if (grapList._list.Count != 0)
@@ -213,7 +221,9 @@ namespace Paint
             Button btnObject = (Button)sender;
             objectChoose = btnObject.Name.Remove(0, 3).ToLower();
             if (objectChoose != "crop")
+            {
                 isCrop = false;
+            }
 
             if (objectChoose == "crop" && isCrop == true)
             {
@@ -320,6 +330,7 @@ namespace Paint
                     {
                         Shape = new CropRectangle();
                         isCrop = true;
+                        posOfCrop = grapList._list.Count;
                     }
                     break;
 

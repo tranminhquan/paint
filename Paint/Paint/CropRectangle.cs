@@ -11,11 +11,10 @@ namespace Paint
 {
     class CropRectangle : RectangleDrawing
 
-    { 
-       
+    {
+
         public CropRectangle()
         {
-
         }
         #region Method
         public override void Draw(Graphics g)
