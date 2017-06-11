@@ -1,5 +1,21 @@
 new
 open
+save
 pencil
 eraser
 undo
+turn off
+stop
+theme
+tool
+shape
+exit
+close
+rectangle
+circle
+star
+line
+triangle
+rhombus
+pentagon
+hexagon

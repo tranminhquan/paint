@@ -443,6 +443,15 @@ namespace Paint
             grapList.RemoveLast();
             picPaint.Refresh();
         }
+
+        private void Exit()
+        {
+            DialogResult rslt = MessageBox.Show("Do you want to exit Absoluke Paint?", "Confirm", MessageBoxButtons.YesNo);
+            if (rslt == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
         #endregion
 
         #region Hot keys for form
@@ -466,6 +475,14 @@ namespace Paint
             if (keyData == (Keys.Control | Keys.U))
             {
                 this.Undo();
+                return true;
+            }
+            if (keyData == (Keys.F1))
+            {
+                if (tgSpeechRecog.Checked)
+                    tgSpeechRecog.Checked = false;
+                else
+                    tgSpeechRecog.Checked = true;
                 return true;
             }
 
@@ -495,10 +512,83 @@ namespace Paint
             SetText(s);
 
             //Xu ly cac lenh tai day
-            //...
+            switch(s)
+            {
+                //Basic functions:
+                case "new":
+                    this.New();
+                    break;
+                case "open":
+                    this.Open();
+                    break;
+                case "save":
+                    this.SaveAs();
+                    break;
+
+                //Tool:
+                case "pencil":
+                    objectChoose = "pencil";
+                    break;
+                case "eraser":
+                    objectChoose = "eraser";
+                    break;
+                case "undo":
+                    this.Undo();
+                    break;            
+                case "theme":
+                    tabOptions.SelectedIndex = 0;
+                    break;
+                case "tool":
+                    tabOptions.SelectedIndex = 1;
+                    break;                   
+                case "shape":
+                    tabOptions.SelectedIndex = 2;
+                    break;
+                //Shape:
+                case "rectangle":
+                    objectChoose = "rectangle";
+                    break;
+                case "circle":
+                    objectChoose = "circle";
+                    break;
+                case "star":
+                    objectChoose = "star";
+                    break;
+                case "line":
+                    objectChoose = "line";
+                    break;
+                case "triangle":
+                    objectChoose = "triangle";
+                    break;
+                case "rhombus":
+                    objectChoose = "rhombus";
+                    break;
+                case "pentagon":
+                    objectChoose = "pentagon";
+                    break;               
+                case "hexagon":
+                    objectChoose = "hexagon";
+                    break;
+                //Turn off and exit
+                case "turn off":
+                case "stop":
+                    tgSpeechRecog.Checked = false;
+                    break;
+                case "exit":
+                case "close":
+                    this.Exit();
+                    break;
+            }
         }
 
         delegate void SetTextCallback(string text);
+
+        private void llblDicInfo_Click(object sender, EventArgs e)
+        {
+            DictionaryInfo ucDicInfo = new DictionaryInfo();
+            ucDicInfo.ShowDialog();
+        }
+
         private void SetText(string text)
         {
 

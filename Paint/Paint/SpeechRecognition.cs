@@ -37,9 +37,10 @@ namespace Paint
            
             GrammarBuilder builder = this.CreateStructure(basic);
             grammar = new Grammar(builder);
-
+          
             //Init recognizer
             recognizer = new SpeechRecognitionEngine();
+            
             recognizer.SetInputToDefaultAudioDevice();       
             if (grammar != null)
             {
@@ -96,17 +97,18 @@ namespace Paint
 
         public void Stop()
         {
-            recognizer.RecognizeAsyncStop();
+            speaker.Speak("Speech Recognition will turn off now! Goodbye!");
+            recognizer.RecognizeAsyncStop();     
         }
 
         public GrammarBuilder CreateStructure(params Choices[] elements)    //Create new structure
         {
-            GrammarBuilder buider = new GrammarBuilder();
+            GrammarBuilder builder = new GrammarBuilder();
             foreach(Choices i in elements)
             {
-                buider.Append(i);
+                builder.Append(i);
             }
-            return buider;
+            return builder;
         }
 
         
