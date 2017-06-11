@@ -103,9 +103,10 @@ namespace Paint
                 if (objectChoose == "bucket")
                 {
                     //Shape = null;    
-                    BucketDrawing bucket = new BucketDrawing(mtitleCurrentColor.BackColor);
+                    Shape = new BucketDrawing(doubleBuffer, fillImage, e.X, e.Y,mtitleCurrentColor.BackColor);
 
-                    fillImage = bucket.Fill(doubleBuffer, fillImage, e.X, e.Y);
+
+                    grapList._list.Insert(grapList._list.Count, Shape);
 
                     picPaint.Refresh();
                 }

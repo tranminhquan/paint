@@ -94,3 +94,8 @@ C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.pdb
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\MetroFramework.Design.dll
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\MetroFramework.dll
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.Paint.resources
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources

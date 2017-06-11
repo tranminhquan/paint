@@ -14,10 +14,21 @@ namespace Paint
 {
     class BucketDrawing : ObjectDrawing
     {
+        #region Declare
+        // thong tin cua anh can fill
+        Bitmap _pic;
+        Bitmap _fillpic;
+        int x;
+        int y;
+        #endregion
         #region Method
 
-        public BucketDrawing(Color _color)
+        public BucketDrawing(Bitmap _pic, Bitmap _fillpic, int x, int y,Color _color)
         {
+            this._pic = _pic;
+            this._fillpic = _fillpic;
+            this.x = x;
+            this.y = y;
             this._color = _color;
         }
 
@@ -32,8 +43,7 @@ namespace Paint
         #endregion
 
         #region Function
-        public Bitmap Fill(Bitmap _pic, Bitmap _fillpic, int x, int y)
-        // clickColor la color o vi tri click
+        public Bitmap Fill()
         {
             PointedColorFloodFill bucket = new PointedColorFloodFill();
             _fillpic = _pic.Clone(new Rectangle(0, 0, _pic.Width, _pic.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
@@ -43,6 +53,10 @@ namespace Paint
             return bucket.Apply(_fillpic);
         }
 
+        public override void Draw(Graphics g)
+        {
+            g.DrawImage(Fill(), new Point(0, 0));
+        }
 
         #endregion
     }

@@ -62,33 +62,34 @@ namespace Paint
             {
 
                 //Neu da chon doi tuong
-                if (objectChoose == "bucket")
-                {
-                    //Shape = null;    
-                    BucketDrawing bucket = new BucketDrawing(color);
-                    
-                    fillImage = bucket.Fill(doubleBuffer,fillImage, e.X, e.Y);
+                if (objectChoose == "bucket") ;
+                //{
+                //    //Shape = null;    
+                //    Shape = new BucketDrawing(doubleBuffer, fillImage, e.X, e.Y, current);
 
-                    picPaint.Refresh();
-                }
+
+                //    grapList._list.Insert(grapList._list.Count, Shape);
+
+                //    picPaint.Refresh();
+                // }
                 else
                  if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
                 {
-                  
-                    
-                        if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
-                        {
-                            Shape.Mouse_Down(e);
-                            status = DRAW_STATUS.INCOMPLETE;
 
-                            if (Shape.CheckLocation(e.Location) == 0)
-                                Cursor = Cursors.SizeAll;
-                            if (Shape.CheckLocation(e.Location) > 0)
-                                Cursor = Cursors.Cross;
-                        }
 
-                        else
-                        {
+                    if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
+                    {
+                        Shape.Mouse_Down(e);
+                        status = DRAW_STATUS.INCOMPLETE;
+
+                        if (Shape.CheckLocation(e.Location) == 0)
+                            Cursor = Cursors.SizeAll;
+                        if (Shape.CheckLocation(e.Location) > 0)
+                            Cursor = Cursors.Cross;
+                    }
+
+                    else
+                    {
                         if (objectChoose != "crop")
                         {
                             status = DRAW_STATUS.COMPLETE;
@@ -105,15 +106,15 @@ namespace Paint
                                     grapList._list.RemoveAt(grapList._list.Count - 1);
                                 picPaint.Refresh();
                             }
-                         
-                                status = DRAW_STATUS.COMPLETE;
-                                ChooseObject();
-                                Shape.Mouse_Down(e);
-                                grapList._list.Insert(grapList._list.Count, Shape);
-                            
+
+                            status = DRAW_STATUS.COMPLETE;
+                            ChooseObject();
+                            Shape.Mouse_Down(e);
+                            grapList._list.Insert(grapList._list.Count, Shape);
+
                         }
-                        }
-                    
+                    }
+
                 }
                 else
                 {
