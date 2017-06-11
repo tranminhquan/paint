@@ -99,3 +99,4 @@ C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\MetroFramework.dll
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.Paint.resources
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
+C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources

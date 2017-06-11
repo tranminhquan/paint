@@ -225,7 +225,8 @@ namespace Paint
 
                 fillImage = CropImage(doubleBuffer, ROI);
 
-                //panelPaint.Size = fillImage.Size;
+                panelPaint.Dock = DockStyle.None;
+                panelPaint.Size = fillImage.Size;
 
                 picPaint.Refresh();
                 isCrop = false;
@@ -385,6 +386,7 @@ namespace Paint
                 picPaint.Size = fillImage.Size;
                 picPaint.Refresh();
             }
+            panelPaint.Dock = DockStyle.Fill;
         }
         private void SaveAs()
         {

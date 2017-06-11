@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paint", "Paint\Paint.csproj", "{CF74CC4F-3C35-4FB5-A860-E7BDBF976E54}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AbsolukePaintSetup", "AbsolukePaintSetup\AbsolukePaintSetup.vdproj", "{ABCC96BD-3536-4066-9DC7-66F7E81B0E28}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{CF74CC4F-3C35-4FB5-A860-E7BDBF976E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF74CC4F-3C35-4FB5-A860-E7BDBF976E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF74CC4F-3C35-4FB5-A860-E7BDBF976E54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ABCC96BD-3536-4066-9DC7-66F7E81B0E28}.Debug|Any CPU.ActiveCfg = Debug
-		{ABCC96BD-3536-4066-9DC7-66F7E81B0E28}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
