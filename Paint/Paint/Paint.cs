@@ -11,7 +11,6 @@ namespace Paint
     {
         #region Declare
         enum DRAW_STATUS { COMPLETE, INCOMPLETE };
-        //Color color = Color.Black;
         int penWidth = 1;
         string objectChoose;
         ObjectDrawing Shape;
@@ -106,15 +105,12 @@ namespace Paint
                     //Shape = null;    
                     Shape = new BucketDrawing(doubleBuffer, fillImage, e.X, e.Y,mtitleCurrentColor.BackColor);
 
-
                     grapList._list.Insert(grapList._list.Count, Shape);
 
                     picPaint.Refresh();
                 }
-                else
-                 if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
+                else if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
                 {
-
 
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
                     {
@@ -167,7 +163,7 @@ namespace Paint
                     status = DRAW_STATUS.COMPLETE;
                     ChooseObject();
                     Shape.Mouse_Down(e);
-                    grapList._list.Insert(grapList._list.Count, Shape);
+                    grapList._list.Insert(grapList._list.Count, Shape);                  
                 }
             }
 
@@ -201,7 +197,7 @@ namespace Paint
         {
             if (objectChoose == "pencil" || objectChoose == "eraser")
             {
-                Shape = null;
+                Shape = null;                
                 status = DRAW_STATUS.COMPLETE;
             }
             if (Shape != null)
@@ -241,6 +237,13 @@ namespace Paint
                 picPaint.Refresh();
                 isCrop = false;
             }
+
+            if (objectChoose == "pencil")
+                picPaint.Cursor = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
+            else if (objectChoose == "eraser")
+                picPaint.Cursor = new Cursor(Application.StartupPath + "\\Eraser.cur");
+            else if (objectChoose == "bucket")
+                picPaint.Cursor = new Cursor(Application.StartupPath + "\\bucket.cur");
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -297,8 +300,8 @@ namespace Paint
             {
                 case "pencil":
                     Shape = new PenDrawing(mtitleCurrentColor.BackColor, penWidth);
+                    
                     break;
-
                 case "eraser":
                     Shape = new EraserDrawing(penWidth);
                     break;
@@ -480,16 +483,19 @@ namespace Paint
             if (keyData == (Keys.Control | Keys.P))
             {
                 objectChoose = "pencil";
+                picPaint.Cursor = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
                 return true;
             }
             if (keyData == (Keys.Control | Keys.E))
             {
                 objectChoose = "eraser";
+                picPaint.Cursor = new Cursor(Application.StartupPath + "\\Eraser.cur");
                 return true;
             }
             if (keyData == (Keys.Control | Keys.F))
             {
                 objectChoose = "bucket";
+                picPaint.Cursor = new Cursor(Application.StartupPath + "\\bucket.cur");
                 return true;
             }
             if (keyData == (Keys.F1))
