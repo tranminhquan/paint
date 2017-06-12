@@ -31,6 +31,8 @@ namespace Paint
         public Paint()
         {
             InitializeComponent();
+            
+               
             for (int i = 1; i < 14; i++)
             {
                 MetroFramework.Controls.MetroTile _Tile = new MetroFramework.Controls.MetroTile();
@@ -77,6 +79,7 @@ namespace Paint
 
         private void picPaint_Paint(object sender, PaintEventArgs e)
         {
+            
             doubleBuffer = fillImage.Clone(new Rectangle(0, 0, fillImage.Width, fillImage.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             Graphics g = Graphics.FromImage(doubleBuffer);
             if (grapList._list.Count > 0)
@@ -91,6 +94,7 @@ namespace Paint
             if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" && objectChoose != "none")
                 Shape.DrawHandlePoint(g);
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
+           
         }
 
         private void picPaint_MouseDown(object sender, MouseEventArgs e)
@@ -109,7 +113,9 @@ namespace Paint
 
                     picPaint.Refresh();
                 }
-                else if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
+                else if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || 
+                    objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || 
+                    objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
                 {
 
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
@@ -172,12 +178,11 @@ namespace Paint
                 status = DRAW_STATUS.COMPLETE;
                 Shape = null;
             }
-
+            picPaint.Refresh();
         }
         private void picPaint_MouseMove(object sender, MouseEventArgs e)
         {
-            label2.Text = e.Location.X + " x " + e.Location.Y;
-
+            label2.Text = e.Location.X + " x " + e.Location.Y;        
             if (Shape != null)
             {
                 Shape.Mouse_Move(e);
@@ -238,12 +243,13 @@ namespace Paint
                 isCrop = false;
             }
 
-            if (objectChoose == "pencil")
-                picPaint.Cursor = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
-            else if (objectChoose == "eraser")
-                picPaint.Cursor = new Cursor(Application.StartupPath + "\\Eraser.cur");
-            else if (objectChoose == "bucket")
-                picPaint.Cursor = new Cursor(Application.StartupPath + "\\bucket.cur");
+            //if (objectChoose == "pencil")
+            //    picPaint.Cursor = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
+            //else if (objectChoose == "eraser")
+            //    picPaint.Cursor = new Cursor(Application.StartupPath + "\\Eraser.cur");
+            //else if (objectChoose == "bucket")
+            //    picPaint.Cursor = new Cursor(Application.StartupPath + "\\bucket.cur");
+            
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -347,6 +353,7 @@ namespace Paint
         private void pn_penWidth_Paint(object sender, PaintEventArgs e)
         {
             DrawpenWidth();
+            
         }
 
         private void llbAbout_Click(object sender, EventArgs e)
@@ -445,6 +452,7 @@ namespace Paint
             status = DRAW_STATUS.COMPLETE;
             grapList.RemoveLast();
             picPaint.Refresh();
+           
         }
 
         private void Exit()
@@ -598,7 +606,7 @@ namespace Paint
                 case "exit":
                 case "close":
                     this.Exit();
-                    break;
+                    break;            
             }
         }
 
@@ -608,6 +616,16 @@ namespace Paint
         {
             DictionaryInfo ucDicInfo = new DictionaryInfo();
             ucDicInfo.ShowDialog();
+        }
+
+        private void pnlSetting_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbConfidence_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
 
         private void SetText(string text)

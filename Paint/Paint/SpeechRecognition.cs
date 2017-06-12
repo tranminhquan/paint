@@ -21,8 +21,16 @@ namespace Paint
         //speaker
         private SpeechSynthesizer speaker;
 
-        public string ResultText { get; set; }
-        public float Confindence { get; set; }
+        public string ResultText
+        {
+            get { return resultText; }
+            set { resultText = value;}
+        }
+        public float Confindence
+        {
+            get { return confidence; }
+            set { confidence = value; }
+        }
         public SpeechRecognition()
         {
             #region Set for speech reconition
@@ -72,7 +80,7 @@ namespace Paint
 
         private void Recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)
         {
-            speaker.Speak("Sorry! I can't detect");
+            speaker.Speak("Can't detect");               
         }
 
         //private void Recognizer_SpeechDetected(object sender, SpeechDetectedEventArgs e)
@@ -98,7 +106,8 @@ namespace Paint
         public void Stop()
         {
             speaker.Speak("Speech Recognition will turn off now! Goodbye!");
-            recognizer.RecognizeAsyncStop();     
+            recognizer.RecognizeAsyncStop();
+            
         }
 
         public GrammarBuilder CreateStructure(params Choices[] elements)    //Create new structure
