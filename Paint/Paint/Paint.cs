@@ -83,16 +83,22 @@ namespace Paint
             
             doubleBuffer = fillImage.Clone(new Rectangle(0, 0, fillImage.Width, fillImage.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             Graphics g = Graphics.FromImage(doubleBuffer);
-            if (grapList._list.Count > 0)
+            if (grapList._list.Count > 0 && objectChoose != "none")
             {
                 btnUndo.Enabled = true;
                 grapList.Draw(g);
+            }
+            else if (objectChoose == "none")
+            {
+                Shape.Draw(g);
             }
             else
             {
                 btnUndo.Enabled = false;
             }
-            if ((status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" && objectChoose != "none" && objectChoose!=null) && (Shape._startPoint != Shape._endPoint ))
+            if ((status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" 
+                && objectChoose != "none" && objectChoose!=null) 
+                && Shape._startPoint != Shape._endPoint)
                 Shape.DrawHandlePoint(g);
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
            
@@ -170,7 +176,8 @@ namespace Paint
                     status = DRAW_STATUS.COMPLETE;
                     ChooseObject();
                     Shape.Mouse_Down(e);
-                    grapList._list.Insert(grapList._list.Count, Shape);                  
+                    if (objectChoose != "none")
+                        grapList._list.Insert(grapList._list.Count, Shape);                  
                 }
             }
 
