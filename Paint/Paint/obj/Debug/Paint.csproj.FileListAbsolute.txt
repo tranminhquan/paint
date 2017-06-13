@@ -102,3 +102,4 @@ C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogiti
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources

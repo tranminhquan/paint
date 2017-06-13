@@ -22,6 +22,7 @@ namespace Paint
         bool isCrop = false;
         bool isCropRectDraw = false;
         int posOfCrop;
+
         SpeechRecognition speechReg;
         #endregion
 
@@ -92,15 +93,6 @@ namespace Paint
             {
                 btnUndo.Enabled = false;
             }
-
-            if (objectChoose == "none")
-            {
-                Shape.Draw(g);
-            }
-            if ((status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" 
-                && objectChoose != "none" && objectChoose!=null) 
-                && Shape._startPoint != Shape._endPoint)
-                Shape.DrawHandlePoint(g);
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
            
         }
@@ -114,7 +106,13 @@ namespace Paint
                 //Neu da chon doi tuong
                 if (objectChoose == "bucket")
                 {
-                    //Shape = null;    
+                    //Shape = null; 
+                    if (isCropRectDraw == true)
+                    {
+                        grapList._list.RemoveAt(posOfCrop);
+                        isCropRectDraw = false;
+                        isCrop = false;
+                    }
                     Shape = new BucketDrawing(doubleBuffer, fillImage, e.X, e.Y,mtitleCurrentColor.BackColor);
 
                     grapList._list.Insert(grapList._list.Count, Shape);
@@ -141,44 +139,53 @@ namespace Paint
                     {
                         if (objectChoose != "crop")
                         {
-                            
-                            status = DRAW_STATUS.COMPLETE;
-                            ChooseObject();
-                            Shape.Mouse_Down(e);
 
-                            grapList._list.Insert(grapList._list.Count, Shape);
                             if (isCropRectDraw == true)
                             {
                                 grapList._list.RemoveAt(posOfCrop);
+                                isCropRectDraw = false;
+                                isCrop = false;
                             }
 
                         }
                         else
                         {
                             isCropRectDraw = true;
-                            if (isCrop == true)
+                            if (grapList._list.Count > 0)
                             {
-                                if (grapList._list.Count != 0)
-                                    grapList._list.RemoveAt(grapList._list.Count - 1);
-                                picPaint.Refresh();
+                                grapList._list.RemoveAt(grapList._list.Count - 1);
+                                isCrop = false;
                             }
-
-                            status = DRAW_STATUS.COMPLETE;
-                            ChooseObject();
-                            Shape.Mouse_Down(e);
-                            grapList._list.Insert(grapList._list.Count, Shape);
-
                         }
+
+                        status = DRAW_STATUS.COMPLETE;
+                        ChooseObject();
+                        Shape.Mouse_Down(e);
+
+                        grapList._list.Insert(grapList._list.Count, Shape);
+                        grapList._posINCOMPLETE = grapList._list.Count - 1 ;
+                        
                     }
 
                 }
                 else
                 {
+                    if (isCropRectDraw == true)
+                    {
+                        grapList._list.RemoveAt(posOfCrop);
+                        isCropRectDraw = false;
+                        isCrop = false;
+                    }
                     status = DRAW_STATUS.COMPLETE;
                     ChooseObject();
                     Shape.Mouse_Down(e);
                     if (objectChoose != "none")
-                        grapList._list.Insert(grapList._list.Count, Shape);                  
+                    {
+                        grapList._list.Insert(grapList._list.Count, Shape);
+                        grapList._list.Insert(grapList._list.Count, Shape);
+                        grapList._posINCOMPLETE = grapList._list.Count - 1;
+                    }
+
                 }
             }
 
@@ -242,7 +249,10 @@ namespace Paint
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
                 Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
-                fillImage = CropImage(doubleBuffer, ROI);
+
+                grapList._list.RemoveAt(posOfCrop);
+
+                fillImage = CropImage(fillImage, ROI);
 
                 panelPaint.Dock = DockStyle.None;
                 panelPaint.Size = fillImage.Size;
@@ -379,6 +389,8 @@ namespace Paint
         private void New()
         {
             //Shape = null;
+            isCropRectDraw = false;
+            isCrop = false;
             grapList._list.Clear();
             if (isSaved == false)
             {
@@ -460,6 +472,8 @@ namespace Paint
             status = DRAW_STATUS.COMPLETE;
             grapList.RemoveLast();
             picPaint.Refresh();
+            isCrop = false;
+            isCropRectDraw = false;
            
         }
 

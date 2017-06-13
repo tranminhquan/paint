@@ -7,6 +7,7 @@ namespace Paint
     {
         #region Decalre
         public List<ObjectDrawing> _list;
+        public int _posINCOMPLETE;
         #endregion
 
         #region Method
@@ -17,9 +18,12 @@ namespace Paint
 
         public void Draw(Graphics g)
         {
-            foreach(ObjectDrawing ObjDrawing in _list)
+
+            for (int i = 0; i < _list.Count; i++)
             {
-                ObjDrawing.Draw(g);
+                if (i == _posINCOMPLETE && _list[i]._startPoint != _list[i]._endPoint )
+                    _list[i].DrawHandlePoint(g);
+                _list[i].Draw(g);
             }
         }
 
