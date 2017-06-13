@@ -212,7 +212,7 @@ namespace Paint
 
         private void TB_penWidth_Scroll(object sender, ScrollEventArgs e)
         {
-            penWidth = TB_penWidth.Value;
+            penWidth = tbPenWidth.Value;
             //lb_penWidth.Text = TB_penWidth.Value.ToString();
             DrawpenWidth();
         }
@@ -598,15 +598,50 @@ namespace Paint
                 case "hexagon":
                     objectChoose = "hexagon";
                     break;
+                //bucket
+                case "paint":
+                    objectChoose = "bucket";
+                    break;
+                //color
+                case "red":   
+                                   
+                case "green":
+                   
+                case "blue":
+                   
+                case "yellow":
+                 
+                case "orange":
+                    
+                case "black":
+                   
+                case "white":
+                   
+                case "gray":
+                    mtitleCurrentColor.BackColor = Color.FromName(s);
+                    break;
                 //Turn off and exit
                 case "turn off":
                 case "stop":
                     tgSpeechRecog.Checked = false;
                     break;
+                
                 case "exit":
                 case "close":
                     this.Exit();
-                    break;            
+                    break;
+                default:
+                    {
+                        string size = s.Remove(s.Length - 2, 2);
+                        if (size == "size")
+                        {
+                            int index = int.Parse(s.Remove(0, 5));
+                            tbPenWidth.Value = index;
+                            penWidth = tbPenWidth.Value;                            
+                            DrawpenWidth();
+                        }
+                        break;
+                    }       
             }
         }
 
@@ -618,14 +653,30 @@ namespace Paint
             ucDicInfo.ShowDialog();
         }
 
-        private void pnlSetting_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbConfidence_Scroll(object sender, ScrollEventArgs e)
         {
+            speechReg.Confindence = ((float)tbConfidence.Value / 10);
+            lblConfidence.Text = speechReg.Confindence.ToString();
+        }
 
+        private void pnlSetting_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (tbConfidence.Visible == false)
+            {
+                tbConfidence.Value = (int) (speechReg.Confindence * 10);
+                tbConfidence.Visible = true;
+                lblNoise.Visible = true;
+                lblQuiet.Visible = true;
+                lblConfidence.Text = speechReg.Confindence.ToString();
+                lblConfidence.Visible = true;
+            }
+            else
+            {
+                tbConfidence.Visible = false;
+                lblNoise.Visible = false;
+                lblQuiet.Visible = false;          
+                lblConfidence.Visible = false;
+            }
         }
 
         private void SetText(string text)

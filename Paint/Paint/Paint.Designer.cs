@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paint));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.pnlReconizer = new MetroFramework.Controls.MetroPanel();
+            this.tbConfidence = new MetroFramework.Controls.MetroTrackBar();
             this.llblDicInfo = new MetroFramework.Controls.MetroLink();
             this.lblSpeechResult = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
@@ -71,7 +72,7 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.pn_penWidth = new System.Windows.Forms.Panel();
-            this.TB_penWidth = new MetroFramework.Controls.MetroTrackBar();
+            this.tbPenWidth = new MetroFramework.Controls.MetroTrackBar();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -92,7 +93,9 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            this.tbConfidence = new MetroFramework.Controls.MetroTrackBar();
+            this.lblQuiet = new System.Windows.Forms.Label();
+            this.lblNoise = new System.Windows.Forms.Label();
+            this.lblConfidence = new System.Windows.Forms.Label();
             this.metroPanel1.SuspendLayout();
             this.pnlReconizer.SuspendLayout();
             this.metroPanel11.SuspendLayout();
@@ -124,7 +127,7 @@
             this.metroPanel1.Location = new System.Drawing.Point(774, 74);
             this.metroPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(409, 738);
+            this.metroPanel1.Size = new System.Drawing.Size(409, 779);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.VerticalScrollbarBarColor = true;
@@ -133,6 +136,9 @@
             // 
             // pnlReconizer
             // 
+            this.pnlReconizer.Controls.Add(this.lblConfidence);
+            this.pnlReconizer.Controls.Add(this.lblNoise);
+            this.pnlReconizer.Controls.Add(this.lblQuiet);
             this.pnlReconizer.Controls.Add(this.tbConfidence);
             this.pnlReconizer.Controls.Add(this.llblDicInfo);
             this.pnlReconizer.Controls.Add(this.lblSpeechResult);
@@ -145,12 +151,27 @@
             this.pnlReconizer.Location = new System.Drawing.Point(0, 469);
             this.pnlReconizer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlReconizer.Name = "pnlReconizer";
-            this.pnlReconizer.Size = new System.Drawing.Size(409, 110);
+            this.pnlReconizer.Size = new System.Drawing.Size(409, 151);
             this.pnlReconizer.TabIndex = 6;
             this.pnlReconizer.UseCustomBackColor = true;
             this.pnlReconizer.VerticalScrollbarBarColor = true;
             this.pnlReconizer.VerticalScrollbarHighlightOnWheel = false;
             this.pnlReconizer.VerticalScrollbarSize = 11;
+            // 
+            // tbConfidence
+            // 
+            this.tbConfidence.BackColor = System.Drawing.Color.Transparent;
+            this.tbConfidence.Location = new System.Drawing.Point(123, 57);
+            this.tbConfidence.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbConfidence.Maximum = 10;
+            this.tbConfidence.Name = "tbConfidence";
+            this.tbConfidence.Size = new System.Drawing.Size(219, 23);
+            this.tbConfidence.TabIndex = 8;
+            this.tbConfidence.Text = "metroTrackBar1";
+            this.tbConfidence.UseCustomBackColor = true;
+            this.tbConfidence.Value = 5;
+            this.tbConfidence.Visible = false;
+            this.tbConfidence.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbConfidence_Scroll);
             // 
             // llblDicInfo
             // 
@@ -158,7 +179,7 @@
             this.llblDicInfo.FontWeight = MetroFramework.MetroLinkWeight.Regular;
             this.llblDicInfo.ForeColor = System.Drawing.Color.SkyBlue;
             this.llblDicInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.llblDicInfo.Location = new System.Drawing.Point(125, 77);
+            this.llblDicInfo.Location = new System.Drawing.Point(116, 113);
             this.llblDicInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.llblDicInfo.Name = "llblDicInfo";
             this.llblDicInfo.Size = new System.Drawing.Size(256, 33);
@@ -216,7 +237,7 @@
             this.pnlSetting.VerticalScrollbarBarColor = true;
             this.pnlSetting.VerticalScrollbarHighlightOnWheel = false;
             this.pnlSetting.VerticalScrollbarSize = 11;
-            this.pnlSetting.MouseEnter += new System.EventHandler(this.pnlSetting_MouseEnter);
+            this.pnlSetting.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlSetting_MouseClick);
             // 
             // metroPanel11
             // 
@@ -234,7 +255,7 @@
             this.metroPanel11.HorizontalScrollbarBarColor = true;
             this.metroPanel11.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel11.HorizontalScrollbarSize = 10;
-            this.metroPanel11.Location = new System.Drawing.Point(0, 579);
+            this.metroPanel11.Location = new System.Drawing.Point(0, 620);
             this.metroPanel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroPanel11.Name = "metroPanel11";
             this.metroPanel11.Size = new System.Drawing.Size(409, 159);
@@ -729,7 +750,7 @@
             // metroPanel8
             // 
             this.metroPanel8.Controls.Add(this.pn_penWidth);
-            this.metroPanel8.Controls.Add(this.TB_penWidth);
+            this.metroPanel8.Controls.Add(this.tbPenWidth);
             this.metroPanel8.Controls.Add(this.metroLabel1);
             this.metroPanel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel8.HorizontalScrollbarBarColor = true;
@@ -754,20 +775,20 @@
             this.pn_penWidth.TabIndex = 5;
             this.pn_penWidth.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_penWidth_Paint);
             // 
-            // TB_penWidth
+            // tbPenWidth
             // 
-            this.TB_penWidth.BackColor = System.Drawing.Color.Transparent;
-            this.TB_penWidth.Location = new System.Drawing.Point(79, 16);
-            this.TB_penWidth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TB_penWidth.Maximum = 10;
-            this.TB_penWidth.Minimum = 1;
-            this.TB_penWidth.Name = "TB_penWidth";
-            this.TB_penWidth.Size = new System.Drawing.Size(196, 23);
-            this.TB_penWidth.TabIndex = 3;
-            this.TB_penWidth.Text = "metroTrackBar1";
-            this.TB_penWidth.UseCustomBackColor = true;
-            this.TB_penWidth.Value = 1;
-            this.TB_penWidth.Scroll += new System.Windows.Forms.ScrollEventHandler(this.TB_penWidth_Scroll);
+            this.tbPenWidth.BackColor = System.Drawing.Color.Transparent;
+            this.tbPenWidth.Location = new System.Drawing.Point(79, 16);
+            this.tbPenWidth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbPenWidth.Maximum = 10;
+            this.tbPenWidth.Minimum = 1;
+            this.tbPenWidth.Name = "tbPenWidth";
+            this.tbPenWidth.Size = new System.Drawing.Size(196, 23);
+            this.tbPenWidth.TabIndex = 3;
+            this.tbPenWidth.Text = "metroTrackBar1";
+            this.tbPenWidth.UseCustomBackColor = true;
+            this.tbPenWidth.Value = 1;
+            this.tbPenWidth.Scroll += new System.Windows.Forms.ScrollEventHandler(this.TB_penWidth_Scroll);
             // 
             // metroLabel1
             // 
@@ -945,7 +966,7 @@
             this.metroPanel4.Location = new System.Drawing.Point(20, 163);
             this.metroPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(754, 649);
+            this.metroPanel4.Size = new System.Drawing.Size(754, 690);
             this.metroPanel4.TabIndex = 2;
             this.metroPanel4.UseCustomBackColor = true;
             this.metroPanel4.VerticalScrollbarBarColor = true;
@@ -961,7 +982,7 @@
             this.metroPanel12.Location = new System.Drawing.Point(727, 30);
             this.metroPanel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroPanel12.Name = "metroPanel12";
-            this.metroPanel12.Size = new System.Drawing.Size(27, 588);
+            this.metroPanel12.Size = new System.Drawing.Size(27, 629);
             this.metroPanel12.TabIndex = 5;
             this.metroPanel12.UseCustomBackColor = true;
             this.metroPanel12.VerticalScrollbarBarColor = true;
@@ -979,7 +1000,7 @@
             this.panelPaint.Location = new System.Drawing.Point(0, 30);
             this.panelPaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelPaint.Name = "panelPaint";
-            this.panelPaint.Size = new System.Drawing.Size(754, 588);
+            this.panelPaint.Size = new System.Drawing.Size(754, 629);
             this.panelPaint.Style = MetroFramework.MetroColorStyle.Blue;
             this.panelPaint.TabIndex = 4;
             this.panelPaint.UseCustomBackColor = true;
@@ -993,7 +1014,7 @@
             this.picPaint.Location = new System.Drawing.Point(0, 0);
             this.picPaint.Margin = new System.Windows.Forms.Padding(4);
             this.picPaint.Name = "picPaint";
-            this.picPaint.Size = new System.Drawing.Size(754, 588);
+            this.picPaint.Size = new System.Drawing.Size(754, 629);
             this.picPaint.TabIndex = 2;
             this.picPaint.TabStop = false;
             this.picPaint.Paint += new System.Windows.Forms.PaintEventHandler(this.picPaint_Paint);
@@ -1007,7 +1028,7 @@
             this.metroPanel6.HorizontalScrollbarBarColor = true;
             this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel6.HorizontalScrollbarSize = 10;
-            this.metroPanel6.Location = new System.Drawing.Point(0, 618);
+            this.metroPanel6.Location = new System.Drawing.Point(0, 659);
             this.metroPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroPanel6.Name = "metroPanel6";
             this.metroPanel6.Size = new System.Drawing.Size(754, 31);
@@ -1043,25 +1064,46 @@
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // tbConfidence
+            // lblQuiet
             // 
-            this.tbConfidence.BackColor = System.Drawing.Color.Transparent;
-            this.tbConfidence.Location = new System.Drawing.Point(113, 57);
-            this.tbConfidence.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbConfidence.Maximum = 10;
-            this.tbConfidence.Name = "tbConfidence";
-            this.tbConfidence.Size = new System.Drawing.Size(219, 23);
-            this.tbConfidence.TabIndex = 8;
-            this.tbConfidence.Text = "metroTrackBar1";
-            this.tbConfidence.UseCustomBackColor = true;
-            this.tbConfidence.Value = 6;
-            this.tbConfidence.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbConfidence_Scroll);
+            this.lblQuiet.AutoSize = true;
+            this.lblQuiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuiet.ForeColor = System.Drawing.Color.White;
+            this.lblQuiet.Location = new System.Drawing.Point(105, 82);
+            this.lblQuiet.Name = "lblQuiet";
+            this.lblQuiet.Size = new System.Drawing.Size(49, 20);
+            this.lblQuiet.TabIndex = 9;
+            this.lblQuiet.Text = "Quiet";
+            this.lblQuiet.Visible = false;
+            // 
+            // lblNoise
+            // 
+            this.lblNoise.AutoSize = true;
+            this.lblNoise.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoise.ForeColor = System.Drawing.Color.White;
+            this.lblNoise.Location = new System.Drawing.Point(323, 82);
+            this.lblNoise.Name = "lblNoise";
+            this.lblNoise.Size = new System.Drawing.Size(51, 20);
+            this.lblNoise.TabIndex = 9;
+            this.lblNoise.Text = "Noisy";
+            this.lblNoise.Visible = false;
+            // 
+            // lblConfidence
+            // 
+            this.lblConfidence.AutoSize = true;
+            this.lblConfidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfidence.ForeColor = System.Drawing.Color.White;
+            this.lblConfidence.Location = new System.Drawing.Point(206, 85);
+            this.lblConfidence.Name = "lblConfidence";
+            this.lblConfidence.Size = new System.Drawing.Size(0, 20);
+            this.lblConfidence.TabIndex = 10;
+            this.lblConfidence.Visible = false;
             // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 832);
+            this.ClientSize = new System.Drawing.Size(1203, 873);
             this.Controls.Add(this.metroPanel4);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
@@ -1106,7 +1148,7 @@
         private MetroFramework.Controls.MetroPanel metroPanel5;
         private MetroFramework.Controls.MetroPanel metroPanel8;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTrackBar TB_penWidth;
+        private MetroFramework.Controls.MetroTrackBar tbPenWidth;
         private MetroFramework.Controls.MetroPanel metroPanel10;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroPanel metroPanel12;
@@ -1161,5 +1203,8 @@
         private MetroFramework.Components.MetroToolTip metroToolTip1;
         private MetroFramework.Controls.MetroPanel pnlSetting;
         private MetroFramework.Controls.MetroTrackBar tbConfidence;
+        private System.Windows.Forms.Label lblNoise;
+        private System.Windows.Forms.Label lblQuiet;
+        private System.Windows.Forms.Label lblConfidence;
     }
 }

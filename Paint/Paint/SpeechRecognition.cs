@@ -39,8 +39,19 @@ namespace Paint
             Choices basic = new Choices();
             foreach(string i in dataGram)
             {
-                basic.Add(i);
-
+                if (i=="size")
+                {
+                    for (int index=1;index<=10;index++)
+                    {
+                        string temp = i + " " + index.ToString();
+                        basic.Add(temp);
+                    }
+                }              
+                else
+                {
+                    basic.Add(i);
+                }
+                
             }
            
             GrammarBuilder builder = this.CreateStructure(basic);
@@ -100,7 +111,7 @@ namespace Paint
         public void Start()
         {
             recognizer.RecognizeAsync(RecognizeMode.Multiple);
-            speaker.Speak("Hello! How can I help you?");
+            speaker.Speak("Hello! How can I help you?");       
         }
 
         public void Stop()

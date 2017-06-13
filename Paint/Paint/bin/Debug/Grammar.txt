@@ -19,3 +19,14 @@ triangle
 rhombus
 pentagon
 hexagon
+paint
+color
+size
+red
+green
+blue
+yellow
+orange
+black
+white
+gray
