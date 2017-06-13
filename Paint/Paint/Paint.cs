@@ -242,7 +242,7 @@ namespace Paint
                 picPaint.Refresh();
                 isCrop = false;
             }
-
+          
             //if (objectChoose == "pencil")
             //    picPaint.Cursor = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
             //else if (objectChoose == "eraser")

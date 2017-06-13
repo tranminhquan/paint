@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paint));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.pnlReconizer = new MetroFramework.Controls.MetroPanel();
+            this.lblConfidence = new System.Windows.Forms.Label();
+            this.lblNoise = new System.Windows.Forms.Label();
+            this.lblQuiet = new System.Windows.Forms.Label();
             this.tbConfidence = new MetroFramework.Controls.MetroTrackBar();
             this.llblDicInfo = new MetroFramework.Controls.MetroLink();
             this.lblSpeechResult = new MetroFramework.Controls.MetroLabel();
@@ -58,6 +61,7 @@
             this.mtTools = new MetroFramework.Controls.MetroTabPage();
             this.btnBucket = new System.Windows.Forms.Button();
             this.btnEraser = new System.Windows.Forms.Button();
+            this.btnNone = new System.Windows.Forms.Button();
             this.btnCrop = new System.Windows.Forms.Button();
             this.btnPencil = new System.Windows.Forms.Button();
             this.mtShapes = new MetroFramework.Controls.MetroTabPage();
@@ -93,9 +97,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            this.lblQuiet = new System.Windows.Forms.Label();
-            this.lblNoise = new System.Windows.Forms.Label();
-            this.lblConfidence = new System.Windows.Forms.Label();
             this.metroPanel1.SuspendLayout();
             this.pnlReconizer.SuspendLayout();
             this.metroPanel11.SuspendLayout();
@@ -157,6 +158,41 @@
             this.pnlReconizer.VerticalScrollbarBarColor = true;
             this.pnlReconizer.VerticalScrollbarHighlightOnWheel = false;
             this.pnlReconizer.VerticalScrollbarSize = 11;
+            // 
+            // lblConfidence
+            // 
+            this.lblConfidence.AutoSize = true;
+            this.lblConfidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfidence.ForeColor = System.Drawing.Color.White;
+            this.lblConfidence.Location = new System.Drawing.Point(213, 85);
+            this.lblConfidence.Name = "lblConfidence";
+            this.lblConfidence.Size = new System.Drawing.Size(0, 20);
+            this.lblConfidence.TabIndex = 10;
+            this.lblConfidence.Visible = false;
+            // 
+            // lblNoise
+            // 
+            this.lblNoise.AutoSize = true;
+            this.lblNoise.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoise.ForeColor = System.Drawing.Color.White;
+            this.lblNoise.Location = new System.Drawing.Point(277, 82);
+            this.lblNoise.Name = "lblNoise";
+            this.lblNoise.Size = new System.Drawing.Size(130, 20);
+            this.lblNoise.TabIndex = 9;
+            this.lblNoise.Text = "Fully confidence";
+            this.lblNoise.Visible = false;
+            // 
+            // lblQuiet
+            // 
+            this.lblQuiet.AutoSize = true;
+            this.lblQuiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuiet.ForeColor = System.Drawing.Color.White;
+            this.lblQuiet.Location = new System.Drawing.Point(72, 82);
+            this.lblQuiet.Name = "lblQuiet";
+            this.lblQuiet.Size = new System.Drawing.Size(116, 20);
+            this.lblQuiet.TabIndex = 9;
+            this.lblQuiet.Text = "No confidence";
+            this.lblQuiet.Visible = false;
             // 
             // tbConfidence
             // 
@@ -520,6 +556,7 @@
             // 
             this.mtTools.Controls.Add(this.btnBucket);
             this.mtTools.Controls.Add(this.btnEraser);
+            this.mtTools.Controls.Add(this.btnNone);
             this.mtTools.Controls.Add(this.btnCrop);
             this.mtTools.Controls.Add(this.btnPencil);
             this.mtTools.HorizontalScrollbarBarColor = true;
@@ -541,10 +578,10 @@
             this.btnBucket.FlatAppearance.BorderSize = 0;
             this.btnBucket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBucket.Image = global::Paint.Properties.Resources._1495660681_Paint;
-            this.btnBucket.Location = new System.Drawing.Point(20, 0);
+            this.btnBucket.Location = new System.Drawing.Point(1, 2);
             this.btnBucket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBucket.Name = "btnBucket";
-            this.btnBucket.Size = new System.Drawing.Size(85, 191);
+            this.btnBucket.Size = new System.Drawing.Size(72, 191);
             this.btnBucket.TabIndex = 2;
             this.metroToolTip1.SetToolTip(this.btnBucket, "CTRL + F");
             this.btnBucket.UseVisualStyleBackColor = false;
@@ -556,14 +593,28 @@
             this.btnEraser.FlatAppearance.BorderSize = 0;
             this.btnEraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEraser.Image = global::Paint.Properties.Resources._1495660439_eraser;
-            this.btnEraser.Location = new System.Drawing.Point(112, 2);
+            this.btnEraser.Location = new System.Drawing.Point(78, 2);
             this.btnEraser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEraser.Name = "btnEraser";
-            this.btnEraser.Size = new System.Drawing.Size(85, 191);
+            this.btnEraser.Size = new System.Drawing.Size(72, 191);
             this.btnEraser.TabIndex = 2;
             this.metroToolTip1.SetToolTip(this.btnEraser, "CTRL + E");
             this.btnEraser.UseVisualStyleBackColor = false;
             this.btnEraser.Click += new System.EventHandler(this.btnObject_Click);
+            // 
+            // btnNone
+            // 
+            this.btnNone.BackColor = System.Drawing.Color.Transparent;
+            this.btnNone.FlatAppearance.BorderSize = 0;
+            this.btnNone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNone.Image = global::Paint.Properties.Resources.pointerIcon;
+            this.btnNone.Location = new System.Drawing.Point(327, 0);
+            this.btnNone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNone.Name = "btnNone";
+            this.btnNone.Size = new System.Drawing.Size(75, 193);
+            this.btnNone.TabIndex = 2;
+            this.btnNone.UseVisualStyleBackColor = false;
+            this.btnNone.Click += new System.EventHandler(this.btnObject_Click);
             // 
             // btnCrop
             // 
@@ -571,10 +622,10 @@
             this.btnCrop.FlatAppearance.BorderSize = 0;
             this.btnCrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrop.Image = global::Paint.Properties.Resources.cropIcon;
-            this.btnCrop.Location = new System.Drawing.Point(299, -2);
+            this.btnCrop.Location = new System.Drawing.Point(247, 0);
             this.btnCrop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrop.Name = "btnCrop";
-            this.btnCrop.Size = new System.Drawing.Size(88, 193);
+            this.btnCrop.Size = new System.Drawing.Size(75, 193);
             this.btnCrop.TabIndex = 2;
             this.btnCrop.UseVisualStyleBackColor = false;
             this.btnCrop.Click += new System.EventHandler(this.btnObject_Click);
@@ -585,10 +636,10 @@
             this.btnPencil.FlatAppearance.BorderSize = 0;
             this.btnPencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPencil.Image = global::Paint.Properties.Resources._1495660053_create;
-            this.btnPencil.Location = new System.Drawing.Point(205, -2);
+            this.btnPencil.Location = new System.Drawing.Point(163, 1);
             this.btnPencil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPencil.Name = "btnPencil";
-            this.btnPencil.Size = new System.Drawing.Size(88, 193);
+            this.btnPencil.Size = new System.Drawing.Size(75, 193);
             this.btnPencil.TabIndex = 2;
             this.metroToolTip1.SetToolTip(this.btnPencil, "CTRL + P");
             this.btnPencil.UseVisualStyleBackColor = false;
@@ -1064,41 +1115,6 @@
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // lblQuiet
-            // 
-            this.lblQuiet.AutoSize = true;
-            this.lblQuiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuiet.ForeColor = System.Drawing.Color.White;
-            this.lblQuiet.Location = new System.Drawing.Point(105, 82);
-            this.lblQuiet.Name = "lblQuiet";
-            this.lblQuiet.Size = new System.Drawing.Size(49, 20);
-            this.lblQuiet.TabIndex = 9;
-            this.lblQuiet.Text = "Quiet";
-            this.lblQuiet.Visible = false;
-            // 
-            // lblNoise
-            // 
-            this.lblNoise.AutoSize = true;
-            this.lblNoise.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoise.ForeColor = System.Drawing.Color.White;
-            this.lblNoise.Location = new System.Drawing.Point(323, 82);
-            this.lblNoise.Name = "lblNoise";
-            this.lblNoise.Size = new System.Drawing.Size(51, 20);
-            this.lblNoise.TabIndex = 9;
-            this.lblNoise.Text = "Noisy";
-            this.lblNoise.Visible = false;
-            // 
-            // lblConfidence
-            // 
-            this.lblConfidence.AutoSize = true;
-            this.lblConfidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfidence.ForeColor = System.Drawing.Color.White;
-            this.lblConfidence.Location = new System.Drawing.Point(206, 85);
-            this.lblConfidence.Name = "lblConfidence";
-            this.lblConfidence.Size = new System.Drawing.Size(0, 20);
-            this.lblConfidence.TabIndex = 10;
-            this.lblConfidence.Visible = false;
-            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1206,5 +1222,6 @@
         private System.Windows.Forms.Label lblNoise;
         private System.Windows.Forms.Label lblQuiet;
         private System.Windows.Forms.Label lblConfidence;
+        private System.Windows.Forms.Button btnNone;
     }
 }

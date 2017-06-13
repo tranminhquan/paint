@@ -162,6 +162,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Icon\1490873152_add.ico" />
+    <None Include="Resources\pointerIcon.png" />
     <None Include="Resources\settingIcon.png" />
     <None Include="Resources\Grammar.txt" />
     <None Include="Icon\1495289914_add.png" />

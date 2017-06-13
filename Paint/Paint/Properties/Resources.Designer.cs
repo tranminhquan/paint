@@ -297,6 +297,16 @@ namespace Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pointerIcon {
+            get {
+                object obj = ResourceManager.GetObject("pointerIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settingIcon {
             get {
                 object obj = ResourceManager.GetObject("settingIcon", resourceCulture);
