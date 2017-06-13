@@ -92,7 +92,7 @@ namespace Paint
             {
                 btnUndo.Enabled = false;
             }
-            if ((status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" && objectChoose != "none" && objectChoose!=null) && (Shape._startPoint != Shape._endPoint && Shape!=null))
+            if ((status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" && objectChoose != "none" && objectChoose!=null) && (Shape._startPoint != Shape._endPoint ))
                 Shape.DrawHandlePoint(g);
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
            
