@@ -238,6 +238,7 @@ namespace Paint
             objectChoose = btnObject.Name.Remove(0, 3).ToLower();
             if (objectChoose != "crop")
             {
+                isCropRectDraw = false;
                 isCrop = false;
             }
 
@@ -247,18 +248,26 @@ namespace Paint
 
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
-                Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
+                if (width != 0 && height != 0)
+                {
+                    if (Shape._endPoint.X < Shape._startPoint.X)
+                        Shape._startPoint.X = fillImage.Size.Width - Shape._startPoint.X;
+                    if(Shape._endPoint.Y < Shape._startPoint.Y)
+                        Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
+                    Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
 
-                grapList._list.RemoveAt(posOfCrop);
+                    grapList._list.RemoveAt(posOfCrop);
 
-                fillImage = CropImage(fillImage, ROI);
+                    fillImage = CropImage(fillImage, ROI);
 
-                panelPaint.Dock = DockStyle.None;
-                panelPaint.Size = fillImage.Size;
+                    panelPaint.Dock = DockStyle.None;
+                    panelPaint.Size = fillImage.Size;
 
-                picPaint.Refresh();
-                isCrop = false;
+                    picPaint.Refresh();
+                    isCrop = false;
+                    isCropRectDraw = false;
+                }
             }
           
             //if (objectChoose == "pencil")
