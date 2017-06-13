@@ -219,8 +219,7 @@ namespace Paint
                 {
                     _PaintMode = MODE.DRAW;
                     _startPoint = e.Location;
-                    _endPoint.X = e.Location.X;
-                    _endPoint.Y = e.Location.Y;
+                    _endPoint = e.Location;
 
                 }
                 else if (posOfLocation == 0)

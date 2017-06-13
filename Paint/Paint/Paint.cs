@@ -62,6 +62,7 @@ namespace Paint
 
             pen = pn_penWidth.CreateGraphics();
 
+            status = DRAW_STATUS.COMPLETE;
             #region Set for recognizer
             speechReg = new SpeechRecognition();
             #endregion
@@ -91,7 +92,7 @@ namespace Paint
             {
                 btnUndo.Enabled = false;
             }
-            if (status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" && objectChoose != "none")
+            if ((status == DRAW_STATUS.INCOMPLETE && objectChoose != "bucket" && objectChoose != "none" && objectChoose!=null) && (Shape._startPoint != Shape._endPoint && Shape!=null))
                 Shape.DrawHandlePoint(g);
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
            
