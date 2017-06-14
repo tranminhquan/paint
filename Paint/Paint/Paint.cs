@@ -23,6 +23,11 @@ namespace Paint
         bool isCropRectDraw = false;
         int posOfCrop;
 
+        //Khai báo con trỏ chuột
+        Cursor pencil = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
+        Cursor eraser = new Cursor(Application.StartupPath + "\\eraser.cur");
+        Cursor bucket = new Cursor(Application.StartupPath + "\\bucket.cur");
+
         SpeechRecognition speechReg;
         #endregion
 
@@ -188,7 +193,6 @@ namespace Paint
                         grapList._list.Insert(grapList._list.Count, Shape);
                         grapList._posINCOMPLETE = grapList._list.Count - 1;
                     }
-
                 }
             }
 
@@ -209,6 +213,14 @@ namespace Paint
                     Cursor = Cursors.SizeAll;
                 else if (Shape.CheckLocation(e.Location) > 0)
                     Cursor = Cursors.Cross;
+
+                //Thay đổi con trỏ chuột ứng với objectChoose
+                if (objectChoose == "pencil")
+                    picPaint.Cursor = pencil;
+                else if (objectChoose == "eraser")
+                    picPaint.Cursor = eraser;
+                else if (objectChoose == "bucket")
+                    picPaint.Cursor = bucket;
                 else
                     Cursor = Cursors.Default;
                 picPaint.Refresh();
@@ -235,7 +247,6 @@ namespace Paint
                 {
                     Shape._endPoint = new Point(fillImage.Size.Width, fillImage.Size.Height);
                 }
-
             }
             if ( objectChoose == "select" && isSelect == true )
             {
@@ -251,12 +262,10 @@ namespace Paint
                         Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
                     Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
-                   // (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
+                   (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
                 }
                 picPaint.Refresh();
-
             }
-
         }
 
         private void TB_penWidth_Scroll(object sender, ScrollEventArgs e)
@@ -305,15 +314,20 @@ namespace Paint
                     isCrop = false;
                     isCropRectDraw = false;
                 }
-            }
-          
-            //if (objectChoose == "pencil")
-            //    picPaint.Cursor = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
-            //else if (objectChoose == "eraser")
-            //    picPaint.Cursor = new Cursor(Application.StartupPath + "\\Eraser.cur");
-            //else if (objectChoose == "bucket")
-            //    picPaint.Cursor = new Cursor(Application.StartupPath + "\\bucket.cur");
-            
+            }            
+        }
+
+        private void picPaint_MouseEnter(object sender, EventArgs e)
+        {
+            //Thay đổi con trỏ chuột ứng với objectChoose
+            if (objectChoose == "pencil")
+                picPaint.Cursor = pencil;
+            else if (objectChoose == "eraser")
+                picPaint.Cursor = eraser;
+            else if (objectChoose == "bucket")
+                picPaint.Cursor = bucket;
+            else
+                picPaint.Cursor = Cursors.Default;
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -407,7 +421,7 @@ namespace Paint
                     break;
                 case "select":
                     {
-                        //Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
+                        Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
                         isSelect = true;
                     }
                     break;
@@ -730,6 +744,7 @@ namespace Paint
             speechReg.Confindence = ((float)tbConfidence.Value / 10);
             lblConfidence.Text = speechReg.Confindence.ToString();
         }
+
 
         private void pnlSetting_MouseClick(object sender, MouseEventArgs e)
         {
