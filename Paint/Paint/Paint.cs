@@ -225,7 +225,18 @@ namespace Paint
             if (Shape != null)
 
                 Shape.Mouse_Up(e);
+            if (objectChoose == "crop")
+            {
+                if (Shape._endPoint.X < 0 || Shape._endPoint.Y < 0)
+                {
+                   Shape._endPoint = new Point(0, 0);
+                }
+                if (Shape._endPoint.X > fillImage.Size.Width || Shape._endPoint.Y > fillImage.Size.Height)
+                {
+                    Shape._endPoint = new Point(fillImage.Size.Width, fillImage.Size.Height);
+                }
 
+            }
             if ( objectChoose == "select" && isSelect == true )
             {
                 //status = DRAW_STATUS.COMPLETE;

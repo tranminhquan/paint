@@ -21,7 +21,7 @@ namespace Paint
         {
             Pen p = new Pen(Color.Black, 1);
             float[] dashValues = { 2, 2, 2, 2 };
-          
+
             p.DashPattern = dashValues;
             g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
         }
