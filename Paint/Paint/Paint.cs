@@ -143,25 +143,16 @@ namespace Paint
 
                     else
                     {
-                        if (objectChoose != "crop")
+                        if (isCropRectDraw == true)
                         {
-
-                            if (isCropRectDraw == true)
-                            {
-                                grapList._list.RemoveAt(posOfCrop);
-                                isCropRectDraw = false;
-                                isCrop = false;
-                            }
-
+                            grapList._list.RemoveAt(posOfCrop);
+                            isCropRectDraw = false;
+                            isCrop = false;
                         }
-                        else
+
+                        if(objectChoose == "crop")
                         {
                             isCropRectDraw = true;
-                            if (grapList._list.Count > 0)
-                            {
-                                grapList._list.RemoveAt(grapList._list.Count - 1);
-                                isCrop = false;
-                            }
                         }
 
                         status = DRAW_STATUS.COMPLETE;
@@ -179,7 +170,6 @@ namespace Paint
                     if (isCropRectDraw == true)
                     {
                         grapList._list.RemoveAt(posOfCrop);
-                        isCropRectDraw = false;
                         isCrop = false;
                     }
                     status = DRAW_STATUS.COMPLETE;
@@ -243,7 +233,7 @@ namespace Paint
                         Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
                     Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
-                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
+                   // (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
                 }
                 picPaint.Refresh();
 
@@ -264,8 +254,7 @@ namespace Paint
             objectChoose = btnObject.Name.Remove(0, 3).ToLower();
             if (objectChoose != "crop")
             {
-                isCropRectDraw = false;
-                isCrop = false;
+               isCrop = false;
             }
 
             if (objectChoose == "crop" && isCrop == true)
@@ -284,8 +273,9 @@ namespace Paint
 
 
                     grapList._list.RemoveAt(posOfCrop);
+                    picPaint.Refresh();
 
-                    fillImage = CropImage(fillImage, ROI);
+                    fillImage = CropImage(doubleBuffer,ROI);
 
                     panelPaint.Dock = DockStyle.None;
                     panelPaint.Size = fillImage.Size;
@@ -397,7 +387,7 @@ namespace Paint
                     break;
                 case "select":
                     {
-                        Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
+                        //Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
                         isSelect = true;
                     }
                     break;
