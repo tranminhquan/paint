@@ -16,6 +16,7 @@ namespace Paint
         protected GraphicsPath _grapPath;
         public Point _startPoint;
         public Point _endPoint;
+        public bool isNoneShape = true;
 
         
 
@@ -58,6 +59,16 @@ namespace Paint
         public virtual void ChaneCursor(Cursor _cursor)
         {
 
+        }
+
+        public Color getColor()
+        {
+            return _color;
+        }
+
+        public virtual Point getMouseClick()
+        {
+            return new Point(0, 0);
         }
         #endregion
 

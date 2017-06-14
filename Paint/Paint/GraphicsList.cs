@@ -21,9 +21,10 @@ namespace Paint
 
             for (int i = 0; i < _list.Count; i++)
             {
-                if (i == _posINCOMPLETE && _list[i]._startPoint != _list[i]._endPoint )
-                    _list[i].DrawHandlePoint(g);
+
                 _list[i].Draw(g);
+                if (i == _posINCOMPLETE && _list[i]._startPoint != _list[i]._endPoint && _list[i].isNoneShape == true)
+                    _list[i].DrawHandlePoint(g);
             }
         }
 
@@ -38,6 +39,18 @@ namespace Paint
             {
                 MessageBox.Show("System error (GraphicsList cant find any element", "Noice");
             }
+        }
+
+        public bool isExist(ObjectDrawing shape)
+        {
+            for (int i = 0; i < _list.Count; i++)
+            {
+                if (shape.getColor() == _list[i].getColor() && shape.getMouseClick() == _list[i].getMouseClick())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         #endregion
     }

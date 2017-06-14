@@ -32,6 +32,10 @@ namespace Paint
             this._color = _color;
         }
 
+        public override Point getMouseClick() 
+        {
+            return new Point(x, y);
+        }
         #endregion
 
         #region Event

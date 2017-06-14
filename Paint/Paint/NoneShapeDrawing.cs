@@ -13,7 +13,7 @@ namespace Paint
     {
         public NoneShapeDrawing() : base()
         {
-
+            isNoneShape = false;
         }
 
         public override void Draw(Graphics g)

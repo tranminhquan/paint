@@ -113,9 +113,20 @@ namespace Paint
                         isCropRectDraw = false;
                         isCrop = false;
                     }
+
+                    // them 1 nonShape de ko hien handlepoint khi su dung bucket 
+                    ObjectDrawing clear = new NoneShapeDrawing();
+                    grapList._posINCOMPLETE = grapList._list.Count;
+                    grapList._list.Insert(grapList._list.Count, clear);
+                    picPaint.Refresh();
+
                     Shape = new BucketDrawing(doubleBuffer, fillImage, e.X, e.Y,mtitleCurrentColor.BackColor);
 
-                    grapList._list.Insert(grapList._list.Count, Shape);
+                    if (!grapList.isExist(Shape))
+                    {
+                        grapList._list.Insert(grapList._list.Count, Shape);
+                        grapList._list.RemoveAt(grapList._list.Count - 2);
+                    }
 
                     picPaint.Refresh();
                 }
