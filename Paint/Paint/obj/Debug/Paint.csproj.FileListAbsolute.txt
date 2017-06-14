@@ -103,3 +103,5 @@ C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogit
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources

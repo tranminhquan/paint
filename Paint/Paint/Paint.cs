@@ -19,7 +19,7 @@ namespace Paint
         DRAW_STATUS status;
         bool isSaved = true;
         Graphics pen; // pen width
-        bool isCrop = false;
+        bool isCrop = false, isSelect = false;
         bool isCropRectDraw = false;
         int posOfCrop;
 
@@ -60,17 +60,12 @@ namespace Paint
             g = Graphics.FromImage(fillImage);
             g.Clear(Color.White);
             grapList = new GraphicsList();
-
             pen = pn_penWidth.CreateGraphics();
 
             status = DRAW_STATUS.COMPLETE;
             #region Set for recognizer
             speechReg = new SpeechRecognition();
             #endregion
-        }
-        private Color ChooseColor(int index)
-        {
-            return listColor[index];
         }
         private void MLEditColor_Click(object sender, System.EventArgs e)
         {
@@ -132,7 +127,7 @@ namespace Paint
                 }
                 else if (objectChoose == "rectangle" || objectChoose == "circle" || objectChoose == "star" || 
                     objectChoose == "line" || objectChoose == "rhombus" || objectChoose == "triangle" || 
-                    objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop")
+                    objectChoose == "pentagon" || objectChoose == "hexagon" || objectChoose == "crop" || objectChoose == "select")
                 {
 
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
@@ -234,6 +229,27 @@ namespace Paint
             if (Shape != null)
 
                 Shape.Mouse_Up(e);
+
+            if ( objectChoose == "select" && isSelect == true )
+            {
+                status = DRAW_STATUS.COMPLETE;
+
+                int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
+                int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
+                if (width != 0 && height != 0)
+                {
+                    if (Shape._endPoint.X < Shape._startPoint.X)
+                        Shape._startPoint.X = fillImage.Size.Width - Shape._startPoint.X;
+                    if (Shape._endPoint.Y < Shape._startPoint.Y)
+                        Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
+                    Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
+
+                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
+                }
+                picPaint.Refresh();
+
+            }
+
         }
 
         private void TB_penWidth_Scroll(object sender, ScrollEventArgs e)
@@ -380,7 +396,12 @@ namespace Paint
                         posOfCrop = grapList._list.Count;
                     }
                     break;
-
+                case "select":
+                    {
+                        Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
+                        isSelect = true;
+                    }
+                    break;
                 default:
                     objectChoose = "none";
                     Shape = new NoneShapeDrawing();

@@ -21,6 +21,7 @@ namespace Paint
         int x;
         int y;
         #endregion
+
         #region Method
 
         public BucketDrawing(Bitmap _pic, Bitmap _fillpic, int x, int y,Color _color)
@@ -52,7 +53,7 @@ namespace Paint
             PointedColorFloodFill bucket = new PointedColorFloodFill();
             _fillpic = _pic.Clone(new Rectangle(0, 0, _pic.Width, _pic.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             bucket.FillColor = _color;
-            bucket.Tolerance = _pic.GetPixel(x,y );
+            bucket.Tolerance = _pic.GetPixel(x,y);
             bucket.StartingPoint = new IntPoint(x,y);
             return bucket.Apply(_fillpic);
         }

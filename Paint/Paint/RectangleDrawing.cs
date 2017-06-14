@@ -10,7 +10,7 @@ namespace Paint
         #region Declare
         protected const int HANDLE_COUNT = 8;
         protected Point  _currentPoint;
-        protected Region _region;
+        public Region _region;
         protected int posOfLocation;
         #endregion
 

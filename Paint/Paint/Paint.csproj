@@ -112,6 +112,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleDrawing.cs" />
+    <Compile Include="RectangleSelection.cs" />
     <Compile Include="RhombusDrawing.cs" />
     <Compile Include="SpeechRecognition.cs" />
     <Compile Include="StarDrawing.cs" />

@@ -97,6 +97,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.metroPanel1.SuspendLayout();
             this.pnlReconizer.SuspendLayout();
             this.metroPanel11.SuspendLayout();
@@ -889,6 +890,7 @@
             // metroPanel2
             // 
             this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(213)))), ((int)(((byte)(247)))));
+            this.metroPanel2.Controls.Add(this.btnSelect);
             this.metroPanel2.Controls.Add(this.btnPaste);
             this.metroPanel2.Controls.Add(this.btnCut);
             this.metroPanel2.Controls.Add(this.btnCopy);
@@ -1115,6 +1117,16 @@
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(529, 26);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 3;
+            this.btnSelect.Text = "button1";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnObject_Click);
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1223,5 +1235,6 @@
         private System.Windows.Forms.Label lblQuiet;
         private System.Windows.Forms.Label lblConfidence;
         private System.Windows.Forms.Button btnNone;
+        private System.Windows.Forms.Button btnSelect;
     }
 }
