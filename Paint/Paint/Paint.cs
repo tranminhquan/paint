@@ -79,7 +79,7 @@ namespace Paint
             
             doubleBuffer = fillImage.Clone(new Rectangle(0, 0, fillImage.Width, fillImage.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             Graphics g = Graphics.FromImage(doubleBuffer);
-            if (grapList._list.Count > 0)// && objectChoose != "none")
+            if (grapList._list.Count > 0)
             {
                 btnUndo.Enabled = true;
                 grapList.Draw(g);
@@ -87,6 +87,11 @@ namespace Paint
             else
             {
                 btnUndo.Enabled = false;
+            }
+
+            if (objectChoose=="none")
+            {
+                Shape.Draw(g);
             }
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
            
@@ -350,8 +355,7 @@ namespace Paint
             switch (objectChoose)
             {
                 case "pencil":
-                    Shape = new PenDrawing(mtitleCurrentColor.BackColor, penWidth);
-                    
+                    Shape = new PenDrawing(mtitleCurrentColor.BackColor, penWidth);                  
                     break;
                 case "eraser":
                     Shape = new EraserDrawing(penWidth);
