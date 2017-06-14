@@ -10,13 +10,13 @@ namespace Paint
     public partial class Paint : MetroFramework.Forms.MetroForm
     {
         #region Declare
-        enum DRAW_STATUS { COMPLETE, INCOMPLETE };
+        //enum DRAW_STATUS { COMPLETE, INCOMPLETE };
         int penWidth = 1;
         string objectChoose;
         ObjectDrawing Shape;
         Bitmap doubleBuffer, fillImage;
         GraphicsList grapList;
-        DRAW_STATUS status;
+        //DRAW_STATUS status;
         bool isSaved = true;
         Graphics pen; // pen width
         bool isCrop = false, isSelect = false;
@@ -62,7 +62,7 @@ namespace Paint
             grapList = new GraphicsList();
             pen = pn_penWidth.CreateGraphics();
 
-            status = DRAW_STATUS.COMPLETE;
+            //status = DRAW_STATUS.COMPLETE;
             #region Set for recognizer
             speechReg = new SpeechRecognition();
             #endregion
@@ -89,6 +89,9 @@ namespace Paint
                 btnUndo.Enabled = false;
             }
 
+            //************************
+            //CẤM XÓA DÒNG DƯỚI ĐÂY
+            //************************
             if (objectChoose=="none")
             {
                 Shape.Draw(g);
@@ -138,7 +141,7 @@ namespace Paint
                     if (Shape != null && Shape.CheckLocation(e.Location) >= 0)
                     {
                         Shape.Mouse_Down(e);
-                        status = DRAW_STATUS.INCOMPLETE;
+                        //status = DRAW_STATUS.INCOMPLETE;
 
                         if (Shape.CheckLocation(e.Location) == 0)
                             Cursor = Cursors.SizeAll;
@@ -160,7 +163,7 @@ namespace Paint
                             isCropRectDraw = true;
                         }
 
-                        status = DRAW_STATUS.COMPLETE;
+                        //status = DRAW_STATUS.COMPLETE;
                         ChooseObject();
                         Shape.Mouse_Down(e);
 
@@ -177,7 +180,7 @@ namespace Paint
                         grapList._list.RemoveAt(posOfCrop);
                         isCrop = false;
                     }
-                    status = DRAW_STATUS.COMPLETE;
+                    //status = DRAW_STATUS.COMPLETE;
                     ChooseObject();
                     Shape.Mouse_Down(e);
                     if (objectChoose != "none")
@@ -191,10 +194,9 @@ namespace Paint
 
             else
             {
-                status = DRAW_STATUS.COMPLETE;
+                //status = DRAW_STATUS.COMPLETE;
                 Shape = null;
-            }
-            picPaint.Refresh();
+            }          
         }
         private void picPaint_MouseMove(object sender, MouseEventArgs e)
         {
@@ -202,7 +204,7 @@ namespace Paint
             if (Shape != null)
             {
                 Shape.Mouse_Move(e);
-                status = DRAW_STATUS.INCOMPLETE;
+                //status = DRAW_STATUS.INCOMPLETE;
                 if (Shape.CheckLocation(e.Location) == 0)
                     Cursor = Cursors.SizeAll;
                 else if (Shape.CheckLocation(e.Location) > 0)
@@ -218,7 +220,7 @@ namespace Paint
             if (objectChoose == "pencil" || objectChoose == "eraser")
             {
                 Shape = null;                
-                status = DRAW_STATUS.COMPLETE;
+                //status = DRAW_STATUS.COMPLETE;
             }
             if (Shape != null)
 
@@ -226,7 +228,7 @@ namespace Paint
 
             if ( objectChoose == "select" && isSelect == true )
             {
-                status = DRAW_STATUS.COMPLETE;
+                //status = DRAW_STATUS.COMPLETE;
 
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
@@ -257,6 +259,7 @@ namespace Paint
 
             Button btnObject = (Button)sender;
             objectChoose = btnObject.Name.Remove(0, 3).ToLower();
+            //grapList._posINCOMPLETE = -1;
             if (objectChoose != "crop")
             {
                isCrop = false;
@@ -264,7 +267,7 @@ namespace Paint
 
             if (objectChoose == "crop" && isCrop == true)
             {
-                status = DRAW_STATUS.COMPLETE;
+                //status = DRAW_STATUS.COMPLETE;
 
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
@@ -355,7 +358,7 @@ namespace Paint
             switch (objectChoose)
             {
                 case "pencil":
-                    Shape = new PenDrawing(mtitleCurrentColor.BackColor, penWidth);                  
+                    Shape = new PenDrawing(mtitleCurrentColor.BackColor, penWidth);            
                     break;
                 case "eraser":
                     Shape = new EraserDrawing(penWidth);
@@ -505,7 +508,7 @@ namespace Paint
         }
         private void Undo()
         {
-            status = DRAW_STATUS.COMPLETE;
+            //status = DRAW_STATUS.COMPLETE;
             grapList.RemoveLast();
             picPaint.Refresh();
             isCrop = false;
