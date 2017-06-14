@@ -81,6 +81,7 @@
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.btnPaste = new System.Windows.Forms.Button();
             this.btnCut = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
@@ -97,7 +98,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.metroPanel1.SuspendLayout();
             this.pnlReconizer.SuspendLayout();
             this.metroPanel11.SuspendLayout();
@@ -912,6 +912,16 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 11;
             // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(529, 26);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 3;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnObject_Click);
+            // 
             // btnPaste
             // 
             this.btnPaste.FlatAppearance.BorderSize = 0;
@@ -1116,16 +1126,6 @@
             this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // btnSelect
-            // 
-            this.btnSelect.Location = new System.Drawing.Point(529, 26);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 3;
-            this.btnSelect.Text = "button1";
-            this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnObject_Click);
             // 
             // Paint
             // 

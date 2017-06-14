@@ -243,7 +243,7 @@ namespace Paint
                         Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
                     Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
-                    //(Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
+                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
                 }
                 picPaint.Refresh();
 
@@ -397,7 +397,7 @@ namespace Paint
                     break;
                 case "select":
                     {
-                        //Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
+                        Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
                         isSelect = true;
                     }
                     break;
