@@ -280,6 +280,8 @@ namespace Paint
                     panelPaint.Dock = DockStyle.None;
                     panelPaint.Size = fillImage.Size;
 
+                    grapList._list.RemoveRange(0, grapList._list.Count);
+
                     picPaint.Refresh();
                     isCrop = false;
                     isCropRectDraw = false;
