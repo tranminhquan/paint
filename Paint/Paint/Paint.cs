@@ -243,7 +243,7 @@ namespace Paint
                         Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
                     Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
-                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
+                    //(Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
                 }
                 picPaint.Refresh();
 
@@ -277,9 +277,9 @@ namespace Paint
                 if (width != 0 && height != 0)
                 {
                     if (Shape._endPoint.X < Shape._startPoint.X)
-                        Shape._startPoint.X = fillImage.Size.Width - Shape._startPoint.X;
+                        Shape._startPoint.X =Shape._startPoint.X - width;
                     if(Shape._endPoint.Y < Shape._startPoint.Y)
-                        Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
+                        Shape._startPoint.Y = Shape._startPoint.Y - height;
                     Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
 
@@ -397,7 +397,7 @@ namespace Paint
                     break;
                 case "select":
                     {
-                        Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
+                        //Shape = new RectangleSelection(mtitleCurrentColor.BackColor, penWidth);
                         isSelect = true;
                     }
                     break;
