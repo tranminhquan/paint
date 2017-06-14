@@ -188,7 +188,6 @@ namespace Paint
                     if (objectChoose != "none")
                     {
                         grapList._list.Insert(grapList._list.Count, Shape);
-                        grapList._list.Insert(grapList._list.Count, Shape);
                         grapList._posINCOMPLETE = grapList._list.Count - 1;
                     }
 
