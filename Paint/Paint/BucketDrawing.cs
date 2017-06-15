@@ -31,6 +31,8 @@ namespace Paint
             this.x = x;
             this.y = y;
             this._color = _color;
+
+            isBucket = true;
         }
 
         public override Point getMouseClick() 
@@ -60,7 +62,7 @@ namespace Paint
 
         public override void Draw(Graphics g)
         {
-            g.DrawImage(Fill(), new Point(0, 0));
+           g.DrawImage(Fill(), new Point(0, 0));
         }
 
         #endregion

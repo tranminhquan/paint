@@ -21,14 +21,14 @@ namespace EmguCV
 {
     public partial class Form1 : Form
     {
-        Image<Bgr, byte> img;
+        Image<Bgr, byte> img; 
         bool check = false;
         IColorSkinDetector skinDetector;
 
-        Image<Bgr, Byte> currentFrame;
-        Image<Bgr, Byte> currentFrameCopy;
+        Image<Bgr, Byte> currentFrame; // img lay ra tu webcam
+        Image<Bgr, Byte> currentFrameCopy; // clone de chuyen sang binary
 
-        Image<Bgr, Byte> paper;
+        Image<Bgr, Byte> paper; // giay ve
         Image<Bgr, Byte> drawpaper;
 
         Capture capture;
@@ -40,19 +40,19 @@ namespace EmguCV
 
         Hsv hsv_min;
         Hsv hsv_max;
-        Ycc YCrCb_min;
+        Ycc YCrCb_min;~// range ycbcr
         Ycc YCrCb_max;
 
         Double Result = 0; // area lon nhat
-        Mat defect = new Mat();
+        Mat defect = new Mat(); // 2 matrix chua defect 
         Matrix<int> mDefect;
 
         
-        Point[] points;
+        Point[] points; // mang chua cua diem tao thanh vien ngoai`
         Point[] drawpoints = new Point[2];
 
-        Rectangle handRect;
-        RotatedRect box;
+        Rectangle handRect; 
+        RotatedRect box;  // Rect bao ngoai`cung
 
 
         // test Undo_Redo
