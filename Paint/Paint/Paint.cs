@@ -69,6 +69,7 @@ namespace Paint
             pen = pn_penWidth.CreateGraphics();
 
             //status = DRAW_STATUS.COMPLETE;
+
             #region Set for recognizer
             speechReg = new SpeechRecognition();
             #endregion
@@ -257,15 +258,32 @@ namespace Paint
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
                 if (width != 0 && height != 0)
                 {
-                    if (Shape._endPoint.X < Shape._startPoint.X)
-                        Shape._startPoint.X = fillImage.Size.Width - Shape._startPoint.X;
-                    if (Shape._endPoint.Y < Shape._startPoint.Y)
-                        Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
+                    if (Shape._startPoint.X > Shape._endPoint.X)
+                    {
+                        int temp = Shape._startPoint.X;
+                        Shape._startPoint.X = Shape._endPoint.X;
+                        Shape._endPoint.X = temp;
+                    }
+                    if (Shape._startPoint.Y > Shape._endPoint.Y)
+                    {
+                        int temp = Shape._startPoint.Y;
+                        Shape._startPoint.Y = Shape._endPoint.Y;
+                        Shape._endPoint.Y = temp;
+                    }
                     Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
+
+                    RectangleDrawing rec = new RectangleDrawing(Color.White,1);
+                    rec._startPoint = Shape._startPoint;
+                    rec._endPoint = Shape._endPoint;
+                    grapList._list.Add(rec);
+
+                    int Soluong = grapList._list.Count;
+                    grapList.Swap(grapList._list,Soluong - 1 , Soluong - 2);
                 }
                 picPaint.Refresh();
+
             }
         }
 

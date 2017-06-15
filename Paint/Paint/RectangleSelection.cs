@@ -25,13 +25,7 @@ namespace Paint
 
             if (_img != null)
             {
-                //Bitmap bmp = new Bitmap(_img.Width, _img.Height);
-
-                //using (Graphics gr = Graphics.FromImage(bmp))
-                //{
-                //    gr.SetClip(_region, CombineMode.Replace);
-                //    gr.Clear(Color.White);
-                //}
+                g.FillRectangle(Brushes.White, GetRectangle(_startPoint, _endPoint));
                 g.DrawImage(_img, GetRectangle(_startPoint, _endPoint));
             }
         }
