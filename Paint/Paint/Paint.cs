@@ -279,7 +279,7 @@ namespace Paint
 
             Button btnObject = (Button)sender;
             objectChoose = btnObject.Name.Remove(0, 3).ToLower();
-            //grapList._posINCOMPLETE = -1;
+            grapList._posINCOMPLETE = -1;
             if (objectChoose != "crop")
             {
                isCrop = false;

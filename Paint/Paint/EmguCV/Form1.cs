@@ -9,11 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-
-
-
-
-
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
@@ -67,6 +62,8 @@ namespace EmguCV
         public Form1()
         {
             InitializeComponent();
+
+           
             //Y
 
 
@@ -145,9 +142,7 @@ namespace EmguCV
                 
                
                 CvInvoke.FindContours(skin, contours, new Mat(), Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
-                
-
-               
+            
 
                 VectorOfPoint biggestContour = new VectorOfPoint();// mang point[] chua vien` lon nhat
                 Double Result1 = 0; // area dang xet
