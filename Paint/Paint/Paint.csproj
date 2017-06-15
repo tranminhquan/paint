@@ -53,6 +53,39 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
+    <Reference Include="Emgu.CV">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Contrib">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Cuda">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.Cuda.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2015">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.DebuggerVisualizers.VS2015.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.ML">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.ML.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.OCR">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.OCR.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Shape">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.Shape.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Stitching">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.Stitching.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Superres">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.Superres.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.VideoStab">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.VideoStab.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.Util.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -116,6 +149,12 @@
     <Compile Include="RhombusDrawing.cs" />
     <Compile Include="SpeechRecognition.cs" />
     <Compile Include="StarDrawing.cs" />
+    <Compile Include="TestHand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestHand.Designer.cs">
+      <DependentUpon>TestHand.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestSpeechRecogition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +162,16 @@
       <DependentUpon>TestSpeechRecogition.cs</DependentUpon>
     </Compile>
     <Compile Include="TriangleDrawing.cs" />
+    <Compile Include="ucHandGesture.cs" />
+    <Compile Include="ucHandGesture.Designer.cs">
+      <DependentUpon>ucHandGesture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucHandMovement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucHandMovement.Designer.cs">
+      <DependentUpon>ucHandMovement.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DictionaryInfo.resx">
       <DependentUpon>DictionaryInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,8 +191,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TestHand.resx">
+      <DependentUpon>TestHand.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestSpeechRecogition.resx">
       <DependentUpon>TestSpeechRecogition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucHandGesture.resx">
+      <DependentUpon>ucHandGesture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucHandMovement.resx">
+      <DependentUpon>ucHandMovement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Diagram.cd" />
     <None Include="packages.config" />
@@ -162,6 +220,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="cvextern.dll" />
     <Content Include="Icon\1490873152_add.ico" />
     <None Include="Resources\pointerIcon.png" />
     <None Include="Resources\settingIcon.png" />
@@ -192,6 +251,9 @@
     <Content Include="Icon\newIcon.png" />
     <Content Include="Icon\saveIcon.png" />
     <None Include="Icon\voiceIcon.png" />
+    <Content Include="opencv_ffmpeg300_64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

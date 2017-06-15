@@ -43,23 +43,10 @@ C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.Properties.Resour
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.exe
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.pdb
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.exe.config
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.exe
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.pdb
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.exe
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.pdb
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.frmPaint.resources
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.xml
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.pdb
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFramework.Design.dll
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFramework.dll
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFramework.Fonts.dll
-E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.Paint.resources
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\Paint.exe.config
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\Paint.exe
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\Paint.pdb
@@ -124,3 +111,74 @@ C:\Users\admin\Downloads\paint\trunk\Paint\Paint\obj\Debug\Paint.Paint.resources
 C:\Users\admin\Downloads\paint\trunk\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
 C:\Users\admin\Downloads\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
 C:\Users\admin\Downloads\paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\opencv_ffmpeg300_64.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.exe.config
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.exe
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Paint.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Contrib.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Cuda.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.DebuggerVisualizers.VS2015.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.ML.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.OCR.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Shape.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Stitching.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Superres.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.Util.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFramework.Design.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFramework.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\MetroFramework.Fonts.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Contrib.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Cuda.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.ML.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.OCR.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Shape.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Stitching.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.Superres.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.Util.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.csproj.Paint.exe.config
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.frmPaint.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.Paint.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.exe
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\obj\Debug\Paint.TestHand.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\opencv_ffmpeg300_64.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Contrib.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Cuda.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.DebuggerVisualizers.VS2015.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.ML.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.OCR.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Shape.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Stitching.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Superres.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.Util.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Contrib.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Cuda.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.ML.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.OCR.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Shape.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Stitching.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.Superres.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.Util.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.csproj.Paint.exe.config
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.TestHand.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources

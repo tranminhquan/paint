@@ -37,8 +37,7 @@ namespace Paint
                                                     , Color.Brown , Color.Pink , Color.Magenta , Color.Purple , Color.Red , Color.Yellow };
         public Paint()
         {
-            InitializeComponent();
-            
+            InitializeComponent();       
                
             for (int i = 1; i < 14; i++)
             {
