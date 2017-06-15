@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
@@ -21,7 +22,7 @@ namespace EmguCV
 {
     public partial class Form1 : Form
     {
-        Image<Bgr, byte> img; 
+        Image<Bgr, byte> img;
         bool check = false;
         IColorSkinDetector skinDetector;
 
@@ -40,18 +41,18 @@ namespace EmguCV
 
         Hsv hsv_min;
         Hsv hsv_max;
-        Ycc YCrCb_min;~// range ycbcr
+        Ycc YCrCb_min; // range ycbcr
         Ycc YCrCb_max;
 
         Double Result = 0; // area lon nhat
         Mat defect = new Mat(); // 2 matrix chua defect 
         Matrix<int> mDefect;
 
-        
+
         Point[] points; // mang chua cua diem tao thanh vien ngoai`
         Point[] drawpoints = new Point[2];
 
-        Rectangle handRect; 
+        Rectangle handRect;
         RotatedRect box;  // Rect bao ngoai`cung
 
 
@@ -62,8 +63,6 @@ namespace EmguCV
         public Form1()
         {
             InitializeComponent();
-
-           
             //Y
 
 
@@ -83,28 +82,28 @@ namespace EmguCV
             trackBar6.Maximum = 255;
             trackBar6.Minimum = 0;
 
-            
+
             //detector = new AdaptiveSkinDetector(1, AdaptiveSkinDetector.MorphingMethod.NONE);
             hsv_min = new Hsv(0, 45, 0);
             hsv_max = new Hsv(20, 255, 255);
-            YCrCb_min = new Ycc(80, 133, 80); 
+            YCrCb_min = new Ycc(80, 133, 80);
             YCrCb_max = new Ycc(255, 173, 158);
             box = new RotatedRect();
 
-            DrawBox.MouseClick += new  MouseEventHandler(Form1_MouseClick);
+            DrawBox.MouseClick += new MouseEventHandler(Form1_MouseClick);
         }
 
         public void ProcessFrame(object sender, EventArgs args) // lay frame
         {
-            Image<Bgr, byte> CamImg =  capture.QueryFrame().ToImage<Bgr, byte>();
-            
+            Image<Bgr, byte> CamImg = capture.QueryFrame().ToImage<Bgr, byte>();
+
             WebcamBox.Image = CamImg.Flip(FlipType.Horizontal); // frame goc tu webcam
             int widthROI = CamImg.Size.Width / 4;
             int heightROI = CamImg.Size.Height / 4;
             currentFrame = CamImg.Copy(new Rectangle(widthROI, heightROI, widthROI * 2, heightROI * 2)); // frame de chinh sua
             if (currentFrame != null)
             {
-   
+
                 currentFrameCopy = currentFrame.Copy();
                 //CvInvoke.GaussianBlur(currentFrameCopy, currentFrameCopy, new Size(3,3), 3);
                 skinDetector = new YCrCbSkinDetector();
@@ -116,10 +115,10 @@ namespace EmguCV
                 SkinBox.Image = skinCopy;
                 if (check == true)
                 {
-                    
+
                     ExtractContourAndHull(skin);
-                   // if(9500 < Result && Result < 25000)
-                        DrawAndComputeFingersNum();
+                    // if(9500 < Result && Result < 25000)
+                    DrawAndComputeFingersNum();
                 }
 
                 outputBox.Image = currentFrame.Copy().Flip(FlipType.Horizontal);
@@ -128,7 +127,7 @@ namespace EmguCV
 
                 if (RedoIsEmpty() == true)
                 {
-                   button3.Hide();
+                    button3.Hide();
                 }
                 else
                     button3.Show();
@@ -139,10 +138,12 @@ namespace EmguCV
             using (MemStorage storage = new MemStorage())
             {
                 VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
-                
-               
+
+
                 CvInvoke.FindContours(skin, contours, new Mat(), Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
-            
+
+
+
 
                 VectorOfPoint biggestContour = new VectorOfPoint();// mang point[] chua vien` lon nhat
                 Double Result1 = 0; // area dang xet
@@ -160,35 +161,35 @@ namespace EmguCV
                     }
                 }
                 label8.Text = "Size Rect :" + Result.ToString();
-                if (biggestContour != null )
+                if (biggestContour != null)
                 {
                     CvInvoke.ApproxPolyDP(biggestContour, biggestContour, 0.00025, false);
 
                     points = biggestContour.ToArray();
 
                     currentFrame.Draw(points, new Bgr(255, 0, 255), 4);
-                                     
-                
+
+
                     VectorOfPoint hull = new VectorOfPoint();
                     VectorOfInt convexHull = new VectorOfInt();
                     CvInvoke.ConvexHull(biggestContour, hull, false); //~ Hull
                     box = CvInvoke.MinAreaRect(hull);
-                   
 
-                    currentFrame.Draw(new CircleF(box.Center,5), new Bgr(Color.Black),4);
-                    
+
+                    currentFrame.Draw(new CircleF(box.Center, 5), new Bgr(Color.Black), 4);
+
                     CvInvoke.ConvexHull(biggestContour, convexHull);
-                 
+
                     //PointF[] Vertices = box.GetVertices();
-                  // handRect = box.MinAreaRect();
+                    // handRect = box.MinAreaRect();
                     currentFrame.Draw(box, new Bgr(200, 0, 0), 1);
-                                      
-                   
+
+
                     // ve khung ban tay khung bao quanh tay
                     currentFrame.DrawPolyline(hull.ToArray(), true, new Bgr(200, 125, 75), 4);
                     currentFrame.Draw(new CircleF(new PointF(box.Center.X, box.Center.Y), 3), new Bgr(200, 125, 75));
 
-                   // tim  convex defect
+                    // tim  convex defect
 
                     CvInvoke.ConvexityDefects(biggestContour, convexHull, defect);
 
@@ -197,12 +198,12 @@ namespace EmguCV
                     {
                         mDefect = new Matrix<int>(defect.Rows, defect.Cols, defect.NumberOfChannels);
                         defect.CopyTo(mDefect);
-                    }      
-                    
+                    }
+
                 }
             }
         }
-        double  getAngle(PointF s, PointF f, PointF e)
+        double getAngle(PointF s, PointF f, PointF e)
         {
             double l1 = Math.Sqrt(Math.Pow(f.X - s.X, 2) + Math.Pow(f.Y - s.Y, 2));
             double l2 = Math.Sqrt(Math.Pow(f.X - e.X, 2) + Math.Pow(f.Y - e.Y, 2));
@@ -216,39 +217,39 @@ namespace EmguCV
             int fingerNum = 0;
 
             #region defects drawing
-            PointF[] start = new PointF[mDefect.Rows  ];
+            PointF[] start = new PointF[mDefect.Rows];
             int num = 0;
-            start[0] = new PointF(0,0);
+            start[0] = new PointF(0, 0);
 
             for (int i = 0; i < mDefect.Rows; i++)
             {
                 int startIdx = mDefect.Data[i, 0];
                 int depthIdx = mDefect.Data[i, 1];
                 int endIdx = mDefect.Data[i, 2];
-        
+
 
                 Point startPoint = points[startIdx];
                 Point endPoint = points[endIdx];
 
                 Point depthPoint = points[depthIdx];
-              
+
 
                 LineSegment2D Line = new LineSegment2D(startPoint, new Point((int)box.Center.X, (int)box.Center.Y));
 
                 CircleF startCircle = new CircleF(startPoint, 5f);
                 CircleF endCircle = new CircleF(endPoint, 5f);
                 CircleF depthCircle = new CircleF(depthPoint, 5f);
-            
 
-              //  currentFrame.Draw(startCircle, new Bgr(Color.Red), 2);
+
+                //  currentFrame.Draw(startCircle, new Bgr(Color.Red), 2);
                 //currentFrame.Draw(endCircle, new Bgr(Color.Yellow), 2);
-               // currentFrame.Draw(depthCircle, new Bgr(Color.White), 2);
-            
+                // currentFrame.Draw(depthCircle, new Bgr(Color.White), 2);
 
-                if ((startPoint.Y < box.Center.Y && endPoint.Y < box.Center.Y) && (startPoint.Y < endPoint.Y)&&
+
+                if ((startPoint.Y < box.Center.Y && endPoint.Y < box.Center.Y) && (startPoint.Y < endPoint.Y) &&
                     (Math.Sqrt(Math.Pow(startPoint.X - endPoint.X, 2) + Math.Pow(startPoint.Y - endPoint.Y, 2)) > box.Size.Height / 6.5))
                 {
-                   if (getAngle(startPoint,box.Center,start[num]) > 10)
+                    if (getAngle(startPoint, box.Center, start[num]) > 10)
                     {
                         fingerNum++;
                         start[num] = startPoint;
@@ -275,31 +276,31 @@ namespace EmguCV
                         }
                     }
                 }
-              
+
 
                 label7.Text = "Number of Fingers : " + fingerNum.ToString();
-            
-        }
+
+            }
 
 
-             #endregion
-             
+            #endregion
+
         }
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-                if (drawpoints[0] == null)
-                {
-                    drawpoints[0] = new Point(e.X, e.Y);
-                }
-                else
-                {
+            if (drawpoints[0] == null)
+            {
+                drawpoints[0] = new Point(e.X, e.Y);
+            }
+            else
+            {
 
-                    drawpoints[1] = new Point(e.X, e.Y);
-                    LineSegment2D drawline = new LineSegment2D(drawpoints[0], drawpoints[1]);
-                    paper.Draw(drawline, new Bgr(Color.Red), 4);
-                    drawpoints[0] = drawpoints[1];
-                }
+                drawpoints[1] = new Point(e.X, e.Y);
+                LineSegment2D drawline = new LineSegment2D(drawpoints[0], drawpoints[1]);
+                paper.Draw(drawline, new Bgr(Color.Red), 4);
+                drawpoints[0] = drawpoints[1];
+            }
             DrawBox.Image = paper;
             UpdateStack();
         }
@@ -308,7 +309,7 @@ namespace EmguCV
         private void StartButton_Click(object sender, EventArgs e)
         {
             #region
-            if(capture == null)
+            if (capture == null)
             {
                 try
                 {
@@ -325,9 +326,9 @@ namespace EmguCV
             }
             #endregion
 
-            if(capture !=null)
+            if (capture != null)
             {
-                if(captureInProgress)
+                if (captureInProgress)
                 {
                     StartButton.Text = "Pause";
                     Application.Idle += ProcessFrame;
@@ -401,8 +402,8 @@ namespace EmguCV
 
         private void DrawBox_Click(object sender, EventArgs e)
         {
-          
-            
+
+
         }
 
         private void newButton_Click(object sender, EventArgs e)

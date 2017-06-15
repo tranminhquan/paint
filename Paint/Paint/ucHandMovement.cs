@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
-//using Emgu.CV.UI
+using Emgu.CV.UI;
 namespace Paint
 {
     public partial class ucHandMovement : MetroFramework.Controls.MetroUserControl
@@ -42,15 +42,15 @@ namespace Paint
 
                 if (capture != null)
                 {
-                    if (captureInProgress)
-                    {                   
+                    //if (captureInProgress)
+                    //{                   
                         Application.Idle += ProcessFramAndUpdateGUI;
-                    }
-                    else
-                    {             
-                        Application.Idle -= ProcessFramAndUpdateGUI;
-                    }
-                    captureInProgress = !captureInProgress;
+                    //}
+                    //else
+                    //{             
+                    //    Application.Idle -= ProcessFramAndUpdateGUI;
+                    //}
+                    //captureInProgress = !captureInProgress;
                 }
             }
         }

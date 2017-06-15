@@ -16,6 +16,7 @@ namespace Paint
         {
             InitializeComponent();
             ucHandMovement handMove = new ucHandMovement();
+            handMove.Location = new Point(10, 10);
             handMove.Parent = this;
         }
     }

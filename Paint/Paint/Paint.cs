@@ -22,7 +22,6 @@ namespace Paint
         bool isCrop = false, isSelect = false;
         bool isCropRectDraw = false;
         int posOfCrop;
-        
 
         //Khai báo con trỏ chuột
         Cursor pencil = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
@@ -68,7 +67,6 @@ namespace Paint
             pen = pn_penWidth.CreateGraphics();
 
             //status = DRAW_STATUS.COMPLETE;
-
             #region Set for recognizer
             speechReg = new SpeechRecognition();
             #endregion
@@ -123,18 +121,18 @@ namespace Paint
                         isCrop = false;
                     }
 
-                    //// them 1 nonShape de ko hien handlepoint khi su dung bucket 
-                    //ObjectDrawing clear = new NoneShapeDrawing();
-                    //grapList._posINCOMPLETE = grapList._list.Count;
-                    //grapList._list.Insert(grapList._list.Count, clear);
-                    //picPaint.Refresh();
+                    // them 1 nonShape de ko hien handlepoint khi su dung bucket 
+                    ObjectDrawing clear = new NoneShapeDrawing();
+                    grapList._posINCOMPLETE = grapList._list.Count;
+                    grapList._list.Insert(grapList._list.Count, clear);
+                    picPaint.Refresh();
 
                     Shape = new BucketDrawing(doubleBuffer, fillImage, e.X, e.Y,mtitleCurrentColor.BackColor);
 
                     if (!grapList.isExist(Shape))
                     {
-                        grapList._listBucketFill.Insert(grapList._listBucketFill.Count, grapList._list.Count);
                         grapList._list.Insert(grapList._list.Count, Shape);
+                        grapList._list.RemoveAt(grapList._list.Count - 2);
                     }
 
                     picPaint.Refresh();
@@ -257,32 +255,15 @@ namespace Paint
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
                 if (width != 0 && height != 0)
                 {
-                    if (Shape._startPoint.X > Shape._endPoint.X)
-                    {
-                        int temp = Shape._startPoint.X;
-                        Shape._startPoint.X = Shape._endPoint.X;
-                        Shape._endPoint.X = temp;
-                    }
-                    if (Shape._startPoint.Y > Shape._endPoint.Y)
-                    {
-                        int temp = Shape._startPoint.Y;
-                        Shape._startPoint.Y = Shape._endPoint.Y;
-                        Shape._endPoint.Y = temp;
-                    }
+                    if (Shape._endPoint.X < Shape._startPoint.X)
+                        Shape._startPoint.X = fillImage.Size.Width - Shape._startPoint.X;
+                    if (Shape._endPoint.Y < Shape._startPoint.Y)
+                        Shape._startPoint.Y = fillImage.Size.Height - Shape._startPoint.Y;
                     Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
-
-                    RectangleDrawing rec = new RectangleDrawing(Color.White,1);
-                    rec._startPoint = Shape._startPoint;
-                    rec._endPoint = Shape._endPoint;
-                    grapList._list.Add(rec);
-
-                    int Soluong = grapList._list.Count;
-                    grapList.Swap(grapList._list,Soluong - 1 , Soluong - 2);
                 }
                 picPaint.Refresh();
-
             }
         }
 

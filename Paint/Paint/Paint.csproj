@@ -14,7 +14,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -79,6 +79,9 @@
     </Reference>
     <Reference Include="Emgu.CV.Superres">
       <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.Superres.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.UI.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.CV.VideoStab">
       <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.VideoStab.dll</HintPath>
@@ -220,7 +223,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="cvextern.dll" />
+    <Content Include="cvextern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon\1490873152_add.ico" />
     <None Include="Resources\pointerIcon.png" />
     <None Include="Resources\settingIcon.png" />

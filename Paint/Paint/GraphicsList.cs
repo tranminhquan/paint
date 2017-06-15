@@ -7,7 +7,6 @@ namespace Paint
     {
         #region Decalre
         public List<ObjectDrawing> _list;
-        public List<int> _listBucketFill;
         public int _posINCOMPLETE;
         #endregion
 
@@ -15,7 +14,6 @@ namespace Paint
         public GraphicsList()
         {
             _list = new List<ObjectDrawing>();
-            _listBucketFill = new List<int>();
         }
 
         public void Draw(Graphics g)
@@ -23,13 +21,10 @@ namespace Paint
 
             for (int i = 0; i < _list.Count; i++)
             {
-                if((_list[i].isBucket == true && i == _listBucketFill[_listBucketFill.Count - 1]) || _list[i].isBucket == false)
-                    _list[i].Draw(g);
+
+                _list[i].Draw(g);
                 if (i == _posINCOMPLETE && _list[i]._startPoint != _list[i]._endPoint && _list[i].isNoneShape == true)
-                    if ( !(_list[i] is RectangleSelection))
-                    {
-                        _list[i].DrawHandlePoint(g);
-                    }   
+                    _list[i].DrawHandlePoint(g);
             }
         }
 
@@ -38,10 +33,6 @@ namespace Paint
         {
             try
             {
-                if(_list[_list.Count - 1].isBucket == true)
-                {
-                    _listBucketFill.RemoveAt(_listBucketFill.Count - 1);
-                }
                 _list.RemoveAt(_list.Count - 1);
             }
             catch
@@ -60,13 +51,6 @@ namespace Paint
                 }
             }
             return false;
-        }
-
-        public void Swap(List<ObjectDrawing> list ,int indexA , int indexB )
-        {
-            ObjectDrawing Temp = list[indexA];
-            list[indexA] = list[indexB];
-            list[indexB] = Temp;
         }
         #endregion
     }
