@@ -147,7 +147,7 @@ namespace Paint
                     RotatedRect minAreaBox = CvInvoke.MinAreaRect(hull);
 
 
-                    currentFrame.Draw(new CircleF(minAreaBox.Center, 5), new Bgr(Color.Black), 4);
+                    //currentFrame.Draw(new CircleF(minAreaBox.Center, 5), new Bgr(Color.Black), 4);
 
                     CvInvoke.ConvexHull(biggestContour, convexHull, true);    //Chinh clockwise thanh true
 
@@ -159,7 +159,7 @@ namespace Paint
 
                     // ve khung ban tay khung bao quanh tay
                     currentFrame.DrawPolyline(hull.ToArray(), true, new Bgr(200, 125, 75), 4);
-                    currentFrame.Draw(new CircleF(new PointF(minAreaBox.Center.X, minAreaBox.Center.Y), 3), new Bgr(200, 125, 75));
+                    //currentFrame.Draw(new CircleF(new PointF(minAreaBox.Center.X, minAreaBox.Center.Y), 3), new Bgr(200, 125, 75));
 
                     // tim  convex defect
                     Mat defect = new Mat();
@@ -216,6 +216,32 @@ namespace Paint
                     #endregion
 
                 }
+                #region Tracking
+                MCvMoments moment = new MCvMoments();               // a new MCvMoments object
+
+                try
+                {
+                    moment = CvInvoke.Moments(biggestContour,false);        // Moments of biggestContour
+                }
+                catch (NullReferenceException except)
+                {
+                    //label3.Text = except.Message;
+                    return;
+                }
+                
+                //CvInvoke.cvMoments(biggestContour, ref moment, 0);
+                double m_00 = CvInvoke.cvGetSpatialMoment(ref moment, 0, 0);
+                double m_10 = CvInvoke.cvGetSpatialMoment(ref moment, 1, 0);
+                double m_01 = CvInvoke.cvGetSpatialMoment(ref moment, 0, 1);
+
+                int current_X = Convert.ToInt32(m_10 / m_00) / 10;      // X location of centre of contour              
+                int current_Y = Convert.ToInt32(m_01 / m_00) / 10;      // Y location of center of contour
+
+
+                Cursor.Position = new Point(current_X * 20, current_Y * 20);
+                metroLabel6.Text = current_X.ToString();
+                metroLabel7.Text = current_Y.ToString();
+                #endregion
             }
             catch
             {

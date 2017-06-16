@@ -122,10 +122,10 @@ namespace Paint
                     }
 
                     // them 1 nonShape de ko hien handlepoint khi su dung bucket 
-                    ObjectDrawing clear = new NoneShapeDrawing();
-                    grapList._posINCOMPLETE = grapList._list.Count;
-                    grapList._list.Insert(grapList._list.Count, clear);
-                    picPaint.Refresh();
+                    //ObjectDrawing clear = new NoneShapeDrawing();
+                    //grapList._posINCOMPLETE = grapList._list.Count;
+                    //grapList._list.Insert(grapList._list.Count, clear);
+                    //picPaint.Refresh();
 
                     Shape = new BucketDrawing(doubleBuffer, fillImage, e.X, e.Y,mtitleCurrentColor.BackColor);
 

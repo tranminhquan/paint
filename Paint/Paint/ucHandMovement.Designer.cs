@@ -32,23 +32,25 @@
             this.picInputCam = new System.Windows.Forms.PictureBox();
             this.btnStart = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.lblNote = new MetroFramework.Controls.MetroLabel();
+            this.lblNumFinger = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.pnlSetting = new MetroFramework.Controls.MetroPanel();
             this.pnlSettingInfo = new MetroFramework.Controls.MetroPanel();
-            this.tbMinCr = new MetroFramework.Controls.MetroTrackBar();
-            this.tbMinCb = new MetroFramework.Controls.MetroTrackBar();
-            this.tbMaxCr = new MetroFramework.Controls.MetroTrackBar();
-            this.tbMaxCb = new MetroFramework.Controls.MetroTrackBar();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.pnlSetting = new MetroFramework.Controls.MetroPanel();
-            this.lblMinCr = new MetroFramework.Controls.MetroLabel();
-            this.lblMinCb = new MetroFramework.Controls.MetroLabel();
-            this.lblMaxCr = new MetroFramework.Controls.MetroLabel();
             this.lblMaxCb = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.lblNumFinger = new MetroFramework.Controls.MetroLabel();
-            this.lblNote = new MetroFramework.Controls.MetroLabel();
+            this.lblMaxCr = new MetroFramework.Controls.MetroLabel();
+            this.lblMinCb = new MetroFramework.Controls.MetroLabel();
+            this.lblMinCr = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.tbMaxCb = new MetroFramework.Controls.MetroTrackBar();
+            this.tbMinCb = new MetroFramework.Controls.MetroTrackBar();
+            this.tbMaxCr = new MetroFramework.Controls.MetroTrackBar();
+            this.tbMinCr = new MetroFramework.Controls.MetroTrackBar();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picSkinCam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInputCam)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -85,6 +87,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroLabel7);
+            this.metroPanel1.Controls.Add(this.metroLabel6);
             this.metroPanel1.Controls.Add(this.lblNote);
             this.metroPanel1.Controls.Add(this.lblNumFinger);
             this.metroPanel1.Controls.Add(this.metroLabel5);
@@ -103,6 +107,49 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // lblNote
+            // 
+            this.lblNote.AutoSize = true;
+            this.lblNote.ForeColor = System.Drawing.Color.Red;
+            this.lblNote.Location = new System.Drawing.Point(49, 400);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(0, 0);
+            this.lblNote.TabIndex = 4;
+            this.lblNote.UseCustomForeColor = true;
+            // 
+            // lblNumFinger
+            // 
+            this.lblNumFinger.AutoSize = true;
+            this.lblNumFinger.Location = new System.Drawing.Point(254, 362);
+            this.lblNumFinger.Name = "lblNumFinger";
+            this.lblNumFinger.Size = new System.Drawing.Size(0, 0);
+            this.lblNumFinger.TabIndex = 3;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(82, 362);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(138, 20);
+            this.metroLabel5.TabIndex = 3;
+            this.metroLabel5.Text = "Number of finger(s): ";
+            // 
+            // pnlSetting
+            // 
+            this.pnlSetting.BackgroundImage = global::Paint.Properties.Resources.settingIcon;
+            this.pnlSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlSetting.HorizontalScrollbarBarColor = true;
+            this.pnlSetting.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlSetting.HorizontalScrollbarSize = 10;
+            this.pnlSetting.Location = new System.Drawing.Point(17, 350);
+            this.pnlSetting.Name = "pnlSetting";
+            this.pnlSetting.Size = new System.Drawing.Size(59, 41);
+            this.pnlSetting.TabIndex = 2;
+            this.pnlSetting.VerticalScrollbarBarColor = true;
+            this.pnlSetting.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlSetting.VerticalScrollbarSize = 10;
+            this.pnlSetting.Click += new System.EventHandler(this.pnlSetting_Click);
             // 
             // pnlSettingInfo
             // 
@@ -131,17 +178,85 @@
             this.pnlSettingInfo.VerticalScrollbarSize = 10;
             this.pnlSettingInfo.Visible = false;
             // 
-            // tbMinCr
+            // metroLabel4
             // 
-            this.tbMinCr.BackColor = System.Drawing.Color.Transparent;
-            this.tbMinCr.Location = new System.Drawing.Point(53, 15);
-            this.tbMinCr.Maximum = 255;
-            this.tbMinCr.Name = "tbMinCr";
-            this.tbMinCr.Size = new System.Drawing.Size(85, 24);
-            this.tbMinCr.TabIndex = 2;
-            this.tbMinCr.Tag = "1";
-            this.tbMinCr.Text = "metroTrackBar1";
-            this.tbMinCr.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Ycc_Scroll);
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(202, 62);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(51, 20);
+            this.metroLabel4.TabIndex = 3;
+            this.metroLabel4.Text = "maxCb";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(3, 62);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(49, 20);
+            this.metroLabel2.TabIndex = 3;
+            this.metroLabel2.Text = "minCb";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(202, 15);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel3.TabIndex = 3;
+            this.metroLabel3.Text = "maxCr";
+            // 
+            // lblMaxCb
+            // 
+            this.lblMaxCb.AutoSize = true;
+            this.lblMaxCb.Location = new System.Drawing.Point(345, 69);
+            this.lblMaxCb.Name = "lblMaxCb";
+            this.lblMaxCb.Size = new System.Drawing.Size(0, 0);
+            this.lblMaxCb.TabIndex = 3;
+            // 
+            // lblMaxCr
+            // 
+            this.lblMaxCr.AutoSize = true;
+            this.lblMaxCr.Location = new System.Drawing.Point(345, 22);
+            this.lblMaxCr.Name = "lblMaxCr";
+            this.lblMaxCr.Size = new System.Drawing.Size(0, 0);
+            this.lblMaxCr.TabIndex = 3;
+            // 
+            // lblMinCb
+            // 
+            this.lblMinCb.AutoSize = true;
+            this.lblMinCb.Location = new System.Drawing.Point(144, 62);
+            this.lblMinCb.Name = "lblMinCb";
+            this.lblMinCb.Size = new System.Drawing.Size(0, 0);
+            this.lblMinCb.TabIndex = 3;
+            // 
+            // lblMinCr
+            // 
+            this.lblMinCr.AutoSize = true;
+            this.lblMinCr.Location = new System.Drawing.Point(144, 15);
+            this.lblMinCr.Name = "lblMinCr";
+            this.lblMinCr.Size = new System.Drawing.Size(0, 0);
+            this.lblMinCr.TabIndex = 3;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(3, 15);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(46, 20);
+            this.metroLabel1.TabIndex = 3;
+            this.metroLabel1.Text = "minCr";
+            // 
+            // tbMaxCb
+            // 
+            this.tbMaxCb.BackColor = System.Drawing.Color.Transparent;
+            this.tbMaxCb.Location = new System.Drawing.Point(254, 62);
+            this.tbMaxCb.Maximum = 255;
+            this.tbMaxCb.Name = "tbMaxCb";
+            this.tbMaxCb.Size = new System.Drawing.Size(85, 24);
+            this.tbMaxCb.TabIndex = 2;
+            this.tbMaxCb.Tag = "4";
+            this.tbMaxCb.Text = "metroTrackBar1";
+            this.tbMaxCb.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Ycc_Scroll);
             // 
             // tbMinCb
             // 
@@ -167,128 +282,35 @@
             this.tbMaxCr.Text = "metroTrackBar1";
             this.tbMaxCr.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Ycc_Scroll);
             // 
-            // tbMaxCb
+            // tbMinCr
             // 
-            this.tbMaxCb.BackColor = System.Drawing.Color.Transparent;
-            this.tbMaxCb.Location = new System.Drawing.Point(254, 62);
-            this.tbMaxCb.Maximum = 255;
-            this.tbMaxCb.Name = "tbMaxCb";
-            this.tbMaxCb.Size = new System.Drawing.Size(85, 24);
-            this.tbMaxCb.TabIndex = 2;
-            this.tbMaxCb.Tag = "4";
-            this.tbMaxCb.Text = "metroTrackBar1";
-            this.tbMaxCb.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Ycc_Scroll);
+            this.tbMinCr.BackColor = System.Drawing.Color.Transparent;
+            this.tbMinCr.Location = new System.Drawing.Point(53, 15);
+            this.tbMinCr.Maximum = 255;
+            this.tbMinCr.Name = "tbMinCr";
+            this.tbMinCr.Size = new System.Drawing.Size(85, 24);
+            this.tbMinCr.TabIndex = 2;
+            this.tbMinCr.Tag = "1";
+            this.tbMinCr.Text = "metroTrackBar1";
+            this.tbMinCr.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Ycc_Scroll);
             // 
-            // metroLabel1
+            // metroLabel6
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 15);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(46, 20);
-            this.metroLabel1.TabIndex = 3;
-            this.metroLabel1.Text = "minCr";
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(98, 400);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(87, 20);
+            this.metroLabel6.TabIndex = 5;
+            this.metroLabel6.Text = "metroLabel6";
             // 
-            // metroLabel2
+            // metroLabel7
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 62);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(49, 20);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "minCb";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(202, 15);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(48, 20);
-            this.metroLabel3.TabIndex = 3;
-            this.metroLabel3.Text = "maxCr";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(202, 62);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(51, 20);
-            this.metroLabel4.TabIndex = 3;
-            this.metroLabel4.Text = "maxCb";
-            // 
-            // pnlSetting
-            // 
-            this.pnlSetting.BackgroundImage = global::Paint.Properties.Resources.settingIcon;
-            this.pnlSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlSetting.HorizontalScrollbarBarColor = true;
-            this.pnlSetting.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnlSetting.HorizontalScrollbarSize = 10;
-            this.pnlSetting.Location = new System.Drawing.Point(17, 350);
-            this.pnlSetting.Name = "pnlSetting";
-            this.pnlSetting.Size = new System.Drawing.Size(59, 41);
-            this.pnlSetting.TabIndex = 2;
-            this.pnlSetting.VerticalScrollbarBarColor = true;
-            this.pnlSetting.VerticalScrollbarHighlightOnWheel = false;
-            this.pnlSetting.VerticalScrollbarSize = 10;
-            this.pnlSetting.Click += new System.EventHandler(this.pnlSetting_Click);
-            // 
-            // lblMinCr
-            // 
-            this.lblMinCr.AutoSize = true;
-            this.lblMinCr.Location = new System.Drawing.Point(144, 15);
-            this.lblMinCr.Name = "lblMinCr";
-            this.lblMinCr.Size = new System.Drawing.Size(0, 0);
-            this.lblMinCr.TabIndex = 3;
-            // 
-            // lblMinCb
-            // 
-            this.lblMinCb.AutoSize = true;
-            this.lblMinCb.Location = new System.Drawing.Point(144, 62);
-            this.lblMinCb.Name = "lblMinCb";
-            this.lblMinCb.Size = new System.Drawing.Size(0, 0);
-            this.lblMinCb.TabIndex = 3;
-            // 
-            // lblMaxCr
-            // 
-            this.lblMaxCr.AutoSize = true;
-            this.lblMaxCr.Location = new System.Drawing.Point(345, 22);
-            this.lblMaxCr.Name = "lblMaxCr";
-            this.lblMaxCr.Size = new System.Drawing.Size(0, 0);
-            this.lblMaxCr.TabIndex = 3;
-            // 
-            // lblMaxCb
-            // 
-            this.lblMaxCb.AutoSize = true;
-            this.lblMaxCb.Location = new System.Drawing.Point(345, 69);
-            this.lblMaxCb.Name = "lblMaxCb";
-            this.lblMaxCb.Size = new System.Drawing.Size(0, 0);
-            this.lblMaxCb.TabIndex = 3;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(82, 362);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(138, 20);
-            this.metroLabel5.TabIndex = 3;
-            this.metroLabel5.Text = "Number of finger(s): ";
-            // 
-            // lblNumFinger
-            // 
-            this.lblNumFinger.AutoSize = true;
-            this.lblNumFinger.Location = new System.Drawing.Point(254, 362);
-            this.lblNumFinger.Name = "lblNumFinger";
-            this.lblNumFinger.Size = new System.Drawing.Size(0, 0);
-            this.lblNumFinger.TabIndex = 3;
-            // 
-            // lblNote
-            // 
-            this.lblNote.AutoSize = true;
-            this.lblNote.ForeColor = System.Drawing.Color.Red;
-            this.lblNote.Location = new System.Drawing.Point(49, 400);
-            this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(0, 0);
-            this.lblNote.TabIndex = 4;
-            this.lblNote.UseCustomForeColor = true;
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(213, 400);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(86, 20);
+            this.metroLabel7.TabIndex = 6;
+            this.metroLabel7.Text = "metroLabel7";
             // 
             // ucHandMovement
             // 
@@ -330,5 +352,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel lblNumFinger;
         private MetroFramework.Controls.MetroLabel lblNote;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }
