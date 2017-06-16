@@ -24,15 +24,54 @@ namespace Paint
         Capture capture;
         Image<Bgr, byte> currentFrame;
         bool captureInProgress;
+        Matrix<int> mDefect;
+        Point[] contourPoints;  //Mang diem contours
+        int minCr, maxCr, minCb, maxCb;
         public ucHandMovement()
         {
             if (!this.DesignMode)
             {
                 this.InitializeComponent();
-               
+              
+                lblMinCr.Text = tbMinCr.Value.ToString();
+                lblMinCb.Text = tbMinCb.Value.ToString();
+                lblMaxCr.Text = tbMaxCr.Value.ToString();
+                lblMaxCb.Text = tbMaxCb.Value.ToString();
 
-               
+                minCr = 131;
+                maxCr = 185;
+                minCb = 80;
+                maxCb = 135;
+
+                tbMinCr.Value = minCr;
+                tbMaxCr.Value = maxCr;
+                tbMinCb.Value = minCb;
+                tbMaxCb.Value = maxCb;
             }
+        }
+
+        private void Ycc_Scroll(object sender, ScrollEventArgs e)
+        {
+            MetroFramework.Controls.MetroTrackBar temp = sender as MetroFramework.Controls.MetroTrackBar;
+            switch(temp.Tag.ToString())
+            {
+                case "1":   //minCr
+                    minCr = tbMinCr.Value;
+                    lblMinCr.Text = tbMinCr.Value.ToString();
+                    break;
+                case "2":   //maxCr
+                    maxCr = tbMaxCr.Value;
+                    lblMaxCr.Text = tbMaxCr.Value.ToString();
+                    break;
+                case "3":   //minCb
+                    minCb = tbMinCb.Value;
+                    lblMinCb.Text = tbMinCb.Value.ToString();
+                    break;
+                case "4":   //maxCb
+                    maxCb = tbMaxCb.Value;
+                    lblMaxCb.Text = tbMaxCb.Value.ToString();
+                    break;
+            }                                    
         }
 
         void ProcessFramAndUpdateGUI(object Sender, EventArgs agr)
@@ -50,7 +89,7 @@ namespace Paint
             Image<Ycc, Byte> currentYCrCbFrame = currentFrame.Convert<Ycc, byte>();
             Image<Gray, byte> skin = new Image<Gray, byte>(currentFrame.Width, currentFrame.Height);
 
-            skin = currentYCrCbFrame.InRange(new Ycc(0, 131, 80), new Ycc(255, 185, 135));
+            skin = currentYCrCbFrame.InRange(new Ycc(0, minCr, minCb), new Ycc(255, maxCr, maxCb));
 
             //Erode
             Mat rect_12 = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(10, 10), new Point(5, 5));
@@ -65,7 +104,7 @@ namespace Paint
 
             //smoothing the filterd , eroded and dilated image.
             skin = skin.SmoothGaussian(9);
-
+            picSkinCam.Image = skin.ToBitmap();
             currentFrame = currentFrame.Flip(FlipType.Horizontal);
 
             #region Extract contours and hull
@@ -89,54 +128,107 @@ namespace Paint
             }
 
             //Gi do
-            if (biggestContour != null)
+            try
             {
-                Point[] contourPoints;
-                CvInvoke.ApproxPolyDP(biggestContour, biggestContour, 0.00025, false);
-
-                contourPoints = biggestContour.ToArray();
-
-                currentFrame.Draw(contourPoints, new Bgr(255, 0, 255), 4);
-
-
-                VectorOfPoint hull = new VectorOfPoint();
-                VectorOfInt convexHull = new VectorOfInt();
-                CvInvoke.ConvexHull(biggestContour, hull, true); //~ Hull   //Chinh clockwise thanh true          
-                RotatedRect minAreaBox = CvInvoke.MinAreaRect(hull);
-                
-
-                currentFrame.Draw(new CircleF(minAreaBox.Center, 5), new Bgr(Color.Black), 4);
-
-                CvInvoke.ConvexHull(biggestContour, convexHull);
-
-                //PointF[] Vertices = box.GetVertices();
-                // handRect = box.MinAreaRect();
-                currentFrame.Draw(minAreaBox, new Bgr(200, 0, 0), 1);
-
-
-                // ve khung ban tay khung bao quanh tay
-                currentFrame.DrawPolyline(hull.ToArray(), true, new Bgr(200, 125, 75), 4);
-                currentFrame.Draw(new CircleF(new PointF(minAreaBox.Center.X, minAreaBox.Center.Y), 3), new Bgr(200, 125, 75));
-
-                // tim  convex defect
-                Mat defect = new Mat();
-                CvInvoke.ConvexityDefects(biggestContour, convexHull, defect);
-
-                // chuyen sang Matrix 
-                Matrix<int> mDefect;
-                if (!defect.IsEmpty)
+                lblNote.Text = "";
+                if (biggestContour != null)
                 {
-                    mDefect = new Matrix<int>(defect.Rows, defect.Cols, defect.NumberOfChannels);
-                    defect.CopyTo(mDefect);
-                }
 
+                    CvInvoke.ApproxPolyDP(biggestContour, biggestContour, 0.00025, false);
+
+                    contourPoints = biggestContour.ToArray();
+
+                    currentFrame.Draw(contourPoints, new Bgr(255, 0, 255), 4);
+
+
+                    VectorOfPoint hull = new VectorOfPoint();
+                    VectorOfInt convexHull = new VectorOfInt();
+                    CvInvoke.ConvexHull(biggestContour, hull, true); //~ Hull   //Chinh clockwise thanh true          
+                    RotatedRect minAreaBox = CvInvoke.MinAreaRect(hull);
+
+
+                    currentFrame.Draw(new CircleF(minAreaBox.Center, 5), new Bgr(Color.Black), 4);
+
+                    CvInvoke.ConvexHull(biggestContour, convexHull, true);    //Chinh clockwise thanh true
+
+
+                    //PointF[] Vertices = box.GetVertices();
+                    // handRect = box.MinAreaRect();
+                    currentFrame.Draw(minAreaBox, new Bgr(200, 0, 0), 1);
+
+
+                    // ve khung ban tay khung bao quanh tay
+                    currentFrame.DrawPolyline(hull.ToArray(), true, new Bgr(200, 125, 75), 4);
+                    currentFrame.Draw(new CircleF(new PointF(minAreaBox.Center.X, minAreaBox.Center.Y), 3), new Bgr(200, 125, 75));
+
+                    // tim  convex defect
+                    Mat defect = new Mat();
+                    CvInvoke.ConvexityDefects(biggestContour, convexHull, defect);
+
+                    // chuyen sang Matrix 
+
+                    if (!defect.IsEmpty)
+                    {
+                        mDefect = new Matrix<int>(defect.Rows, defect.Cols, defect.NumberOfChannels);
+                        defect.CopyTo(mDefect);
+                    }
+
+                    #region Counting finger
+                    if (mDefect.Rows == 0) return;
+                    PointF[] start = new PointF[mDefect.Rows];
+                    start[0] = new PointF(0, 0);
+
+                    try
+                    {
+                        for (int i = 0; i < mDefect.Rows; i++)
+                        {
+                            int startIdx = mDefect.Data[i, 0];
+                            int depthIdx = mDefect.Data[i, 1];
+                            int endIdx = mDefect.Data[i, 2];
+
+
+                            Point startPoint = contourPoints[startIdx];
+                            Point endPoint = contourPoints[endIdx];
+                            Point depthPoint = contourPoints[depthIdx];
+
+                            CircleF startCircle = new CircleF(startPoint, 5f);
+                            CircleF endCircle = new CircleF(endPoint, 5f);
+                            CircleF depthCircle = new CircleF(depthPoint, 5f);
+
+                            //Cach 1
+                            if ((startCircle.Center.Y < minAreaBox.Center.Y || depthCircle.Center.Y < minAreaBox.Center.Y) &&
+                                      (startCircle.Center.Y < depthCircle.Center.Y) &&
+                                      (Math.Sqrt(Math.Pow(startCircle.Center.X - depthCircle.Center.X, 2) +
+                                                 Math.Pow(startCircle.Center.Y - depthCircle.Center.Y, 2)) >
+                                                 minAreaBox.Size.Height / 6.5))
+                            {
+                                Finger_num++;
+                            }
+
+                            //Cach 2
+                        }
+                    }
+                    catch
+                    {
+                        return;
+                    }
+
+                    #endregion
+
+                }
             }
+            catch
+            {
+                lblNote.Text = "Opps! Make sure to have a 'white space'";
+                return;
+            }         
             #endregion
 
 
             //Display image from camera
             picInputCam.Image = currentFrame.ToBitmap();
-            picSkinCam.Image = skin.ToBitmap();
+            
+            lblNumFinger.Text = Finger_num.ToString();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -148,7 +240,7 @@ namespace Paint
                 {
                     capture = new Capture();
 
-                    capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps, 5);
+                    capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps, 5);              
 
                 }
                 catch (NullReferenceException excpt)
@@ -172,6 +264,16 @@ namespace Paint
                 }
                 captureInProgress = !captureInProgress;
             }
+        }
+
+        private void pnlSetting_Click(object sender, EventArgs e)
+        {
+            if (pnlSettingInfo.Visible == false)
+            {
+                pnlSettingInfo.Visible = true;
+            }
+            else
+                pnlSettingInfo.Visible = false;
         }
     }
 }
