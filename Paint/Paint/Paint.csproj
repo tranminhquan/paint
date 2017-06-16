@@ -150,6 +150,7 @@
     <Compile Include="RectangleDrawing.cs" />
     <Compile Include="RectangleSelection.cs" />
     <Compile Include="RhombusDrawing.cs" />
+    <Compile Include="SkinDetector.cs" />
     <Compile Include="SpeechRecognition.cs" />
     <Compile Include="StarDrawing.cs" />
     <Compile Include="TestHand.cs">
