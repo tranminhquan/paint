@@ -45,8 +45,8 @@ namespace Paint
 
         public override void Draw(Graphics g)
         {
-            //base.Draw(g);
             g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.FillRectangle(Brushes.White, GetRectangle(_startPoint, _endPoint));
             g.DrawRectangle(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));           
         }
 

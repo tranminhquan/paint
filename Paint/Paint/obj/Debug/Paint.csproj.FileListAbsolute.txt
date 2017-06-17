@@ -190,3 +190,23 @@ E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.TestHand.resources
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\cvextern.dll
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\opencv_ffmpeg300_64.dll
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\ZedGraph.dll
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Contrib.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Cuda.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.ML.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.OCR.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Shape.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Stitching.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Superres.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.Util.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.xml
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.Paint.exe.config
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.TestHand.resources
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
+E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
