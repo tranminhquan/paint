@@ -15,7 +15,7 @@ using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Util;
-
+using EmguCV;
 using Emgu.Util;
 namespace Paint
 {
@@ -84,21 +84,26 @@ namespace Paint
             if (currentFrame == null) return;
 
 
-
+            //Cach 1***************************
             //Applying YCrCb filter
-            Image<Ycc, Byte> currentYCrCbFrame = currentFrame.Convert<Ycc, byte>();
-            Image<Gray, byte> skin = new Image<Gray, byte>(currentFrame.Width, currentFrame.Height);
+            //Image<Ycc, Byte> currentYCrCbFrame = currentFrame.Convert<Ycc, byte>();
+            //Image<Gray, byte> skin = new Image<Gray, byte>(currentFrame.Width, currentFrame.Height);
 
-            skin = currentYCrCbFrame.InRange(new Ycc(0, minCr, minCb), new Ycc(255, maxCr, maxCb));
+            //skin = currentYCrCbFrame.InRange(new Ycc(0, minCr, minCb), new Ycc(255, maxCr, maxCb));
 
-            //Erode
-            Mat rect_12 = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(10, 10), new Point(5, 5));
-            CvInvoke.Erode(skin, skin, rect_12, new Point(-1, -1), 1, BorderType.Default, new MCvScalar());
+            ////Erode
+            //Mat rect_12 = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(10, 10), new Point(5, 5));
+            //CvInvoke.Erode(skin, skin, rect_12, new Point(-1, -1), 1, BorderType.Default, new MCvScalar());
 
-            //Dilate
-            Mat rect_6 = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(6, 6), new Point(3, 3));
-            CvInvoke.Dilate(skin, skin, rect_6, new Point(-1, -1), 1, BorderType.Default, new MCvScalar());
+            ////Dilate
+            //Mat rect_6 = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(6, 6), new Point(3, 3));
+            //CvInvoke.Dilate(skin, skin, rect_6, new Point(-1, -1), 1, BorderType.Default, new MCvScalar());
+            //**********************************
 
+            //Cach 2**************************** Phong
+            IColorSkinDetector skinDetector = new YCrCbSkinDetector();
+            Image<Gray, byte> skin = skinDetector.DetectSkin(currentFrame, new Ycc(0, minCr, minCb), new Ycc(255, maxCr, maxCb));          
+            //**********************************
 
             skin = skin.Flip(FlipType.Horizontal);
 
@@ -176,6 +181,7 @@ namespace Paint
                     #region Counting finger
                     if (mDefect.Rows == 0) return;
                     PointF[] start = new PointF[mDefect.Rows];
+                    int num = 0;
                     start[0] = new PointF(0, 0);
 
                     try
@@ -206,6 +212,16 @@ namespace Paint
                             }
 
                             //Cach 2
+                            //         if ((startPoint.Y < minAreaBox.Center.Y && endPoint.Y < minAreaBox.Center.Y) && (startPoint.Y < endPoint.Y) &&
+                            //(Math.Sqrt(Math.Pow(startPoint.X - endPoint.X, 2) + Math.Pow(startPoint.Y - endPoint.Y, 2)) > minAreaBox.Size.Height / 6.5))
+                            //         {
+                            //             if (getAngle(startPoint, minAreaBox.Center, start[num]) > 10)
+                            //             {
+                            //                 Finger_num++;
+                            //                 start[num] = startPoint;
+                            //                 num++;
+                            //             }
+                            //         }
                         }
                     }
                     catch
@@ -257,6 +273,16 @@ namespace Paint
             lblNumFinger.Text = Finger_num.ToString();
         }
 
+        //Ham tim goc
+        double getAngle(PointF s, PointF f, PointF e)
+        {
+            double l1 = Math.Sqrt(Math.Pow(f.X - s.X, 2) + Math.Pow(f.Y - s.Y, 2));
+            double l2 = Math.Sqrt(Math.Pow(f.X - e.X, 2) + Math.Pow(f.Y - e.Y, 2));
+            float dot = (s.X - f.X) * (e.X - f.X) + (s.Y - f.Y) * (e.Y - f.Y);
+            double angle = Math.Acos(dot / (l1 * l2));
+            angle = angle * 180 / Math.PI;
+            return angle;
+        }
         private void btnStart_Click(object sender, EventArgs e)
         {          
             #region
