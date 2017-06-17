@@ -254,7 +254,7 @@ namespace Paint
                 int current_Y = Convert.ToInt32(m_01 / m_00) / 10;      // Y location of center of contour
 
 
-                //Cursor.Position = new Point(current_X * 20, current_Y * 20);
+                Cursor.Position = new Point(current_X * 20, current_Y * 20);
                 //metroLabel6.Text = current_X.ToString();
                 //metroLabel7.Text = current_Y.ToString();
                 #endregion

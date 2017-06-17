@@ -24,11 +24,12 @@ namespace Paint
         int posOfCrop;
 
         //Khai báo con trỏ chuột
-        Cursor pencil = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
-        Cursor eraser = new Cursor(Application.StartupPath + "\\eraser.cur");
-        Cursor bucket = new Cursor(Application.StartupPath + "\\bucket.cur");
+        Cursor pencil = new Cursor(Application.StartupPath + @"\Pencil -v.cur");
+        Cursor eraser = new Cursor(Application.StartupPath + @"\eraser.cur");
+        Cursor bucket = new Cursor(Application.StartupPath + @"\bucket.cur");
 
         SpeechRecognition speechReg;
+        ucHandMovement ucHandGesture;
         #endregion
 
         // danh sách màu mặc định
@@ -70,6 +71,14 @@ namespace Paint
             #region Set for recognizer
             speechReg = new SpeechRecognition();
             #endregion
+
+            #region Setup Handgesture
+            ucHandGesture = new ucHandMovement();
+            ucHandGesture.Parent = metroPanel1;
+            ucHandGesture.Dock = DockStyle.Bottom;
+            ucHandGesture.Enabled = false;
+            ucHandGesture.Visible = false;
+            #endregion 
         }
         private void MLEditColor_Click(object sender, System.EventArgs e)
         {
@@ -461,7 +470,7 @@ namespace Paint
 
         private void llbAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("A gift to Vuong-sama");
+            
         }
         public void DrawpenWidth()
         {
@@ -766,6 +775,24 @@ namespace Paint
             lblConfidence.Text = speechReg.Confindence.ToString();
         }
 
+        private void pnlInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A gift to Vuong-sama");
+        }
+
+        private void tgHand_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tgHand.Checked)
+            {
+                ucHandGesture.Enabled = true;
+                ucHandGesture.Visible = true;
+            }
+            else
+            {
+                ucHandGesture.Enabled = false;
+                ucHandGesture.Visible = false;
+            }
+        }
 
         private void pnlSetting_MouseClick(object sender, MouseEventArgs e)
         {

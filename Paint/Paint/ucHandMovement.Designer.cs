@@ -310,7 +310,7 @@
             this.Controls.Add(this.pnlSettingInfo);
             this.Controls.Add(this.metroPanel1);
             this.Name = "ucHandMovement";
-            this.Size = new System.Drawing.Size(403, 561);
+            this.Size = new System.Drawing.Size(403, 554);
             ((System.ComponentModel.ISupportInitialize)(this.picSkinCam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInputCam)).EndInit();
             this.metroPanel1.ResumeLayout(false);
