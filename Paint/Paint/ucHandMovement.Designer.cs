@@ -49,8 +49,7 @@
             this.tbMinCb = new MetroFramework.Controls.MetroTrackBar();
             this.tbMaxCr = new MetroFramework.Controls.MetroTrackBar();
             this.tbMinCr = new MetroFramework.Controls.MetroTrackBar();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picSkinCam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInputCam)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -87,8 +86,7 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.metroLabel7);
-            this.metroPanel1.Controls.Add(this.metroLabel6);
+            this.metroPanel1.Controls.Add(this.label1);
             this.metroPanel1.Controls.Add(this.lblNote);
             this.metroPanel1.Controls.Add(this.lblNumFinger);
             this.metroPanel1.Controls.Add(this.metroLabel5);
@@ -102,7 +100,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(409, 432);
+            this.metroPanel1.Size = new System.Drawing.Size(403, 463);
             this.metroPanel1.TabIndex = 2;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -169,9 +167,9 @@
             this.pnlSettingInfo.HorizontalScrollbarBarColor = true;
             this.pnlSettingInfo.HorizontalScrollbarHighlightOnWheel = false;
             this.pnlSettingInfo.HorizontalScrollbarSize = 10;
-            this.pnlSettingInfo.Location = new System.Drawing.Point(0, 432);
+            this.pnlSettingInfo.Location = new System.Drawing.Point(0, 463);
             this.pnlSettingInfo.Name = "pnlSettingInfo";
-            this.pnlSettingInfo.Size = new System.Drawing.Size(409, 128);
+            this.pnlSettingInfo.Size = new System.Drawing.Size(403, 91);
             this.pnlSettingInfo.TabIndex = 3;
             this.pnlSettingInfo.VerticalScrollbarBarColor = true;
             this.pnlSettingInfo.VerticalScrollbarHighlightOnWheel = false;
@@ -294,23 +292,16 @@
             this.tbMinCr.Text = "metroTrackBar1";
             this.tbMinCr.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Ycc_Scroll);
             // 
-            // metroLabel6
+            // label1
             // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(98, 400);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(87, 20);
-            this.metroLabel6.TabIndex = 5;
-            this.metroLabel6.Text = "metroLabel6";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(213, 400);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(86, 20);
-            this.metroLabel7.TabIndex = 6;
-            this.metroLabel7.Text = "metroLabel7";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 424);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(313, 51);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "We recommended you keep clear space behind \r\nto have great effect\r\n\r\n";
             // 
             // ucHandMovement
             // 
@@ -319,7 +310,7 @@
             this.Controls.Add(this.pnlSettingInfo);
             this.Controls.Add(this.metroPanel1);
             this.Name = "ucHandMovement";
-            this.Size = new System.Drawing.Size(409, 549);
+            this.Size = new System.Drawing.Size(403, 561);
             ((System.ComponentModel.ISupportInitialize)(this.picSkinCam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInputCam)).EndInit();
             this.metroPanel1.ResumeLayout(false);
@@ -352,7 +343,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel lblNumFinger;
         private MetroFramework.Controls.MetroLabel lblNote;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private System.Windows.Forms.Label label1;
     }
 }

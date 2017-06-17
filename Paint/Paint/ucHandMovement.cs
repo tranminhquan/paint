@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 
 
 using Emgu.CV;
@@ -32,12 +32,7 @@ namespace Paint
             if (!this.DesignMode)
             {
                 this.InitializeComponent();
-              
-                lblMinCr.Text = tbMinCr.Value.ToString();
-                lblMinCb.Text = tbMinCb.Value.ToString();
-                lblMaxCr.Text = tbMaxCr.Value.ToString();
-                lblMaxCb.Text = tbMaxCb.Value.ToString();
-
+                          
                 minCr = 131;
                 maxCr = 185;
                 minCb = 80;
@@ -47,6 +42,11 @@ namespace Paint
                 tbMaxCr.Value = maxCr;
                 tbMinCb.Value = minCb;
                 tbMaxCb.Value = maxCb;
+
+                lblMinCr.Text = tbMinCr.Value.ToString();
+                lblMinCb.Text = tbMinCb.Value.ToString();
+                lblMaxCr.Text = tbMaxCr.Value.ToString();
+                lblMaxCb.Text = tbMaxCb.Value.ToString();
             }
         }
 
@@ -102,7 +102,7 @@ namespace Paint
 
             //Cach 2**************************** Phong
             IColorSkinDetector skinDetector = new YCrCbSkinDetector();
-            Image<Gray, byte> skin = skinDetector.DetectSkin(currentFrame, new Ycc(0, minCr, minCb), new Ycc(255, maxCr, maxCb));          
+            Image<Gray, byte> skin = skinDetector.DetectSkin(currentFrame, new Ycc(0, minCr, minCb), new Ycc(255, maxCr, maxCb));
             //**********************************
 
             skin = skin.Flip(FlipType.Horizontal);
@@ -124,7 +124,7 @@ namespace Paint
             {
                 VectorOfPoint contour = contours[i]; // chuyen sang Point[][]
                 Result1 = CvInvoke.ContourArea(contour, false);// tinh area
-            
+
                 if (Result1 > Result2)
                 {
                     Result2 = Result1;
@@ -202,26 +202,26 @@ namespace Paint
                             CircleF depthCircle = new CircleF(depthPoint, 5f);
 
                             //Cach 1
-                            if ((startCircle.Center.Y < minAreaBox.Center.Y || depthCircle.Center.Y < minAreaBox.Center.Y) &&
-                                      (startCircle.Center.Y < depthCircle.Center.Y) &&
-                                      (Math.Sqrt(Math.Pow(startCircle.Center.X - depthCircle.Center.X, 2) +
-                                                 Math.Pow(startCircle.Center.Y - depthCircle.Center.Y, 2)) >
-                                                 minAreaBox.Size.Height / 6.5))
-                            {
-                                Finger_num++;
-                            }
+                            //if ((startCircle.Center.Y < minAreaBox.Center.Y || depthCircle.Center.Y < minAreaBox.Center.Y) &&
+                            //          (startCircle.Center.Y < depthCircle.Center.Y) &&
+                            //          (Math.Sqrt(Math.Pow(startCircle.Center.X - depthCircle.Center.X, 2) +
+                            //                     Math.Pow(startCircle.Center.Y - depthCircle.Center.Y, 2)) >
+                            //                     minAreaBox.Size.Height / 6.5))
+                            //{
+                            //    Finger_num++;
+                            //}
 
                             //Cach 2
-                            //         if ((startPoint.Y < minAreaBox.Center.Y && endPoint.Y < minAreaBox.Center.Y) && (startPoint.Y < endPoint.Y) &&
-                            //(Math.Sqrt(Math.Pow(startPoint.X - endPoint.X, 2) + Math.Pow(startPoint.Y - endPoint.Y, 2)) > minAreaBox.Size.Height / 6.5))
-                            //         {
-                            //             if (getAngle(startPoint, minAreaBox.Center, start[num]) > 10)
-                            //             {
-                            //                 Finger_num++;
-                            //                 start[num] = startPoint;
-                            //                 num++;
-                            //             }
-                            //         }
+                            if ((startPoint.Y < minAreaBox.Center.Y && endPoint.Y < minAreaBox.Center.Y) && (startPoint.Y < endPoint.Y) &&
+                   (Math.Sqrt(Math.Pow(startPoint.X - endPoint.X, 2) + Math.Pow(startPoint.Y - endPoint.Y, 2)) > minAreaBox.Size.Height / 6.5))
+                            {
+                                if (getAngle(startPoint, minAreaBox.Center, start[num]) > 10)
+                                {
+                                    Finger_num++;
+                                    start[num] = startPoint;
+                                    num++;
+                                }
+                            }
                         }
                     }
                     catch
@@ -237,14 +237,14 @@ namespace Paint
 
                 try
                 {
-                    moment = CvInvoke.Moments(biggestContour,false);        // Moments of biggestContour
+                    moment = CvInvoke.Moments(biggestContour, false);        // Moments of biggestContour
                 }
                 catch (NullReferenceException except)
                 {
                     //label3.Text = except.Message;
                     return;
                 }
-                
+
                 //CvInvoke.cvMoments(biggestContour, ref moment, 0);
                 double m_00 = CvInvoke.cvGetSpatialMoment(ref moment, 0, 0);
                 double m_10 = CvInvoke.cvGetSpatialMoment(ref moment, 1, 0);
@@ -254,24 +254,45 @@ namespace Paint
                 int current_Y = Convert.ToInt32(m_01 / m_00) / 10;      // Y location of center of contour
 
 
-                Cursor.Position = new Point(current_X * 20, current_Y * 20);
-                metroLabel6.Text = current_X.ToString();
-                metroLabel7.Text = current_Y.ToString();
+                //Cursor.Position = new Point(current_X * 20, current_Y * 20);
+                //metroLabel6.Text = current_X.ToString();
+                //metroLabel7.Text = current_Y.ToString();
                 #endregion
             }
             catch
             {
+                Finger_num = 0;
                 lblNote.Text = "Opps! Make sure to have a 'white space'";
                 return;
-            }         
+            }
             #endregion
+
 
 
             //Display image from camera
             picInputCam.Image = currentFrame.ToBitmap();
-            
+
             lblNumFinger.Text = Finger_num.ToString();
         }
+
+        #region Mouse event for hand gesture
+        [DllImport("user32.dll")]
+        static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, int dwExtraInfo);
+
+        private const int MOUSEEVENTF_LEFTDOWN = 0x02;          // mouse left button pressed 
+        private const int MOUSEEVENTF_LEFTUP = 0x04;            // mouse left button unpressed
+        private const int MOUSEEVENTF_RIGHTDOWN = 0x08;         // mouse right button pressed
+        private const int MOUSEEVENTF_RIGHTUP = 0x10;           // mouse right button unpressed
+
+        //this function will click the mouse using the parameters assigned to it
+        public void DoMouseClick()
+        {
+            //Call the imported function with the cursor's current position
+            uint X = Convert.ToUInt32(Cursor.Position.X);
+            uint Y = Convert.ToUInt32(Cursor.Position.Y);
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+        }
+        #endregion
 
         //Ham tim goc
         double getAngle(PointF s, PointF f, PointF e)
