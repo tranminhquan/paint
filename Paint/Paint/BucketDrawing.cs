@@ -31,6 +31,7 @@ namespace Paint
             this.x = x;
             this.y = y;
             this._color = _color;
+            isBucket = true;
         }
 
         public override Point getMouseClick() 
@@ -51,7 +52,7 @@ namespace Paint
         public Bitmap Fill()
         {
             PointedColorFloodFill bucket = new PointedColorFloodFill();
-            _fillpic = _pic.Clone(new Rectangle(0, 0, _pic.Width, _pic.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            _fillpic = _pic.Clone(new Rectangle(0, 0, _pic.Width  , _pic.Height ), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             bucket.FillColor = _color;
             bucket.Tolerance = _pic.GetPixel(x,y);
             bucket.StartingPoint = new IntPoint(x,y);

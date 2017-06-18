@@ -17,8 +17,11 @@ namespace Paint
         public Point _startPoint;
         public Point _endPoint;
         public bool isNoneShape = true;
+        public bool isSelectRect = false ;
+        public bool isBucket = false;
 
-        
+
+
 
 
 

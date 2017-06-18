@@ -12,6 +12,7 @@ namespace Paint
         protected Point  _currentPoint;
         public Region _region;
         protected int posOfLocation;
+        
         #endregion
 
         #region Method
@@ -46,7 +47,8 @@ namespace Paint
         public override void Draw(Graphics g)
         {
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.FillRectangle(Brushes.White, GetRectangle(_startPoint, _endPoint));
+            if(isSelectRect == true)
+                g.FillRectangle(Brushes.White, GetRectangle(_startPoint, _endPoint));
             g.DrawRectangle(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));           
         }
 

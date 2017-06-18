@@ -17,12 +17,12 @@ namespace Paint
         }
         public override void Draw(Graphics g)
         {
+
             Pen p = new Pen(Color.Black, 1);
             float[] dashValues = { 2, 2, 2, 2 };
-            
+
             p.DashPattern = dashValues;
             g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
-
             if (_img != null)
             {
                 g.DrawImage(_img, GetRectangle(_startPoint, _endPoint));

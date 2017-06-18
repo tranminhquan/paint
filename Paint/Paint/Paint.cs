@@ -21,6 +21,7 @@ namespace Paint
         Graphics pen; // pen width
         bool isCrop = false, isSelect = false;
         bool isCropRectDraw = false;
+        
         int posOfCrop;
 
         //Khai báo con trỏ chuột
@@ -141,8 +142,8 @@ namespace Paint
 
                     if (!grapList.isExist(Shape))
                     {
+                        grapList._listBucketFill.Insert(grapList._listBucketFill.Count, grapList._list.Count);
                         grapList._list.Insert(grapList._list.Count, Shape);
-                        grapList._list.RemoveAt(grapList._list.Count - 2);
                     }
 
                     picPaint.Refresh();
@@ -176,6 +177,7 @@ namespace Paint
                         {
                             isCropRectDraw = true;
                         }
+
 
                         //status = DRAW_STATUS.COMPLETE;
                         ChooseObject();
@@ -278,13 +280,17 @@ namespace Paint
                         Shape._endPoint.Y = temp;
                     }
 
-                    Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
+
+                    Rectangle ROI = new Rectangle(Shape._startPoint.X , Shape._startPoint.Y , width - 2, height - 2);
+
+
 
                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
 
                     RectangleDrawing rec = new RectangleDrawing(Color.White, 1);
                     rec._startPoint = Shape._startPoint;
                     rec._endPoint = Shape._endPoint;
+                    rec.isSelectRect = true;
 
                     grapList._list.Add(rec);
 
@@ -293,6 +299,7 @@ namespace Paint
                     grapList.Swap(Soluong - 1, Soluong - 2);
 
                     isSelect = false;
+                    
                 }
                 picPaint.Refresh();          
             }
@@ -329,7 +336,7 @@ namespace Paint
                         Shape._startPoint.Y = Shape._startPoint.Y - height;
                     Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width - 2, height - 2);
 
-
+                    
                     grapList._list.RemoveAt(posOfCrop);
                     picPaint.Refresh();
 

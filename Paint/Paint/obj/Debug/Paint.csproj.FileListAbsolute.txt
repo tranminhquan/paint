@@ -210,3 +210,23 @@ E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForg
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\cvextern.dll
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\opencv_ffmpeg300_64.dll
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\ZedGraph.dll
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Contrib.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Cuda.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.ML.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.OCR.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Shape.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Stitching.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Superres.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.Util.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.xml
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.Paint.exe.config
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestHand.resources
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
+C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
