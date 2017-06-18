@@ -26,7 +26,7 @@ namespace Paint
             {
                 if ((_list[i].isBucket == true && i == _listBucketFill[_listBucketFill.Count - 1]) || _list[i].isBucket == false)
                     _list[i].Draw(g);
-                if (i == _posINCOMPLETE && _list[i]._startPoint != _list[i]._endPoint && _list[i].isNoneShape == true  && _list[i].isSelectRect == false)
+                if (i == _posINCOMPLETE && _list[i]._startPoint != _list[i]._endPoint && _list[i].isNoneShape == false  && _list[i].isSelectRect == false)
                     if (!(_list[i] is RectangleSelection))
                     {
                         _list[i].DrawHandlePoint(g);

@@ -16,7 +16,7 @@ namespace Paint
         protected GraphicsPath _grapPath;
         public Point _startPoint;
         public Point _endPoint;
-        public bool isNoneShape = true;
+        public bool isNoneShape = false;
         public bool isSelectRect = false ;
         public bool isBucket = false;
 
