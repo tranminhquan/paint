@@ -250,3 +250,41 @@ E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForg
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.GL.dll
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.GL.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Paint.exe.config
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.exe
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.pdb
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Paint.exe
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Paint.pdb
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\MetroFramework.Design.dll
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\MetroFramework.dll
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\ZedGraph.dll
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\AForge.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\AForge.Imaging.pdb
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.Contrib.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.Cuda.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.ML.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.OCR.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.Shape.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.Stitching.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.Superres.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.GL.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Emgu.Util.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.xml
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.csproj.Paint.exe.config
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.frmPaint.resources
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.Paint.resources
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.TestHand.resources
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
+C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache

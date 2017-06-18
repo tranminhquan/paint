@@ -84,7 +84,11 @@ namespace Paint
             Double Result1 = 0;
             Double Result2 = 0;
             //querying image
+            
             currentFrame = capture.QueryFrame().ToImage<Bgr, byte>();
+            int widthROI = currentFrame.Size.Width / 4;
+            int heightROI = currentFrame.Size.Height / 4;
+            currentFrame = currentFrame.Copy(new Rectangle(widthROI, heightROI, widthROI * 2, heightROI * 2));
             if (currentFrame == null) return;
 
 
@@ -156,19 +160,18 @@ namespace Paint
                     RotatedRect minAreaBox = CvInvoke.MinAreaRect(hull);
 
 
-                    //currentFrame.Draw(new CircleF(minAreaBox.Center, 5), new Bgr(Color.Black), 4);
+                    currentFrame.Draw(new CircleF(minAreaBox.Center, 5), new Bgr(Color.Black), 4);
 
                     CvInvoke.ConvexHull(biggestContour, convexHull, true);    //Chinh clockwise thanh true
 
 
-                    //PointF[] Vertices = box.GetVertices();
-                    // handRect = box.MinAreaRect();
+                    
                     currentFrame.Draw(minAreaBox, new Bgr(200, 0, 0), 1);
 
 
                     // ve khung ban tay khung bao quanh tay
                     currentFrame.DrawPolyline(hull.ToArray(), true, new Bgr(200, 125, 75), 4);
-                    //currentFrame.Draw(new CircleF(new PointF(minAreaBox.Center.X, minAreaBox.Center.Y), 3), new Bgr(200, 125, 75));
+                    currentFrame.Draw(new CircleF(new PointF(minAreaBox.Center.X, minAreaBox.Center.Y), 3), new Bgr(200, 125, 75));
 
                     // tim  convex defect
                     Mat defect = new Mat();
@@ -205,6 +208,9 @@ namespace Paint
                             CircleF endCircle = new CircleF(endPoint, 5f);
                             CircleF depthCircle = new CircleF(depthPoint, 5f);
 
+                            LineSegment2D Line = new LineSegment2D(startPoint, new Point((int)minAreaBox.Center.X, (int)minAreaBox.Center.Y));
+
+
                             //Cach 1
                             //if ((startCircle.Center.Y < minAreaBox.Center.Y || depthCircle.Center.Y < minAreaBox.Center.Y) &&
                             //          (startCircle.Center.Y < depthCircle.Center.Y) &&
@@ -217,13 +223,20 @@ namespace Paint
 
                             //Cach 2
                             if ((startPoint.Y < minAreaBox.Center.Y && endPoint.Y < minAreaBox.Center.Y) && (startPoint.Y < endPoint.Y) &&
-                   (Math.Sqrt(Math.Pow(startPoint.X - endPoint.X, 2) + Math.Pow(startPoint.Y - endPoint.Y, 2)) > minAreaBox.Size.Height / 6.5))
+                    (Math.Sqrt(Math.Pow(startPoint.X - endPoint.X, 2) + Math.Pow(startPoint.Y - endPoint.Y, 2)) > minAreaBox.Size.Height / 7))
                             {
-                                if (getAngle(startPoint, minAreaBox.Center, start[num]) > 10)
+                                if (getAngle(startPoint, minAreaBox.Center, start[num]) > 10 )
                                 {
                                     Finger_num++;
                                     start[num] = startPoint;
                                     num++;
+                                    currentFrame.Draw(Line, new Bgr(Color.Violet), 2);
+                                    currentFrame.Draw(startCircle, new Bgr(Color.OrangeRed), 5);
+                                    //currentFrame.Draw(endCircle, new Bgr(Color.Black), 5);
+                                    //currentFrame.Draw(Finger_num.ToString(), new Point(startPoint.X - 10, startPoint.Y), FontFace.HersheyPlain, 2, new Bgr(Color.Orange), 3);
+                                    //currentFrame.Draw(Finger_num.ToString(), new Point(endPoint.X - 10, endPoint.Y), FontFace.HersheyPlain, 2, new Bgr(Color.Orange), 3);
+
+
                                 }
                             }
                         }
@@ -264,7 +277,7 @@ namespace Paint
 
                 if (Finger_num == 0 || Finger_num == 1)
                 {
-                    Cursor.Position = new Point(current_X, current_Y);
+                    //Cursor.Position = new Point(current_X, current_Y);
                 }
 
                 // Leave the cursor where it was and Do mouse click, if finger count >= 4
@@ -273,13 +286,13 @@ namespace Paint
                 {
                     if (!isDrag)
                     {
-                        sendMouseDown();
-                        isDrag = true;
+                        //sendMouseDown();
+                       // isDrag = true;
                     }
                    else
                     {
-                        sendMouseUp();
-                        isDrag = false;
+                        //sendMouseUp();
+                       // isDrag = false;
                     }
                     //Cursor.Position = new Point(current_X * 20, current_Y * 20);
                     //Cursor.Position = new Point(300, 300);             
