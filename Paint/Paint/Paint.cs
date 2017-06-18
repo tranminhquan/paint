@@ -21,7 +21,9 @@ namespace Paint
         Graphics pen; // pen width
         bool isCrop = false, isSelect = false;
         bool isCropRectDraw = false;
-        
+        Rectangle ROI; // HCN sau khi dùng select
+        RectangleSelection _CopyCut = new RectangleSelection(); //
+
         int posOfCrop;
 
         //Khai báo con trỏ chuột
@@ -59,10 +61,10 @@ namespace Paint
                 flColors.Controls.Add(_Tile);
             }
             mtitleCurrentColor.BackColor = Color.Blue;
-            doubleBuffer = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height - 100, picPaint.CreateGraphics());
+            doubleBuffer = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, picPaint.CreateGraphics());
             Graphics g = Graphics.FromImage(doubleBuffer);
             g.Clear(Color.White);
-            fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height - 100, picPaint.CreateGraphics());
+            fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, picPaint.CreateGraphics());
             g = Graphics.FromImage(fillImage);
             g.Clear(Color.White);
             grapList = new GraphicsList();
@@ -90,7 +92,7 @@ namespace Paint
 
         private void picPaint_Paint(object sender, PaintEventArgs e)
         {
-            
+
             doubleBuffer = fillImage.Clone(new Rectangle(0, 0, fillImage.Width, fillImage.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             Graphics g = Graphics.FromImage(doubleBuffer);
             if (grapList._list.Count > 0)
@@ -106,12 +108,12 @@ namespace Paint
             //************************
             //CẤM XÓA DÒNG DƯỚI ĐÂY
             //************************
-            if (objectChoose=="none")
+            if (objectChoose == "none")
             {
                 Shape.Draw(g);
             }
             e.Graphics.DrawImageUnscaled(doubleBuffer, 0, 0);
-           
+
         }
 
       
@@ -281,11 +283,11 @@ namespace Paint
                     }
 
 
-                    Rectangle ROI = new Rectangle(Shape._startPoint.X , Shape._startPoint.Y , width - 2, height - 2);
-
+                    ROI = new Rectangle(Shape._startPoint.X , Shape._startPoint.Y , width - 2, height - 2);
 
 
                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
+                    _CopyCut._img = (Shape as RectangleSelection)._img;
 
                     RectangleDrawing rec = new RectangleDrawing(Color.White, 1);
                     rec._startPoint = Shape._startPoint;
@@ -313,7 +315,6 @@ namespace Paint
         }
         public void btnObject_Click(object sender, EventArgs e)
         {
-
             Button btnObject = (Button)sender;
             objectChoose = btnObject.Name.Remove(0, 3).ToLower();
             grapList._posINCOMPLETE = -1;
@@ -370,6 +371,61 @@ namespace Paint
         private void btnUndo_Click(object sender, EventArgs e)
         {
             this.Undo();
+        }
+
+        // Copy vùng được selected vào clipboard.
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            _CopyCut.CopyToClipboard(ROI, _CopyCut._img);
+            System.Media.SystemSounds.Beep.Play();
+        }
+
+        // Copy vùng được selected vào clipboard và làm trông vùng đó.
+        private void btnCut_Click(object sender, EventArgs e)
+        {
+            // Copy vùng được selected vào clipboard.
+            _CopyCut.CopyToClipboard(ROI, _CopyCut._img);
+
+            // Làm trống vùng đã cut.
+            using (Graphics gr = Graphics.FromImage(_CopyCut._img))
+            {
+                using (SolidBrush br = new SolidBrush(picPaint.BackColor))
+                {
+                    gr.FillRectangle(br, ROI);
+                }
+            }
+
+            // Hiển thị vùng cut
+            //doubleBuffer = new Bitmap(_CopyCut._img);
+            //picPaint.Image = doubleBuffer;
+            picPaint.Image = new Bitmap(_CopyCut._img);
+
+            System.Media.SystemSounds.Beep.Play();
+        }
+
+        // Paste the image on the clipboard, centering it on the selected area.
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            //// Không làm gì hết nếu clipboard rỗng
+            //if (!Clipboard.ContainsImage()) return;
+
+            //// Lấy ảnh từ Clipboard
+            //Image clipboard_image = Clipboard.GetImage();
+
+            //// Xác định vị trí đặt ảnh
+            //int cx = ROI.X + (ROI.Width - clipboard_image.Width) / 2;
+            //int cy = ROI.Y + (ROI.Height - clipboard_image.Height) / 2;
+            //Rectangle dest_rect = new Rectangle(cx, cy, clipboard_image.Width, clipboard_image.Height);
+
+            //// Copy hình ảnh mới vào vị trí
+            //using (Graphics gr = Graphics.FromImage(clipboard_image))
+            //{
+            //    gr.DrawImage(clipboard_image, dest_rect);
+            //}
+
+            //// Hiển thị hình ảnh
+            //picPaint.Image = clipboard_image;
+            //picPaint.Refresh();
         }
 
         private Bitmap CropImage(Bitmap src, Rectangle Roi)
@@ -488,7 +544,6 @@ namespace Paint
         #region BasicFunctions
         private void New()
         {
-            //Shape = null;
             isCropRectDraw = false;
             isCrop = false;
             grapList._list.Clear();
@@ -499,8 +554,8 @@ namespace Paint
                 {
                     this.SaveAs();
                     isSaved = true;
-                    //panelPaint.Size = new Size(1145, 737);
-                    fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+
+                    fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                     Graphics g = Graphics.FromImage(fillImage);
                     g.Clear(Color.White);
                     picPaint.Size = fillImage.Size;
@@ -509,8 +564,7 @@ namespace Paint
                 }
                 else
                 {
-                    //panelPaint.Size = new Size(1145, 737);
-                    fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                    fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                     Graphics g = Graphics.FromImage(fillImage);
                     g.Clear(Color.White);
                     picPaint.Size = fillImage.Size;
@@ -520,8 +574,7 @@ namespace Paint
             }
             else
             {
-                //panelPaint.Size = new Size(1145, 737);
-                fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 Graphics g = Graphics.FromImage(fillImage);
                 g.Clear(Color.White);
                 picPaint.Size = fillImage.Size;

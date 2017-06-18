@@ -11,7 +11,14 @@ namespace Paint
 {
     class RectangleSelection : RectangleDrawing
     {
+        #region Declare
         public Image _img;
+        #endregion
+
+        #region Method
+        public RectangleSelection() : base()
+        {
+        }
         public RectangleSelection(Color color, int penwidth) : base(color, penwidth)
         {
         }
@@ -51,6 +58,27 @@ namespace Paint
         {
             base.ChangeStartAndEndPoint(handleIndex);
         }
+
+        // Copy the selected area to the clipboard.
+        public void CopyToClipboard(Rectangle src_rect, Image originalImage)
+        {
+            // Make a bitmap for the selected area's image.
+            Bitmap bm = new Bitmap(src_rect.Width, src_rect.Height);
+
+            // Copy the selected area into the bitmap.
+            using (Graphics gr = Graphics.FromImage(bm))
+            {
+                Rectangle dest_rect = new Rectangle(0, 0, src_rect.Width, src_rect.Height);
+                gr.DrawImage(originalImage, dest_rect, src_rect, GraphicsUnit.Pixel);
+            }
+
+            // Copy the selection image to the clipboard.
+            Clipboard.SetImage(bm);
+        }
+       
+        #endregion
+
+        #region Event
         public override void Mouse_Up(MouseEventArgs e)
         {
             base.Mouse_Up(e);
@@ -64,6 +92,7 @@ namespace Paint
         {
             base.Mouse_Down(e);
         }
+        #endregion
     }
 
 }

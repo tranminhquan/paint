@@ -20,11 +20,6 @@ namespace Paint
         public bool isSelectRect = false ;
         public bool isBucket = false;
 
-
-
-
-
-
         #endregion
 
         #region Method
