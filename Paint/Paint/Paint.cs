@@ -53,7 +53,7 @@ namespace Paint
                     
                     mtitleCurrentColor.UseCustomBackColor = true;
                     mtitleCurrentColor.BackColor = _Tile.BackColor;
-
+                    
                     mtitleCurrentColor.Refresh();
                 };
                 flColors.Controls.Add(_Tile);
@@ -636,7 +636,15 @@ namespace Paint
                     tgSpeechRecog.Checked = true;
                 return true;
             }
-
+            if (keyData == (Keys.F2))
+            {
+                if (tgHand.Checked)
+                    tgHand.Checked = false;
+                else
+                    tgHand.Checked = true;
+                return true;
+            }
+        
             return base.ProcessCmdKey(ref msg, keyData);
         }
         #endregion
@@ -803,6 +811,7 @@ namespace Paint
             {
                 ucHandGesture.Enabled = false;
                 ucHandGesture.Visible = false;
+                ucHandGesture.ReleaseData();
             }
         }
 

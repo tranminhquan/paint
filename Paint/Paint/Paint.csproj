@@ -276,6 +276,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon\1490873152_add.ico" />
+    <None Include="Resources\1497810725_ic_select_all_48px.png" />
     <None Include="Resources\pointerIcon.png" />
     <None Include="Resources\settingIcon.png" />
     <None Include="Resources\Grammar.txt" />

@@ -118,88 +118,91 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1495707665_check-circle-outline-blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495707665_check-circle-outline-blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Grammar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Grammar.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="1495707637_button_shape_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495707637_button_shape_line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1495708747_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495708747_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settingIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settingIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\EditColor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pointerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pointerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cropIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\cropIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="voiceIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\voiceIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495660053_create" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495660053_create.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1496504981_paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1496504981_paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495659848_editor-undo-arrow-outline-stroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495659848_editor-undo-arrow-outline-stroke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495660681_Paint" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495660681_Paint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495707482_button_shape_rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495707482_button_shape_rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="copyIcon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\copyIcon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cutIcon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\cutIcon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495708677_new10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495708677_new10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cursorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\cursorIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495707501_button_shape_polygon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495707501_button_shape_polygon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1495708725_BT_folder_file_open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\1495708725_BT_folder_file_open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495707618_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495707618_star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495724957_icon_27_one_finger_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495724957_icon_27_one_finger_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495708747_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495708747_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495707493_button_shape_triangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495707493_button_shape_triangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1495660439_eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\1495660439_eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1495289914_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\1495289914_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1495708677_new10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495708677_new10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495660053_create" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495660053_create.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495660439_eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495660439_eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="aboutIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\aboutIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495659848_editor-undo-arrow-outline-stroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495659848_editor-undo-arrow-outline-stroke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495707482_button_shape_rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495707482_button_shape_rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="voiceIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\voiceIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495707665_check-circle-outline-blank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495707665_check-circle-outline-blank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496504981_paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1496504981_paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495724957_icon_27_one_finger_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495724957_icon_27_one_finger_click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copyIcon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\copyIcon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495707501_button_shape_polygon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495707501_button_shape_polygon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Editing-Polygone-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\Editing-Polygone-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1495707637_button_shape_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495707637_button_shape_line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cutIcon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\cutIcon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cropIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\cropIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grammar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grammar.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="cursorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\cursorIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\EditColor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495707493_button_shape_triangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495707493_button_shape_triangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pointerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pointerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495660681_Paint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495660681_Paint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1495707618_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\1495707618_star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="rhombus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\rhombus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1497810725_ic_select_all_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1497810725_ic_select_all_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

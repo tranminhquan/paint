@@ -28,6 +28,7 @@ namespace Paint
         Point[] contourPoints;  //Mang diem contours
         int minCr, maxCr, minCb, maxCb;
         bool isDrag;
+        bool useVirtualMouse;
 
         public ucHandMovement()
         {
@@ -36,7 +37,8 @@ namespace Paint
                 this.InitializeComponent();
 
                 isDrag = false;
-                          
+                useVirtualMouse = false;          
+
                 minCr = 131;
                 maxCr = 185;
                 minCb = 80;
@@ -53,7 +55,10 @@ namespace Paint
                 lblMaxCb.Text = tbMaxCb.Value.ToString();
             }
         }
-
+        public void ReleaseData()
+        {
+            tgVirtualMouse.Checked = false;
+        }
         private void Ycc_Scroll(object sender, ScrollEventArgs e)
         {
             MetroFramework.Controls.MetroTrackBar temp = sender as MetroFramework.Controls.MetroTrackBar;
@@ -88,7 +93,7 @@ namespace Paint
             currentFrame = capture.QueryFrame().ToImage<Bgr, byte>();
             int widthROI = currentFrame.Size.Width / 4;
             int heightROI = currentFrame.Size.Height / 4;
-            currentFrame = currentFrame.Copy(new Rectangle(widthROI, heightROI, widthROI * 2, heightROI * 2));
+           // currentFrame = currentFrame.Copy(new Rectangle(widthROI, heightROI, widthROI * 2, heightROI * 2));
             if (currentFrame == null) return;
 
 
@@ -267,35 +272,38 @@ namespace Paint
                 double m_10 = CvInvoke.cvGetSpatialMoment(ref moment, 1, 0);
                 double m_01 = CvInvoke.cvGetSpatialMoment(ref moment, 0, 1);
 
-                int current_X = Convert.ToInt32(m_10 / m_00) / 1;      // X location of centre of contour              
-                int current_Y = Convert.ToInt32(m_01 / m_00) / 1;      // Y location of center of contour
-           
+                int current_X = Convert.ToInt32(m_10 / m_00) / 10;      // X location of centre of contour              
+                int current_Y = Convert.ToInt32(m_01 / m_00) / 10;      // Y location of center of contour
+
                 #endregion
 
-                // move cursor to center of contour only if Finger count is 1 or 0
-                // i.e. palm is closed
-
-                if (Finger_num == 0 || Finger_num == 1)
+                if (useVirtualMouse)
                 {
-                    //Cursor.Position = new Point(current_X, current_Y);
-                }
+                    // move cursor to center of contour only if Finger count is 1 or 0
+                    // i.e. palm is closed
 
-                // Leave the cursor where it was and Do mouse click, if finger count >= 4
+                    if (Finger_num == 0 || Finger_num == 1)
+                    {
+                        Cursor.Position = new Point(current_X * 20, current_Y * 20);
+                    }
 
-                if (Finger_num >= 3)
-                {
-                    if (!isDrag)
+                    // Leave the cursor where it was and Do mouse click, if finger count >= 4
+
+                    if (Finger_num >= 3)
                     {
-                        //sendMouseDown();
-                       // isDrag = true;
+                        if (!isDrag)
+                        {
+                            DoMouseDown();
+                            isDrag = true;
+                        }
+                        else
+                        {
+                            DoMouseUp();
+                            isDrag = false;
+                        }
+                        //Cursor.Position = new Point(current_X * 20, current_Y * 20);
+                        //Cursor.Position = new Point(300, 300);             
                     }
-                   else
-                    {
-                        //sendMouseUp();
-                       // isDrag = false;
-                    }
-                    //Cursor.Position = new Point(current_X * 20, current_Y * 20);
-                    //Cursor.Position = new Point(300, 300);             
                 }
             }
             catch
@@ -305,8 +313,6 @@ namespace Paint
                 return;
             }
             #endregion
-
-
 
 
             //Display image from camera
@@ -357,14 +363,30 @@ namespace Paint
         //    mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, p.X, p.Y, 0, 0);
         //}
 
-        void sendMouseDown()
+        void DoMouseDown()
         {
-            mouse_event(MOUSEEVENTF_LEFTDOWN, 50, 50, 0, 0);
+            uint X = Convert.ToUInt32(Cursor.Position.X);
+            uint Y = Convert.ToUInt32(Cursor.Position.Y);
+            mouse_event(MOUSEEVENTF_LEFTDOWN, X, Y, 0, 0);
         }
 
-        void sendMouseUp()
+        void DoMouseUp()
         {
-            mouse_event(MOUSEEVENTF_LEFTUP, 50, 50, 0, 0);
+            uint X = Convert.ToUInt32(Cursor.Position.X);
+            uint Y = Convert.ToUInt32(Cursor.Position.Y);
+            mouse_event(MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+        }
+
+        private void tgVirtualMouse_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tgVirtualMouse.Checked)
+            {
+                useVirtualMouse = true;
+            }
+            else
+            {
+                useVirtualMouse = false;
+            }
         }
         #endregion
 
@@ -421,6 +443,18 @@ namespace Paint
             }
             else
                 pnlSettingInfo.Visible = false;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.M))
+            {
+                if (tgVirtualMouse.Checked)
+                    tgVirtualMouse.Checked = false;
+                else
+                    tgVirtualMouse.Checked = true;
+            }          
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

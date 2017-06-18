@@ -32,6 +32,7 @@
             this.picInputCam = new System.Windows.Forms.PictureBox();
             this.btnStart = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblNote = new MetroFramework.Controls.MetroLabel();
             this.lblNumFinger = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -49,7 +50,8 @@
             this.tbMinCb = new MetroFramework.Controls.MetroTrackBar();
             this.tbMaxCr = new MetroFramework.Controls.MetroTrackBar();
             this.tbMinCr = new MetroFramework.Controls.MetroTrackBar();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tgVirtualMouse = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picSkinCam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInputCam)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -86,6 +88,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroLabel6);
+            this.metroPanel1.Controls.Add(this.tgVirtualMouse);
             this.metroPanel1.Controls.Add(this.label1);
             this.metroPanel1.Controls.Add(this.lblNote);
             this.metroPanel1.Controls.Add(this.lblNumFinger);
@@ -100,11 +104,22 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(403, 463);
+            this.metroPanel1.Size = new System.Drawing.Size(433, 463);
             this.metroPanel1.TabIndex = 2;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 424);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(266, 51);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "We recommended you keep clear space \r\nbehind to have great effect\r\n\r\n";
             // 
             // lblNote
             // 
@@ -169,7 +184,7 @@
             this.pnlSettingInfo.HorizontalScrollbarSize = 10;
             this.pnlSettingInfo.Location = new System.Drawing.Point(0, 463);
             this.pnlSettingInfo.Name = "pnlSettingInfo";
-            this.pnlSettingInfo.Size = new System.Drawing.Size(403, 91);
+            this.pnlSettingInfo.Size = new System.Drawing.Size(433, 92);
             this.pnlSettingInfo.TabIndex = 3;
             this.pnlSettingInfo.VerticalScrollbarBarColor = true;
             this.pnlSettingInfo.VerticalScrollbarHighlightOnWheel = false;
@@ -292,16 +307,27 @@
             this.tbMinCr.Text = "metroTrackBar1";
             this.tbMinCr.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Ycc_Scroll);
             // 
-            // label1
+            // tgVirtualMouse
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 424);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 51);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "We recommended you keep clear space behind \r\nto have great effect\r\n\r\n";
+            this.tgVirtualMouse.AutoSize = true;
+            this.tgVirtualMouse.DisplayStatus = false;
+            this.tgVirtualMouse.Location = new System.Drawing.Point(330, 398);
+            this.tgVirtualMouse.Name = "tgVirtualMouse";
+            this.tgVirtualMouse.Size = new System.Drawing.Size(50, 21);
+            this.tgVirtualMouse.TabIndex = 6;
+            this.tgVirtualMouse.Text = "Off";
+            this.tgVirtualMouse.UseSelectable = true;
+            this.tgVirtualMouse.CheckedChanged += new System.EventHandler(this.tgVirtualMouse_CheckedChanged);
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(277, 423);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(126, 60);
+            this.metroLabel6.TabIndex = 7;
+            this.metroLabel6.Text = "Use CTR+M to use\r\nvirtual mouse\r\n";
+            this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ucHandMovement
             // 
@@ -310,7 +336,7 @@
             this.Controls.Add(this.pnlSettingInfo);
             this.Controls.Add(this.metroPanel1);
             this.Name = "ucHandMovement";
-            this.Size = new System.Drawing.Size(403, 554);
+            this.Size = new System.Drawing.Size(433, 558);
             ((System.ComponentModel.ISupportInitialize)(this.picSkinCam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInputCam)).EndInit();
             this.metroPanel1.ResumeLayout(false);
@@ -344,5 +370,7 @@
         private MetroFramework.Controls.MetroLabel lblNumFinger;
         private MetroFramework.Controls.MetroLabel lblNote;
         private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroToggle tgVirtualMouse;
     }
 }

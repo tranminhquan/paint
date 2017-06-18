@@ -734,12 +734,13 @@
             // 
             // metroPanel14
             // 
+            this.metroPanel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel14.BackgroundImage = global::Paint.Properties.Resources._1495724957_icon_27_one_finger_click;
             this.metroPanel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.metroPanel14.HorizontalScrollbarBarColor = true;
             this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel14.HorizontalScrollbarSize = 10;
-            this.metroPanel14.Location = new System.Drawing.Point(716, 14);
+            this.metroPanel14.Location = new System.Drawing.Point(824, 16);
             this.metroPanel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroPanel14.Name = "metroPanel14";
             this.metroPanel14.Size = new System.Drawing.Size(53, 39);
@@ -784,12 +785,13 @@
             // 
             // metroPanel13
             // 
+            this.metroPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel13.BackgroundImage = global::Paint.Properties.Resources.voiceIcon;
             this.metroPanel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.metroPanel13.HorizontalScrollbarBarColor = true;
             this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel13.HorizontalScrollbarSize = 10;
-            this.metroPanel13.Location = new System.Drawing.Point(581, 14);
+            this.metroPanel13.Location = new System.Drawing.Point(744, 16);
             this.metroPanel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroPanel13.Name = "metroPanel13";
             this.metroPanel13.Size = new System.Drawing.Size(53, 41);
@@ -801,9 +803,10 @@
             // 
             // tgHand
             // 
+            this.tgHand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tgHand.AutoSize = true;
             this.tgHand.DisplayStatus = false;
-            this.tgHand.Location = new System.Drawing.Point(715, 58);
+            this.tgHand.Location = new System.Drawing.Point(823, 60);
             this.tgHand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tgHand.Name = "tgHand";
             this.tgHand.Size = new System.Drawing.Size(50, 21);
@@ -816,9 +819,10 @@
             // 
             // tgSpeechRecog
             // 
+            this.tgSpeechRecog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tgSpeechRecog.AutoSize = true;
             this.tgSpeechRecog.DisplayStatus = false;
-            this.tgSpeechRecog.Location = new System.Drawing.Point(581, 58);
+            this.tgSpeechRecog.Location = new System.Drawing.Point(744, 60);
             this.tgSpeechRecog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tgSpeechRecog.Name = "tgSpeechRecog";
             this.tgSpeechRecog.Size = new System.Drawing.Size(50, 21);
@@ -833,8 +837,8 @@
             // metroPanel2
             // 
             this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(213)))), ((int)(((byte)(247)))));
-            this.metroPanel2.Controls.Add(this.metroPanel14);
             this.metroPanel2.Controls.Add(this.btnSelect);
+            this.metroPanel2.Controls.Add(this.metroPanel14);
             this.metroPanel2.Controls.Add(this.metroPanel13);
             this.metroPanel2.Controls.Add(this.tgHand);
             this.metroPanel2.Controls.Add(this.btnPaste);
@@ -861,13 +865,17 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(500, 31);
+            this.btnSelect.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelect.FlatAppearance.BorderSize = 0;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Image = global::Paint.Properties.Resources._1497810725_ic_select_all_48px;
+            this.btnSelect.Location = new System.Drawing.Point(483, 5);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 3;
-            this.btnSelect.Text = "Select";
-            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Size = new System.Drawing.Size(79, 78);
+            this.btnSelect.TabIndex = 12;
+            this.metroToolTip1.SetToolTip(this.btnSelect, "CTRL + R");
+            this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnObject_Click);
             // 
             // btnPaste
@@ -1040,7 +1048,7 @@
             // 
             this.picPaint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picPaint.Location = new System.Drawing.Point(0, 0);
-            this.picPaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPaint.Margin = new System.Windows.Forms.Padding(4);
             this.picPaint.Name = "picPaint";
             this.picPaint.Size = new System.Drawing.Size(972, 614);
             this.picPaint.TabIndex = 2;
@@ -1204,7 +1212,7 @@
         private System.Windows.Forms.Label lblQuiet;
         private System.Windows.Forms.Label lblConfidence;
         private System.Windows.Forms.Button btnNone;
-        private System.Windows.Forms.Button btnSelect;
         private MetroFramework.Controls.MetroPanel metroPanel7;
+        private System.Windows.Forms.Button btnSelect;
     }
 }
