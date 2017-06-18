@@ -41,7 +41,7 @@ namespace Paint
             //base.Draw(g);
             Pen p = new Pen(_color, _penWidth - 1);
 
-            PointF A = GetHandlePoint(2);
+            Point A = GetHandlePoint(2);
             Point B = new Point(_startPoint.X, _startPoint.Y + (_endPoint.Y - _startPoint.Y) * 2 / 6);
             Point C = new Point(_startPoint.X + (_endPoint.X - _startPoint.X) / 6, _endPoint.Y);
             Point D = new Point(_startPoint.X + (_endPoint.X - _startPoint.X) * 5 / 6, _endPoint.Y);

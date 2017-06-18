@@ -64,7 +64,6 @@ namespace EmguCV
 
     public class HsvSkinDetector : IColorSkinDetector
     {
-
         public override Image<Gray, byte> DetectSkin(Image<Bgr, byte> Img, IColor min, IColor max)
         {
             Image<Hsv, Byte> currentHsvFrame = Img.Convert<Hsv, Byte>();

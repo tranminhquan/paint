@@ -59,10 +59,10 @@ namespace Paint
                 flColors.Controls.Add(_Tile);
             }
             mtitleCurrentColor.BackColor = Color.Blue;
-            doubleBuffer = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, picPaint.CreateGraphics());
+            doubleBuffer = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height - 100, picPaint.CreateGraphics());
             Graphics g = Graphics.FromImage(doubleBuffer);
             g.Clear(Color.White);
-            fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height, picPaint.CreateGraphics());
+            fillImage = new Bitmap(Screen.PrimaryScreen.Bounds.Width - 300, Screen.PrimaryScreen.Bounds.Height - 100, picPaint.CreateGraphics());
             g = Graphics.FromImage(fillImage);
             g.Clear(Color.White);
             grapList = new GraphicsList();

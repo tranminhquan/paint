@@ -43,9 +43,9 @@ namespace Paint
             Pen p = new Pen(_color, _penWidth - 1);
             p.DashPattern = dashValues;
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            //g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
+            
             g.DrawEllipse(new Pen(_color, _penWidth), GetRectangle(_startPoint, _endPoint));
-
+            //g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
             //DrawHandlePoint(g);
         }
 
