@@ -401,7 +401,7 @@
             this.btnRhombus.BackColor = System.Drawing.Color.Transparent;
             this.btnRhombus.FlatAppearance.BorderSize = 0;
             this.btnRhombus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRhombus.Image = ((System.Drawing.Image)(resources.GetObject("btnRhombus.Image")));
+            this.btnRhombus.Image = global::Paint.Properties.Resources.rhombus;
             this.btnRhombus.Location = new System.Drawing.Point(77, 80);
             this.btnRhombus.Margin = new System.Windows.Forms.Padding(2);
             this.btnRhombus.Name = "btnRhombus";
@@ -472,7 +472,7 @@
             this.btnHexagon.BackColor = System.Drawing.Color.Transparent;
             this.btnHexagon.FlatAppearance.BorderSize = 0;
             this.btnHexagon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHexagon.Image = ((System.Drawing.Image)(resources.GetObject("btnHexagon.Image")));
+            this.btnHexagon.Image = global::Paint.Properties.Resources.Editing_Polygone_icon;
             this.btnHexagon.Location = new System.Drawing.Point(225, 80);
             this.btnHexagon.Margin = new System.Windows.Forms.Padding(2);
             this.btnHexagon.Name = "btnHexagon";

@@ -302,7 +302,9 @@
     <None Include="Icon\copyIcon %282%29.png" />
     <None Include="Icon\cutIcon %282%29.png" />
     <None Include="Icon\cursorIcon.png" />
+    <None Include="Icon\Editing-Polygone-icon.png" />
     <Content Include="Icon\newIcon.png" />
+    <None Include="Icon\rhombus.png" />
     <Content Include="Icon\saveIcon.png" />
     <None Include="Icon\voiceIcon.png" />
     <Content Include="opencv_ffmpeg300_64.dll">
