@@ -458,16 +458,16 @@ namespace Paint
                 {
                     btnSaveAs_Click(sender, e);
                     isSaved = true;
-                    this.Dispose();
+                    Application.Exit();
                 }
                 else
                 {
-                    this.Dispose();
+                    Application.Exit();
                 }
             }
             else
             {
-                this.Dispose();
+                Application.Exit();
             };
         }
 
