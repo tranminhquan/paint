@@ -27,11 +27,15 @@ namespace Paint
         Matrix<int> mDefect;
         Point[] contourPoints;  //Mang diem contours
         int minCr, maxCr, minCb, maxCb;
+        bool isDrag;
+
         public ucHandMovement()
         {
             if (!this.DesignMode)
             {
                 this.InitializeComponent();
+
+                isDrag = false;
                           
                 minCr = 131;
                 maxCr = 185;
@@ -250,14 +254,36 @@ namespace Paint
                 double m_10 = CvInvoke.cvGetSpatialMoment(ref moment, 1, 0);
                 double m_01 = CvInvoke.cvGetSpatialMoment(ref moment, 0, 1);
 
-                int current_X = Convert.ToInt32(m_10 / m_00) / 10;      // X location of centre of contour              
-                int current_Y = Convert.ToInt32(m_01 / m_00) / 10;      // Y location of center of contour
-
-
-                Cursor.Position = new Point(current_X * 20, current_Y * 20);
-                //metroLabel6.Text = current_X.ToString();
-                //metroLabel7.Text = current_Y.ToString();
+                int current_X = Convert.ToInt32(m_10 / m_00) / 1;      // X location of centre of contour              
+                int current_Y = Convert.ToInt32(m_01 / m_00) / 1;      // Y location of center of contour
+           
                 #endregion
+
+                // move cursor to center of contour only if Finger count is 1 or 0
+                // i.e. palm is closed
+
+                if (Finger_num == 0 || Finger_num == 1)
+                {
+                    Cursor.Position = new Point(current_X, current_Y);
+                }
+
+                // Leave the cursor where it was and Do mouse click, if finger count >= 4
+
+                if (Finger_num >= 3)
+                {
+                    if (!isDrag)
+                    {
+                        sendMouseDown();
+                        isDrag = true;
+                    }
+                   else
+                    {
+                        sendMouseUp();
+                        isDrag = false;
+                    }
+                    //Cursor.Position = new Point(current_X * 20, current_Y * 20);
+                    //Cursor.Position = new Point(300, 300);             
+                }
             }
             catch
             {
@@ -266,6 +292,7 @@ namespace Paint
                 return;
             }
             #endregion
+
 
 
 
@@ -288,9 +315,43 @@ namespace Paint
         public void DoMouseClick()
         {
             //Call the imported function with the cursor's current position
+            
             uint X = Convert.ToUInt32(Cursor.Position.X);
             uint Y = Convert.ToUInt32(Cursor.Position.Y);
             mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+        }
+
+        //void sendMouseRightclick(Point p)
+        //{
+        //    mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, X, Y, 0, 0);
+        //}
+
+        //void sendMouseDoubleClick(Point p)
+        //{
+        //    mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, p.X, p.Y, 0, 0);
+
+        //    Thread.Sleep(150);
+
+        //    mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, p.X, p.Y, 0, 0);
+        //}
+
+        //void sendMouseRightDoubleClick(Point p)
+        //{
+        //    mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, p.X, p.Y, 0, 0);
+
+        //    Thread.Sleep(150);
+
+        //    mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, p.X, p.Y, 0, 0);
+        //}
+
+        void sendMouseDown()
+        {
+            mouse_event(MOUSEEVENTF_LEFTDOWN, 50, 50, 0, 0);
+        }
+
+        void sendMouseUp()
+        {
+            mouse_event(MOUSEEVENTF_LEFTUP, 50, 50, 0, 0);
         }
         #endregion
 

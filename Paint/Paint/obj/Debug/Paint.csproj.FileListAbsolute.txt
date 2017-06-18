@@ -205,11 +205,6 @@ E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.exe
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.pdb
-E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.xml
-E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.Imaging.pdb
-E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
-E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
-E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\cvextern.dll
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\opencv_ffmpeg300_64.dll
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
