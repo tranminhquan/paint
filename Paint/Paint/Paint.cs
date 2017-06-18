@@ -138,7 +138,7 @@ namespace Paint
                     //grapList._list.Insert(grapList._list.Count, clear);
                     //picPaint.Refresh();
 
-                    Shape = new BucketDrawing(doubleBuffer, fillImage, e.X, e.Y,mtitleCurrentColor.BackColor);
+                    Shape = new BucketDrawing(doubleBuffer, e.X, e.Y,mtitleCurrentColor.BackColor);
 
                     if (!grapList.isExist(Shape))
                     {

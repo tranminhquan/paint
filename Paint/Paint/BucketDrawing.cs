@@ -24,10 +24,9 @@ namespace Paint
 
         #region Method
 
-        public BucketDrawing(Bitmap _pic, Bitmap _fillpic, int x, int y,Color _color)
+        public BucketDrawing(Bitmap _pic, int x, int y,Color _color)
         {
             this._pic = _pic;
-            this._fillpic = _fillpic;
             this.x = x;
             this.y = y;
             this._color = _color;
