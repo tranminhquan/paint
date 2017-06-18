@@ -701,6 +701,7 @@ namespace Paint
                 case "paint":
                     objectChoose = "bucket";
                     picPaint.Cursor = bucket;
+                    grapList._posINCOMPLETE = -1;
                     break;
                 //Shape:
                 case "rectangle":
@@ -757,10 +758,12 @@ namespace Paint
                     break;
                 default:
                     {
-                        string size = s.Remove(s.Length - 2, 2);
-                        if (size == "size")
+                        string size = s.Remove(s.Length - 2, 2);                 
+                        if (size == "size" || size == "size ")
                         {
-                            int index = int.Parse(s.Remove(0, 5));
+                            //if (s.Length >= 7)
+                             //   index = int.Parse(s.Remove())
+                            int index = int.Parse(s.Remove(0, 4));
                             tbPenWidth.Value = index;
                             penWidth = tbPenWidth.Value;
                             DrawpenWidth();

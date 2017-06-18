@@ -120,6 +120,9 @@
     <Reference Include="Emgu.CV.UI">
       <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Emgu.CV.UI.GL">
+      <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.UI.GL.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV.VideoStab">
       <HintPath>C:\Emgu_3.0\emgucv-windows-universal 3.0.0.2157\bin\Emgu.CV.VideoStab.dll</HintPath>
     </Reference>
@@ -272,9 +275,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cvextern.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Icon\1490873152_add.ico" />
     <None Include="Resources\pointerIcon.png" />
     <None Include="Resources\settingIcon.png" />
@@ -307,9 +307,6 @@
     <None Include="Icon\rhombus.png" />
     <Content Include="Icon\saveIcon.png" />
     <None Include="Icon\voiceIcon.png" />
-    <Content Include="opencv_ffmpeg300_64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

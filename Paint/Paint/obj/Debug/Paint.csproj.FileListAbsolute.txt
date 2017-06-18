@@ -154,8 +154,6 @@ E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.Paint.exe.config
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.TestHand.resources
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
-E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\cvextern.dll
-E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\opencv_ffmpeg300_64.dll
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Paint.exe.config
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Paint.exe
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Paint.pdb
@@ -245,3 +243,10 @@ C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.Superres.xml
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.xml
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.xml
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.Util.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.Imaging.pdb
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.GL.dll
+E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.GL.xml
