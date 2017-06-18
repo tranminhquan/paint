@@ -471,13 +471,12 @@ namespace Paint
 
         private void pn_penWidth_Paint(object sender, PaintEventArgs e)
         {
-            DrawpenWidth();
-            
+            DrawpenWidth();           
         }
 
         private void llbAbout_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("A Gift to Vương - sama <3");
         }
         public void DrawpenWidth()
         {
@@ -664,7 +663,7 @@ namespace Paint
             SetText(s);
 
             //Xu ly cac lenh tai day
-            switch(s)
+            switch (s)
             {
                 //Basic functions:
                 case "new":
@@ -676,25 +675,32 @@ namespace Paint
                 case "save":
                     this.SaveAs();
                     break;
-
                 //Tool:
                 case "pencil":
                     objectChoose = "pencil";
+                    picPaint.Cursor = pencil;
                     break;
                 case "eraser":
                     objectChoose = "eraser";
+                    picPaint.Cursor = eraser;
                     break;
                 case "undo":
                     this.Undo();
-                    break;            
+                    break;
                 case "theme":
                     tabOptions.SelectedIndex = 0;
                     break;
                 case "tool":
                     tabOptions.SelectedIndex = 1;
-                    break;                   
+                    break;
                 case "shape":
                     tabOptions.SelectedIndex = 2;
+                    break;
+                //bucket
+                case "bucket":
+                case "paint":
+                    objectChoose = "bucket";
+                    picPaint.Cursor = bucket;
                     break;
                 //Shape:
                 case "rectangle":
@@ -717,29 +723,25 @@ namespace Paint
                     break;
                 case "pentagon":
                     objectChoose = "pentagon";
-                    break;               
+                    break;
                 case "hexagon":
                     objectChoose = "hexagon";
                     break;
-                //bucket
-                case "paint":
-                    objectChoose = "bucket";
-                    break;
                 //color
-                case "red":   
-                                   
+                case "red":
+
                 case "green":
-                   
+
                 case "blue":
-                   
+
                 case "yellow":
-                 
+
                 case "orange":
-                    
+
                 case "black":
-                   
+
                 case "white":
-                   
+
                 case "gray":
                     mtitleCurrentColor.BackColor = Color.FromName(s);
                     break;
@@ -748,7 +750,7 @@ namespace Paint
                 case "stop":
                     tgSpeechRecog.Checked = false;
                     break;
-                
+
                 case "exit":
                 case "close":
                     this.Exit();
@@ -760,11 +762,11 @@ namespace Paint
                         {
                             int index = int.Parse(s.Remove(0, 5));
                             tbPenWidth.Value = index;
-                            penWidth = tbPenWidth.Value;                            
+                            penWidth = tbPenWidth.Value;
                             DrawpenWidth();
                         }
                         break;
-                    }       
+                    }
             }
         }
 

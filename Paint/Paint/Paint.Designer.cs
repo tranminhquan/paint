@@ -1120,7 +1120,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Paint";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
-            this.Text = "Absoluke Paint";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Paint_FormClosed);

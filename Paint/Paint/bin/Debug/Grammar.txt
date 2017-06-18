@@ -1,6 +1,7 @@
 new
 open
 save
+bucket
 pencil
 eraser
 undo

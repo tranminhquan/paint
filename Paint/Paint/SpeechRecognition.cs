@@ -37,21 +37,20 @@ namespace Paint
             //Add grammar
             string[] dataGram =  File.ReadAllLines(@".\Grammar.txt");
             Choices basic = new Choices();
-            foreach(string i in dataGram)
+            foreach (string i in dataGram)
             {
-                if (i=="size")
+                if (i == "size")
                 {
-                    for (int index=1;index<=10;index++)
+                    for (int index = 1; index <= 10; index++)
                     {
                         string temp = i + " " + index.ToString();
                         basic.Add(temp);
                     }
-                }              
+                }
                 else
                 {
                     basic.Add(i);
                 }
-                
             }
            
             GrammarBuilder builder = this.CreateStructure(basic);
@@ -117,8 +116,7 @@ namespace Paint
         public void Stop()
         {
             speaker.Speak("Speech Recognition will turn off now! Goodbye!");
-            recognizer.RecognizeAsyncStop();
-            
+            recognizer.RecognizeAsyncStop();          
         }
 
         public GrammarBuilder CreateStructure(params Choices[] elements)    //Create new structure
@@ -129,8 +127,6 @@ namespace Paint
                 builder.Append(i);
             }
             return builder;
-        }
-
-        
+        }     
     }
 }
