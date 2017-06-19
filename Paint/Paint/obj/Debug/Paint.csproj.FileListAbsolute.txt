@@ -47,7 +47,6 @@ E:\project\Paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.pdb
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\AForge.Imaging.xml
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\AForge.Math.xml
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
-E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.frmPaint.resources
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.Paint.resources
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
@@ -65,7 +64,6 @@ C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogiti
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
-E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
 C:\Users\admin\Downloads\paint\trunk\Paint\Paint\bin\Debug\Paint.exe.config
 C:\Users\admin\Downloads\paint\trunk\Paint\Paint\obj\Debug\Paint.exe
 C:\Users\admin\Downloads\paint\trunk\Paint\Paint\obj\Debug\Paint.pdb
@@ -147,8 +145,6 @@ E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.VideoStab.xml
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.Util.xml
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.xml
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.Paint.exe.config
-E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.TestHand.resources
-E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Paint.exe.config
 E:\Courses\4th-Semester\Truc quan\Projects\Git\trunk\Paint\Paint\bin\Debug\Paint.exe

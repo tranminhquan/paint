@@ -642,18 +642,29 @@ namespace Paint
             Image clipboard_image = Clipboard.GetImage();
 
             // Xác định vị trí đặt ảnh
-            int cx = selectedArea.X + (selectedArea.Width - clipboard_image.Width) / 2;
-            int cy = selectedArea.Y + (selectedArea.Height - clipboard_image.Height) / 2;
-            Rectangle dest_rect = new Rectangle(cx, cy, clipboard_image.Width, clipboard_image.Height);
+            //int cx = selectedArea.X + (selectedArea.Width - clipboard_image.Width) / 2;
+            //int cy = selectedArea.Y + (selectedArea.Height - clipboard_image.Height) / 2;
+            //Rectangle dest_rect = new Rectangle(cx, cy, clipboard_image.Width, clipboard_image.Height);
 
+            RectangleSelection dest_rect = new RectangleSelection();
+            dest_rect._startPoint = new Point(5, 5);
+            dest_rect._img = clipboard_image;
+            dest_rect._endPoint.X = dest_rect._startPoint.X + clipboard_image.Width;
+            dest_rect._endPoint.Y = dest_rect._startPoint.Y + clipboard_image.Height;
+
+            Shape = dest_rect;
+
+            grapList._list.Add(dest_rect);
+
+            
             // Copy hình ảnh mới vào vị trí
-            using (Graphics gr = Graphics.FromImage(clipboard_image))
-            {
-                gr.DrawImage(clipboard_image, dest_rect);
-            }
+            //using (Graphics gr = Graphics.FromImage(clipboard_image))
+            //{
+            //   gr.DrawImage(clipboard_image, dest_rect);
+            //}
 
             // Hiển thị hình 
-            picPaint.Image = clipboard_image; ////////////////////////////////chỗ này đây
+            //picPaint.Image = clipboard_image; ////////////////////////////////chỗ này đây
             picPaint.Refresh();
         }
         #endregion
