@@ -188,10 +188,6 @@
     <Compile Include="SpeechRecognition.cs" />
     <Compile Include="StarDrawing.cs" />
     <Compile Include="TriangleDrawing.cs" />
-    <Compile Include="ucHandGesture.cs" />
-    <Compile Include="ucHandGesture.Designer.cs">
-      <DependentUpon>ucHandGesture.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucHandMovement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,9 +210,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucHandGesture.resx">
-      <DependentUpon>ucHandGesture.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucHandMovement.resx">
       <DependentUpon>ucHandMovement.cs</DependentUpon>
     </EmbeddedResource>

@@ -66,18 +66,23 @@ namespace Paint
         // Copy the selected area to the clipboard.
         public void CopyToClipboard(Rectangle src_rect, Image originalImage)
         {
-            // Make a bitmap for the selected area's image.
-            Bitmap bm = new Bitmap(src_rect.Width, src_rect.Height);
-
-            // Copy the selected area into the bitmap.
-            using (Graphics gr = Graphics.FromImage(bm))
+            if (src_rect.Width == 0 || src_rect.Height == 0)
+                return;
+            else
             {
-                Rectangle dest_rect = new Rectangle(0, 0, src_rect.Width, src_rect.Height);
-                gr.DrawImage(originalImage, dest_rect, src_rect, GraphicsUnit.Pixel);
-            }
+                // Make a bitmap for the selected area's image.
+                Bitmap bm = new Bitmap(src_rect.Width, src_rect.Height);
 
-            // Copy the selection image to the clipboard.
-            Clipboard.SetImage(bm);
+                // Copy the selected area into the bitmap.
+                using (Graphics gr = Graphics.FromImage(bm))
+                {
+                    Rectangle dest_rect = new Rectangle(0, 0, src_rect.Width, src_rect.Height);
+                    gr.DrawImage(originalImage, dest_rect, src_rect, GraphicsUnit.Pixel);
+                }
+
+                // Copy the selection image to the clipboard.
+                Clipboard.SetImage(bm);
+            }
         }
        
         #endregion

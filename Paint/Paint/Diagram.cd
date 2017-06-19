@@ -29,9 +29,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.GraphicsList" Collapsed="true">
-    <Position X="17" Y="5" Width="1.5" />
+    <Position X="16.75" Y="12" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAgAIAAABAAAAAAABAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAAAAAgAIAAABAABAAAABAAAAQAAAAAAAAAA=</HashCode>
       <FileName>GraphicsList.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,7 +59,7 @@
   <Class Name="Paint.ObjectDrawing" Collapsed="true">
     <Position X="11.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAIBgBAACAAAAACAgADIAgAAAAAgEAQAAA=</HashCode>
+      <HashCode>AgEBCAAAAAAIBgBAACAAAAACAgADIAgAAAAAgEAQAAA=</HashCode>
       <FileName>ObjectDrawing.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -78,7 +78,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.Program" Collapsed="true">
-    <Position X="21.5" Y="5" Width="1.5" />
+    <Position X="23.25" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
@@ -115,43 +115,50 @@
   <Class Name="Paint.RectangleSelection" Collapsed="true">
     <Position X="6.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAACCgAAAAgAAAAAAgAQAIA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAACCgAAAAgAAACAAgAQAIA=</HashCode>
       <FileName>RectangleSelection.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EmguCV.IColorSkinDetector" Collapsed="true">
-    <Position X="22.25" Y="0.5" Width="1.5" />
+    <Position X="20" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SkinDetector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EmguCV.CustomYCrCbSkinDetector" Collapsed="true">
-    <Position X="22.25" Y="1.75" Width="1.5" />
+    <Position X="20" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SkinDetector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EmguCV.HsvSkinDetector" Collapsed="true">
-    <Position X="20" Y="1.75" Width="1.5" />
+    <Position X="17.75" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SkinDetector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EmguCV.YCrCbSkinDetector" Collapsed="true">
-    <Position X="24.5" Y="1.75" Width="1.5" />
+    <Position X="22.25" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SkinDetector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.SpeechRecognition" Collapsed="true">
-    <Position X="19.25" Y="5" Width="1.5" />
+    <Position X="19" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAGIACAAAAAAAAAQiAAkAAAAAAAAIoAEAAAAAAA=</HashCode>
       <FileName>SpeechRecognition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.ucHandMovement" Collapsed="true">
+    <Position X="21.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAIAEijgCQAkFAAAhCIMgBCAAA8GQKD4AYACgCABAA=</HashCode>
+      <FileName>ucHandMovement.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

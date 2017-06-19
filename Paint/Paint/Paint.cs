@@ -10,13 +10,12 @@ namespace Paint
     public partial class Paint : MetroFramework.Forms.MetroForm
     {
         #region Declare
-        //enum DRAW_STATUS { COMPLETE, INCOMPLETE };
+
         int penWidth = 1;
         string objectChoose;
         ObjectDrawing Shape;
         Bitmap doubleBuffer, fillImage;
         GraphicsList grapList;
-        //DRAW_STATUS status;
         bool isSaved = true;
         Graphics pen; // pen width
         bool isCrop = false, isSelect = false;
@@ -49,7 +48,6 @@ namespace Paint
                 _Tile.Tag = i;
                 _Tile.UseCustomBackColor = true;
                 _Tile.BackColor = listColor[i];
-                //_Tile.Style = (MetroColorStyle)i;
                 _Tile.Click += (sender, e) =>
                 {
                     
@@ -70,7 +68,6 @@ namespace Paint
             grapList = new GraphicsList();
             pen = pn_penWidth.CreateGraphics();
 
-            //status = DRAW_STATUS.COMPLETE;
             #region Set for recognizer
             speechReg = new SpeechRecognition();
             #endregion
@@ -328,7 +325,6 @@ namespace Paint
         private void TB_penWidth_Scroll(object sender, ScrollEventArgs e)
         {
             penWidth = tbPenWidth.Value;
-            //lb_penWidth.Text = TB_penWidth.Value.ToString();
             DrawpenWidth();
         }
         public void btnObject_Click(object sender, EventArgs e)
@@ -347,8 +343,6 @@ namespace Paint
 
             if (objectChoose == "crop" && isCrop == true)
             {
-                //status = DRAW_STATUS.COMPLETE;
-
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
                 if (width != 0 && height != 0)
@@ -390,6 +384,13 @@ namespace Paint
                 picPaint.Cursor = Cursors.Default;
         }
 
+        private Bitmap CropImage(Bitmap src, Rectangle Roi)
+        {
+            Bitmap croppedImg;
+            croppedImg = src.Clone(Roi, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            return croppedImg;
+        }
+
         private void btnUndo_Click(object sender, EventArgs e)
         {
             this.Undo();
@@ -411,13 +412,6 @@ namespace Paint
         private void btnPaste_Click(object sender, EventArgs e)
         {
             this.Paste();
-        }
-
-        private Bitmap CropImage(Bitmap src, Rectangle Roi)
-        {
-            Bitmap croppedImg;
-            croppedImg = src.Clone(Roi, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-            return croppedImg;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -498,10 +492,6 @@ namespace Paint
             DrawpenWidth();           
         }
 
-        private void llbAbout_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("A Gift to Vương - sama <3");
-        }
         public void DrawpenWidth()
         {
             pen.Clear(Color.FromArgb(128, 128, 255));
@@ -588,15 +578,6 @@ namespace Paint
                 }
             }
         }
-        private void Undo()
-        {
-            //status = DRAW_STATUS.COMPLETE;
-            grapList.RemoveLast();
-            picPaint.Refresh();
-            isCrop = false;
-            isCropRectDraw = false;
-           
-        }
 
         private void Exit()
         {
@@ -610,15 +591,19 @@ namespace Paint
                     Application.Exit();
                 }
                 else
-                {
                     Application.Exit();
-                }
             }
             else
-            {
                 Application.Exit();
-            };
         }
+
+        private void Undo()
+        {
+            grapList.RemoveLast();
+            picPaint.Refresh();
+            isCrop = false;
+            isCropRectDraw = false;          
+        }   
 
         // Copy vùng được selected vào clipboard.
         private void Copy()
@@ -667,8 +652,8 @@ namespace Paint
                 gr.DrawImage(clipboard_image, dest_rect);
             }
 
-            // Hiển thị hình ảnh
-            picPaint.Image = clipboard_image;
+            // Hiển thị hình 
+            picPaint.Image = clipboard_image; ////////////////////////////////chỗ này đây
             picPaint.Refresh();
         }
         #endregion
@@ -744,8 +729,7 @@ namespace Paint
                 else
                     tgHand.Checked = true;
                 return true;
-            }
-        
+            }      
             return base.ProcessCmdKey(ref msg, keyData);
         }
         #endregion
@@ -896,11 +880,6 @@ namespace Paint
             lblConfidence.Text = speechReg.Confindence.ToString();
         }
 
-        private void pnlInfo_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("A gift to Vuong-sama");
-        }
-
         private void tgHand_CheckedChanged(object sender, EventArgs e)
         {
             if (tgHand.Checked)
@@ -953,5 +932,10 @@ namespace Paint
             }
         }
         #endregion
-    }
+
+        private void pnlInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A gift to Vuong-sama");
+        }
+    }    
 }
