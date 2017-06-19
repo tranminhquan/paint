@@ -21,7 +21,7 @@ namespace Paint
         Graphics pen; // pen width
         bool isCrop = false, isSelect = false;
         bool isCropRectDraw = false;
-        Rectangle ROI; // HCN sau khi dùng select
+        Rectangle selectedArea; // HCN sau khi dùng select
         RectangleSelection _CopyCut = new RectangleSelection(); //
 
         int posOfCrop;
@@ -298,10 +298,11 @@ namespace Paint
                     grapList.RemoveLast();
                     picPaint.Refresh();
 
-                    Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width , height);
-
+                    Rectangle ROI = new Rectangle(Shape._startPoint.X, Shape._startPoint.Y, width , height);
                     (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
-                    _CopyCut._img = (Shape as RectangleSelection)._img;
+
+                    selectedArea = new Rectangle(0, 0, width, height); //Vị trí lấy hình cắt được gán vào HCN
+                    _CopyCut._img = (Shape as RectangleSelection)._img; //Hình dc cắt
 
                     grapList._list.Insert(grapList._list.Count, t);
           
@@ -397,56 +398,19 @@ namespace Paint
         // Copy vùng được selected vào clipboard.
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            _CopyCut.CopyToClipboard(ROI, _CopyCut._img);
-            System.Media.SystemSounds.Beep.Play();
+            this.Copy();
         }
 
         // Copy vùng được selected vào clipboard và làm trông vùng đó.
         private void btnCut_Click(object sender, EventArgs e)
         {
-            // Copy vùng được selected vào clipboard.
-            _CopyCut.CopyToClipboard(ROI, _CopyCut._img);
-
-            // Làm trống vùng đã cut.
-            using (Graphics gr = Graphics.FromImage(_CopyCut._img))
-            {
-                using (SolidBrush br = new SolidBrush(picPaint.BackColor))
-                {
-                    gr.FillRectangle(br, ROI);
-                }
-            }
-
-            // Hiển thị vùng cut
-            //doubleBuffer = new Bitmap(_CopyCut._img);
-            //picPaint.Image = doubleBuffer;
-            picPaint.Image = new Bitmap(_CopyCut._img);
-
-            System.Media.SystemSounds.Beep.Play();
+            this.Cut();
         }
 
         // Paste the image on the clipboard, centering it on the selected area.
         private void btnPaste_Click(object sender, EventArgs e)
         {
-            //// Không làm gì hết nếu clipboard rỗng
-            //if (!Clipboard.ContainsImage()) return;
-
-            //// Lấy ảnh từ Clipboard
-            //Image clipboard_image = Clipboard.GetImage();
-
-            //// Xác định vị trí đặt ảnh
-            //int cx = ROI.X + (ROI.Width - clipboard_image.Width) / 2;
-            //int cy = ROI.Y + (ROI.Height - clipboard_image.Height) / 2;
-            //Rectangle dest_rect = new Rectangle(cx, cy, clipboard_image.Width, clipboard_image.Height);
-
-            //// Copy hình ảnh mới vào vị trí
-            //using (Graphics gr = Graphics.FromImage(clipboard_image))
-            //{
-            //    gr.DrawImage(clipboard_image, dest_rect);
-            //}
-
-            //// Hiển thị hình ảnh
-            //picPaint.Image = clipboard_image;
-            //picPaint.Refresh();
+            this.Paste();
         }
 
         private Bitmap CropImage(Bitmap src, Rectangle Roi)
@@ -472,24 +436,7 @@ namespace Paint
         }
         private void Paint_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (isSaved == false)
-            {
-                DialogResult dlr = MessageBox.Show("Do you want to save first?", "Absoluke Paint", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dlr == DialogResult.Yes)
-                {
-                    btnSaveAs_Click(sender, e);
-                    isSaved = true;
-                    Application.Exit();
-                }
-                else
-                {
-                    Application.Exit();
-                }
-            }
-            else
-            {
-                Application.Exit();
-            };
+            this.Exit();
         }
 
         private void ChooseObject()
@@ -653,11 +600,76 @@ namespace Paint
 
         private void Exit()
         {
-            DialogResult rslt = MessageBox.Show("Do you want to exit Absoluke Paint?", "Confirm", MessageBoxButtons.YesNo);
-            if (rslt == DialogResult.Yes)
+            if (isSaved == false)
+            {
+                DialogResult dlr = MessageBox.Show("Do you want to save first?", "Absoluke Paint", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    this.SaveAs();
+                    isSaved = true;
+                    Application.Exit();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
+            else
             {
                 Application.Exit();
+            };
+        }
+
+        // Copy vùng được selected vào clipboard.
+        private void Copy()
+        {
+            _CopyCut.CopyToClipboard(selectedArea, _CopyCut._img);
+            System.Media.SystemSounds.Beep.Play();
+        }
+
+        // Copy vùng được selected vào clipboard và làm trông vùng đó.
+        private void Cut()
+        {
+            // Copy vùng được selected vào clipboard.
+            _CopyCut.CopyToClipboard(selectedArea, _CopyCut._img);
+
+            // Làm trống vùng đã cut.
+            using (Graphics gr = Graphics.FromImage(_CopyCut._img))
+            {
+                using (SolidBrush br = new SolidBrush(picPaint.BackColor))
+                {
+                    gr.FillRectangle(br, selectedArea);
+                }
             }
+
+            // Hiển thị vùng cut
+            picPaint.Image = new Bitmap(_CopyCut._img);
+            System.Media.SystemSounds.Beep.Play();
+        }
+
+        // Paste the image on the clipboard, centering it on the selected area.
+        private void Paste()
+        {
+            // Không làm gì hết nếu clipboard rỗng
+            if (!Clipboard.ContainsImage()) return;
+
+            // Lấy ảnh từ Clipboard
+            Image clipboard_image = Clipboard.GetImage();
+
+            // Xác định vị trí đặt ảnh
+            int cx = selectedArea.X + (selectedArea.Width - clipboard_image.Width) / 2;
+            int cy = selectedArea.Y + (selectedArea.Height - clipboard_image.Height) / 2;
+            Rectangle dest_rect = new Rectangle(cx, cy, clipboard_image.Width, clipboard_image.Height);
+
+            // Copy hình ảnh mới vào vị trí
+            using (Graphics gr = Graphics.FromImage(clipboard_image))
+            {
+                gr.DrawImage(clipboard_image, dest_rect);
+            }
+
+            // Hiển thị hình ảnh
+            picPaint.Image = clipboard_image;
+            picPaint.Refresh();
         }
         #endregion
 
@@ -684,22 +696,37 @@ namespace Paint
                 this.Undo();
                 return true;
             }
+            if (keyData == (Keys.Control | Keys.C))
+            {
+                this.Copy();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.X))
+            {
+                this.Cut();
+                return true;
+            }
+            if (keyData == (Keys.Control | Keys.V))
+            {
+                this.Paste();
+                return true;
+            }
             if (keyData == (Keys.Control | Keys.P))
             {
                 objectChoose = "pencil";
-                picPaint.Cursor = new Cursor(Application.StartupPath + "\\Pencil -v.cur");
+                picPaint.Cursor = pencil;
                 return true;
             }
             if (keyData == (Keys.Control | Keys.E))
             {
                 objectChoose = "eraser";
-                picPaint.Cursor = new Cursor(Application.StartupPath + "\\Eraser.cur");
+                picPaint.Cursor = eraser;
                 return true;
             }
             if (keyData == (Keys.Control | Keys.F))
             {
                 objectChoose = "bucket";
-                picPaint.Cursor = new Cursor(Application.StartupPath + "\\bucket.cur");
+                picPaint.Cursor = bucket;
                 return true;
             }
             if (keyData == (Keys.F1))

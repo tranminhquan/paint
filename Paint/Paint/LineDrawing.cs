@@ -107,9 +107,12 @@ namespace Paint
             base.Mouse_Up(e);
             _grapPath = new GraphicsPath();
             Pen pen = new Pen(_color, _penWidth);
-            _grapPath.AddLine(_startPoint, _endPoint);
-            _grapPath.Widen(new Pen(_color, _penWidth));
-            _region = new Region(_grapPath);
+            if (_startPoint != _endPoint)
+            {
+                _grapPath.AddLine(_startPoint, _endPoint);
+                _grapPath.Widen(new Pen(_color, _penWidth));
+                _region = new Region(_grapPath);
+            }         
         }
         #endregion
     }

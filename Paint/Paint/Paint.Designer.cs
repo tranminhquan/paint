@@ -123,7 +123,7 @@
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 8;
             this.metroPanel1.Location = new System.Drawing.Point(744, 60);
-            this.metroPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(325, 633);
             this.metroPanel1.TabIndex = 0;
@@ -141,7 +141,7 @@
             this.metroPanel10.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel10.HorizontalScrollbarSize = 8;
             this.metroPanel10.Location = new System.Drawing.Point(0, 113);
-            this.metroPanel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel10.Name = "metroPanel10";
             this.metroPanel10.Size = new System.Drawing.Size(325, 231);
             this.metroPanel10.TabIndex = 4;
@@ -157,7 +157,7 @@
             this.tabOptions.Controls.Add(this.mtShapes);
             this.tabOptions.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabOptions.Location = new System.Drawing.Point(0, 34);
-            this.tabOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabOptions.Margin = new System.Windows.Forms.Padding(2);
             this.tabOptions.Name = "tabOptions";
             this.tabOptions.SelectedIndex = 2;
             this.tabOptions.Size = new System.Drawing.Size(325, 197);
@@ -176,7 +176,7 @@
             this.mtTheme.HorizontalScrollbarHighlightOnWheel = false;
             this.mtTheme.HorizontalScrollbarSize = 8;
             this.mtTheme.Location = new System.Drawing.Point(4, 38);
-            this.mtTheme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtTheme.Margin = new System.Windows.Forms.Padding(2);
             this.mtTheme.Name = "mtTheme";
             this.mtTheme.Padding = new System.Windows.Forms.Padding(0, 81, 0, 0);
             this.mtTheme.Size = new System.Drawing.Size(317, 155);
@@ -192,7 +192,7 @@
             this.MLEditColor.Image = ((System.Drawing.Image)(resources.GetObject("MLEditColor.Image")));
             this.MLEditColor.ImageSize = 45;
             this.MLEditColor.Location = new System.Drawing.Point(229, 10);
-            this.MLEditColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MLEditColor.Margin = new System.Windows.Forms.Padding(2);
             this.MLEditColor.Name = "MLEditColor";
             this.MLEditColor.Size = new System.Drawing.Size(52, 40);
             this.MLEditColor.TabIndex = 9;
@@ -214,7 +214,7 @@
             this.mtitleCurrentColor.ActiveControl = null;
             this.mtitleCurrentColor.Enabled = false;
             this.mtitleCurrentColor.Location = new System.Drawing.Point(94, 10);
-            this.mtitleCurrentColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtitleCurrentColor.Margin = new System.Windows.Forms.Padding(2);
             this.mtitleCurrentColor.Name = "mtitleCurrentColor";
             this.mtitleCurrentColor.Size = new System.Drawing.Size(38, 32);
             this.mtitleCurrentColor.TabIndex = 7;
@@ -246,7 +246,7 @@
             this.flColors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flColors.ForeColor = System.Drawing.Color.Transparent;
             this.flColors.Location = new System.Drawing.Point(0, 81);
-            this.flColors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flColors.Margin = new System.Windows.Forms.Padding(2);
             this.flColors.Name = "flColors";
             this.flColors.Size = new System.Drawing.Size(317, 74);
             this.flColors.TabIndex = 2;
@@ -262,7 +262,7 @@
             this.mtTools.HorizontalScrollbarHighlightOnWheel = false;
             this.mtTools.HorizontalScrollbarSize = 8;
             this.mtTools.Location = new System.Drawing.Point(4, 38);
-            this.mtTools.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtTools.Margin = new System.Windows.Forms.Padding(2);
             this.mtTools.Name = "mtTools";
             this.mtTools.Size = new System.Drawing.Size(317, 155);
             this.mtTools.TabIndex = 1;
@@ -278,7 +278,7 @@
             this.btnBucket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBucket.Image = global::Paint.Properties.Resources._1495660681_Paint;
             this.btnBucket.Location = new System.Drawing.Point(1, 2);
-            this.btnBucket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBucket.Margin = new System.Windows.Forms.Padding(2);
             this.btnBucket.Name = "btnBucket";
             this.btnBucket.Size = new System.Drawing.Size(54, 155);
             this.btnBucket.TabIndex = 2;
@@ -293,7 +293,7 @@
             this.btnEraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEraser.Image = global::Paint.Properties.Resources._1495660439_eraser;
             this.btnEraser.Location = new System.Drawing.Point(58, 2);
-            this.btnEraser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEraser.Margin = new System.Windows.Forms.Padding(2);
             this.btnEraser.Name = "btnEraser";
             this.btnEraser.Size = new System.Drawing.Size(54, 155);
             this.btnEraser.TabIndex = 2;
@@ -308,7 +308,7 @@
             this.btnNone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNone.Image = global::Paint.Properties.Resources.pointerIcon;
             this.btnNone.Location = new System.Drawing.Point(245, 0);
-            this.btnNone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNone.Margin = new System.Windows.Forms.Padding(2);
             this.btnNone.Name = "btnNone";
             this.btnNone.Size = new System.Drawing.Size(56, 157);
             this.btnNone.TabIndex = 2;
@@ -322,7 +322,7 @@
             this.btnCrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrop.Image = global::Paint.Properties.Resources.cropIcon;
             this.btnCrop.Location = new System.Drawing.Point(185, 0);
-            this.btnCrop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrop.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrop.Name = "btnCrop";
             this.btnCrop.Size = new System.Drawing.Size(56, 157);
             this.btnCrop.TabIndex = 2;
@@ -336,7 +336,7 @@
             this.btnPencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPencil.Image = global::Paint.Properties.Resources._1495660053_create;
             this.btnPencil.Location = new System.Drawing.Point(122, 1);
-            this.btnPencil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPencil.Margin = new System.Windows.Forms.Padding(2);
             this.btnPencil.Name = "btnPencil";
             this.btnPencil.Size = new System.Drawing.Size(56, 157);
             this.btnPencil.TabIndex = 2;
@@ -359,7 +359,7 @@
             this.mtShapes.HorizontalScrollbarHighlightOnWheel = false;
             this.mtShapes.HorizontalScrollbarSize = 8;
             this.mtShapes.Location = new System.Drawing.Point(4, 38);
-            this.mtShapes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtShapes.Margin = new System.Windows.Forms.Padding(2);
             this.mtShapes.Name = "mtShapes";
             this.mtShapes.Size = new System.Drawing.Size(317, 155);
             this.mtShapes.TabIndex = 2;
@@ -375,7 +375,7 @@
             this.btnCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCircle.Image = global::Paint.Properties.Resources._1495707665_check_circle_outline_blank;
             this.btnCircle.Location = new System.Drawing.Point(77, 15);
-            this.btnCircle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCircle.Margin = new System.Windows.Forms.Padding(2);
             this.btnCircle.Name = "btnCircle";
             this.btnCircle.Size = new System.Drawing.Size(59, 63);
             this.btnCircle.TabIndex = 5;
@@ -389,7 +389,7 @@
             this.btnStar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStar.Image = global::Paint.Properties.Resources._1495707618_star;
             this.btnStar.Location = new System.Drawing.Point(148, 15);
-            this.btnStar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStar.Margin = new System.Windows.Forms.Padding(2);
             this.btnStar.Name = "btnStar";
             this.btnStar.Size = new System.Drawing.Size(59, 63);
             this.btnStar.TabIndex = 7;
@@ -403,7 +403,7 @@
             this.btnRhombus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRhombus.Image = global::Paint.Properties.Resources.rhombus;
             this.btnRhombus.Location = new System.Drawing.Point(77, 80);
-            this.btnRhombus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRhombus.Margin = new System.Windows.Forms.Padding(2);
             this.btnRhombus.Name = "btnRhombus";
             this.btnRhombus.Size = new System.Drawing.Size(59, 63);
             this.btnRhombus.TabIndex = 4;
@@ -417,7 +417,7 @@
             this.btnLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLine.Image = global::Paint.Properties.Resources._1495707637_button_shape_line;
             this.btnLine.Location = new System.Drawing.Point(225, 15);
-            this.btnLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLine.Margin = new System.Windows.Forms.Padding(2);
             this.btnLine.Name = "btnLine";
             this.btnLine.Size = new System.Drawing.Size(59, 63);
             this.btnLine.TabIndex = 10;
@@ -431,7 +431,7 @@
             this.btnPentagon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPentagon.Image = global::Paint.Properties.Resources._1495707501_button_shape_polygon;
             this.btnPentagon.Location = new System.Drawing.Point(148, 80);
-            this.btnPentagon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPentagon.Margin = new System.Windows.Forms.Padding(2);
             this.btnPentagon.Name = "btnPentagon";
             this.btnPentagon.Size = new System.Drawing.Size(59, 63);
             this.btnPentagon.TabIndex = 6;
@@ -445,7 +445,7 @@
             this.btnTriangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTriangle.Image = global::Paint.Properties.Resources._1495707493_button_shape_triangle;
             this.btnTriangle.Location = new System.Drawing.Point(6, 80);
-            this.btnTriangle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTriangle.Margin = new System.Windows.Forms.Padding(2);
             this.btnTriangle.Name = "btnTriangle";
             this.btnTriangle.Size = new System.Drawing.Size(59, 63);
             this.btnTriangle.TabIndex = 9;
@@ -459,7 +459,7 @@
             this.btnRectangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRectangle.Image = global::Paint.Properties.Resources._1495707482_button_shape_rectangle;
             this.btnRectangle.Location = new System.Drawing.Point(6, 15);
-            this.btnRectangle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRectangle.Margin = new System.Windows.Forms.Padding(2);
             this.btnRectangle.Name = "btnRectangle";
             this.btnRectangle.Size = new System.Drawing.Size(59, 63);
             this.btnRectangle.TabIndex = 11;
@@ -474,7 +474,7 @@
             this.btnHexagon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHexagon.Image = global::Paint.Properties.Resources.Editing_Polygone_icon;
             this.btnHexagon.Location = new System.Drawing.Point(225, 80);
-            this.btnHexagon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHexagon.Margin = new System.Windows.Forms.Padding(2);
             this.btnHexagon.Name = "btnHexagon";
             this.btnHexagon.Size = new System.Drawing.Size(59, 63);
             this.btnHexagon.TabIndex = 8;
@@ -508,7 +508,7 @@
             this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel8.HorizontalScrollbarSize = 8;
             this.metroPanel8.Location = new System.Drawing.Point(0, 72);
-            this.metroPanel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel8.Name = "metroPanel8";
             this.metroPanel8.Size = new System.Drawing.Size(325, 41);
             this.metroPanel8.TabIndex = 3;
@@ -520,7 +520,7 @@
             // pn_penWidth
             // 
             this.pn_penWidth.Location = new System.Drawing.Point(225, 11);
-            this.pn_penWidth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_penWidth.Margin = new System.Windows.Forms.Padding(2);
             this.pn_penWidth.Name = "pn_penWidth";
             this.pn_penWidth.Size = new System.Drawing.Size(71, 24);
             this.pn_penWidth.TabIndex = 5;
@@ -530,7 +530,7 @@
             // 
             this.tbPenWidth.BackColor = System.Drawing.Color.Transparent;
             this.tbPenWidth.Location = new System.Drawing.Point(59, 13);
-            this.tbPenWidth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPenWidth.Margin = new System.Windows.Forms.Padding(2);
             this.tbPenWidth.Maximum = 10;
             this.tbPenWidth.Minimum = 1;
             this.tbPenWidth.Name = "tbPenWidth";
@@ -567,7 +567,7 @@
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 8;
             this.metroPanel3.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(325, 72);
             this.metroPanel3.TabIndex = 2;
@@ -602,7 +602,7 @@
             this.pnlReconizer.HorizontalScrollbarHighlightOnWheel = false;
             this.pnlReconizer.HorizontalScrollbarSize = 8;
             this.pnlReconizer.Location = new System.Drawing.Point(46, 3);
-            this.pnlReconizer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlReconizer.Margin = new System.Windows.Forms.Padding(2);
             this.pnlReconizer.Name = "pnlReconizer";
             this.pnlReconizer.Size = new System.Drawing.Size(920, 45);
             this.pnlReconizer.TabIndex = 6;
@@ -658,7 +658,7 @@
             this.llblDicInfo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.llblDicInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.llblDicInfo.Location = new System.Drawing.Point(673, 0);
-            this.llblDicInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.llblDicInfo.Margin = new System.Windows.Forms.Padding(2);
             this.llblDicInfo.Name = "llblDicInfo";
             this.llblDicInfo.Size = new System.Drawing.Size(247, 45);
             this.llblDicInfo.TabIndex = 4;
@@ -673,7 +673,7 @@
             // 
             this.tbConfidence.BackColor = System.Drawing.Color.Transparent;
             this.tbConfidence.Location = new System.Drawing.Point(411, 5);
-            this.tbConfidence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbConfidence.Margin = new System.Windows.Forms.Padding(2);
             this.tbConfidence.Maximum = 10;
             this.tbConfidence.Name = "tbConfidence";
             this.tbConfidence.Size = new System.Drawing.Size(100, 19);
@@ -724,7 +724,7 @@
             this.pnlSetting.HorizontalScrollbarHighlightOnWheel = false;
             this.pnlSetting.HorizontalScrollbarSize = 8;
             this.pnlSetting.Location = new System.Drawing.Point(286, 2);
-            this.pnlSetting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSetting.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSetting.Name = "pnlSetting";
             this.pnlSetting.Size = new System.Drawing.Size(28, 28);
             this.pnlSetting.TabIndex = 7;
@@ -753,7 +753,7 @@
             this.metroPanel14.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel14.HorizontalScrollbarSize = 8;
             this.metroPanel14.Location = new System.Drawing.Point(618, 13);
-            this.metroPanel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel14.Name = "metroPanel14";
             this.metroPanel14.Size = new System.Drawing.Size(40, 32);
             this.metroPanel14.TabIndex = 7;
@@ -770,7 +770,7 @@
             this.pnlInfo.HorizontalScrollbarHighlightOnWheel = false;
             this.pnlInfo.HorizontalScrollbarSize = 8;
             this.pnlInfo.Location = new System.Drawing.Point(695, 5);
-            this.pnlInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlInfo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(27, 25);
             this.pnlInfo.TabIndex = 7;
@@ -787,7 +787,7 @@
             this.metroPanel15.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel15.HorizontalScrollbarSize = 8;
             this.metroPanel15.Location = new System.Drawing.Point(2, 3);
-            this.metroPanel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel15.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel15.Name = "metroPanel15";
             this.metroPanel15.Size = new System.Drawing.Size(40, 33);
             this.metroPanel15.TabIndex = 7;
@@ -804,7 +804,7 @@
             this.metroPanel13.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel13.HorizontalScrollbarSize = 8;
             this.metroPanel13.Location = new System.Drawing.Point(558, 13);
-            this.metroPanel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel13.Name = "metroPanel13";
             this.metroPanel13.Size = new System.Drawing.Size(40, 33);
             this.metroPanel13.TabIndex = 7;
@@ -819,7 +819,7 @@
             this.tgHand.AutoSize = true;
             this.tgHand.DisplayStatus = false;
             this.tgHand.Location = new System.Drawing.Point(605, 49);
-            this.tgHand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tgHand.Margin = new System.Windows.Forms.Padding(2);
             this.tgHand.Name = "tgHand";
             this.tgHand.Size = new System.Drawing.Size(50, 17);
             this.tgHand.TabIndex = 6;
@@ -835,7 +835,7 @@
             this.tgSpeechRecog.AutoSize = true;
             this.tgSpeechRecog.DisplayStatus = false;
             this.tgSpeechRecog.Location = new System.Drawing.Point(546, 49);
-            this.tgSpeechRecog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tgSpeechRecog.Margin = new System.Windows.Forms.Padding(2);
             this.tgSpeechRecog.Name = "tgSpeechRecog";
             this.tgSpeechRecog.Size = new System.Drawing.Size(50, 17);
             this.tgSpeechRecog.TabIndex = 5;
@@ -866,7 +866,7 @@
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 8;
             this.metroPanel2.Location = new System.Drawing.Point(15, 60);
-            this.metroPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(729, 72);
             this.metroPanel2.TabIndex = 1;
@@ -882,7 +882,7 @@
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelect.Image = global::Paint.Properties.Resources._1497810725_ic_select_all_48px;
             this.btnSelect.Location = new System.Drawing.Point(187, 6);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(59, 54);
             this.btnSelect.TabIndex = 12;
@@ -896,11 +896,12 @@
             this.btnPaste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPaste.Image = global::Paint.Properties.Resources._1496504981_paste;
             this.btnPaste.Location = new System.Drawing.Point(368, 8);
-            this.btnPaste.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPaste.Margin = new System.Windows.Forms.Padding(2);
             this.btnPaste.Name = "btnPaste";
             this.btnPaste.Size = new System.Drawing.Size(55, 54);
             this.btnPaste.TabIndex = 2;
             this.btnPaste.UseVisualStyleBackColor = true;
+            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
             // 
             // btnCut
             // 
@@ -908,11 +909,12 @@
             this.btnCut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCut.Image = global::Paint.Properties.Resources.cutIcon__2_;
             this.btnCut.Location = new System.Drawing.Point(309, 8);
-            this.btnCut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCut.Margin = new System.Windows.Forms.Padding(2);
             this.btnCut.Name = "btnCut";
             this.btnCut.Size = new System.Drawing.Size(55, 54);
             this.btnCut.TabIndex = 2;
             this.btnCut.UseVisualStyleBackColor = true;
+            this.btnCut.Click += new System.EventHandler(this.btnCut_Click);
             // 
             // btnCopy
             // 
@@ -920,11 +922,12 @@
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopy.Image = global::Paint.Properties.Resources.copyIcon__2_;
             this.btnCopy.Location = new System.Drawing.Point(250, 8);
-            this.btnCopy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCopy.Margin = new System.Windows.Forms.Padding(2);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(55, 54);
             this.btnCopy.TabIndex = 2;
             this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // btnSaveAs
             // 
@@ -932,7 +935,7 @@
             this.btnSaveAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveAs.Image = global::Paint.Properties.Resources._1495708747_save;
             this.btnSaveAs.Location = new System.Drawing.Point(128, 10);
-            this.btnSaveAs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveAs.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(55, 50);
             this.btnSaveAs.TabIndex = 2;
@@ -946,7 +949,7 @@
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpen.Image = global::Paint.Properties.Resources._1495708725_BT_folder_file_open;
             this.btnOpen.Location = new System.Drawing.Point(69, 10);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(55, 50);
             this.btnOpen.TabIndex = 2;
@@ -960,7 +963,7 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Image = global::Paint.Properties.Resources._1495708677_new10;
             this.btnNew.Location = new System.Drawing.Point(10, 10);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(55, 50);
             this.btnNew.TabIndex = 2;
@@ -975,7 +978,7 @@
             this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUndo.Image = global::Paint.Properties.Resources._1495659848_editor_undo_arrow_outline_stroke;
             this.btnUndo.Location = new System.Drawing.Point(657, 2);
-            this.btnUndo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUndo.Margin = new System.Windows.Forms.Padding(2);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(68, 65);
             this.btnUndo.TabIndex = 2;
@@ -996,7 +999,7 @@
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 8;
             this.metroPanel4.Location = new System.Drawing.Point(15, 132);
-            this.metroPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel4.Name = "metroPanel4";
             this.metroPanel4.Size = new System.Drawing.Size(729, 561);
             this.metroPanel4.TabIndex = 2;
@@ -1012,7 +1015,7 @@
             this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel7.HorizontalScrollbarSize = 8;
             this.metroPanel7.Location = new System.Drawing.Point(0, 499);
-            this.metroPanel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel7.Name = "metroPanel7";
             this.metroPanel7.Size = new System.Drawing.Size(709, 25);
             this.metroPanel7.TabIndex = 6;
@@ -1028,7 +1031,7 @@
             this.metroPanel12.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel12.HorizontalScrollbarSize = 8;
             this.metroPanel12.Location = new System.Drawing.Point(709, 24);
-            this.metroPanel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel12.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel12.Name = "metroPanel12";
             this.metroPanel12.Size = new System.Drawing.Size(20, 500);
             this.metroPanel12.TabIndex = 5;
@@ -1046,7 +1049,7 @@
             this.panelPaint.HorizontalScrollbarHighlightOnWheel = false;
             this.panelPaint.HorizontalScrollbarSize = 8;
             this.panelPaint.Location = new System.Drawing.Point(0, 24);
-            this.panelPaint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelPaint.Margin = new System.Windows.Forms.Padding(2);
             this.panelPaint.Name = "panelPaint";
             this.panelPaint.Size = new System.Drawing.Size(729, 500);
             this.panelPaint.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1082,7 +1085,7 @@
             this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel6.HorizontalScrollbarSize = 8;
             this.metroPanel6.Location = new System.Drawing.Point(0, 524);
-            this.metroPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel6.Name = "metroPanel6";
             this.metroPanel6.Size = new System.Drawing.Size(729, 37);
             this.metroPanel6.TabIndex = 3;
@@ -1098,7 +1101,7 @@
             this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel5.HorizontalScrollbarSize = 8;
             this.metroPanel5.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.metroPanel5.Name = "metroPanel5";
             this.metroPanel5.Size = new System.Drawing.Size(729, 24);
             this.metroPanel5.TabIndex = 2;
@@ -1125,7 +1128,7 @@
             this.Controls.Add(this.metroPanel4);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Paint";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

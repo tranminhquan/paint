@@ -166,12 +166,6 @@
       <DependentUpon>DictionaryInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="EraserDrawing.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GraphicsList.cs" />
     <Compile Include="HexagonDrawing.cs" />
     <Compile Include="LineDrawing.cs" />
@@ -193,18 +187,6 @@
     <Compile Include="SkinDetector.cs" />
     <Compile Include="SpeechRecognition.cs" />
     <Compile Include="StarDrawing.cs" />
-    <Compile Include="TestHand.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestHand.Designer.cs">
-      <DependentUpon>TestHand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TestSpeechRecogition.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestSpeechRecogition.Designer.cs">
-      <DependentUpon>TestSpeechRecogition.cs</DependentUpon>
-    </Compile>
     <Compile Include="TriangleDrawing.cs" />
     <Compile Include="ucHandGesture.cs" />
     <Compile Include="ucHandGesture.Designer.cs">
@@ -219,9 +201,6 @@
     <EmbeddedResource Include="DictionaryInfo.resx">
       <DependentUpon>DictionaryInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Paint.resx">
       <DependentUpon>Paint.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,12 +214,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TestHand.resx">
-      <DependentUpon>TestHand.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestSpeechRecogition.resx">
-      <DependentUpon>TestSpeechRecogition.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucHandGesture.resx">
       <DependentUpon>ucHandGesture.cs</DependentUpon>
     </EmbeddedResource>

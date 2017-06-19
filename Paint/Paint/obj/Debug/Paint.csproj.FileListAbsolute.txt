@@ -28,7 +28,6 @@ C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateRes
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Paint.exe.config
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Paint.exe
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Paint.pdb
-C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.frmPaint.resources
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.exe
@@ -63,7 +62,6 @@ C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\MetroFramework.dll
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.Paint.resources
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
-C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestSpeechRecogition.resources
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
 C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
 E:\project\Paint\trunk\Paint\Paint\obj\Debug\Paint.DictionaryInfo.resources
@@ -219,7 +217,6 @@ C:\Users\User\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.res
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.xml
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.csproj.Paint.exe.config
-C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.TestHand.resources
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandGesture.resources
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
