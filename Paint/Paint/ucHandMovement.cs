@@ -434,7 +434,11 @@ namespace Paint
                 captureInProgress = !captureInProgress;
             }
         }
-
+        public void Stop()
+        {
+            Application.Idle -= ProcessFramAndUpdateGUI;
+            capture.Dispose();
+        }
         private void pnlSetting_Click(object sender, EventArgs e)
         {
             if (pnlSettingInfo.Visible == false)

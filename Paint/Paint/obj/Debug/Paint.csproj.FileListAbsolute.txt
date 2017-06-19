@@ -134,8 +134,6 @@ E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.
 E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\ZedGraph.dll
 E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\Emgu.CV.UI.xml
 E:\Courses\4th-Semester\Truc quan\Projects\Paint2\Paint\Paint\bin\Debug\cvextern.dll
-E:\project\Paint\trunk\Paint\Paint\bin\Debug\cvextern.dll
-E:\project\Paint\trunk\Paint\Paint\bin\Debug\opencv_ffmpeg300_64.dll
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\ZedGraph.dll
 E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.xml
@@ -287,3 +285,4 @@ C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.ucHandGestur
 C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.ucHandMovement.resources
 C:\Users\User\Desktop\paint(Main)\trunk\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.GL.xml
+E:\project\Paint\trunk\Paint\Paint\bin\Debug\Emgu.CV.UI.GL.xml

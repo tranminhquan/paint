@@ -34,7 +34,8 @@ namespace Paint
             }
             if (_img != null)
             {
-                g.DrawImage(_img, GetRectangle(new Point(_startPoint.X +1, _startPoint.Y + 1), new Point(_endPoint.X,_endPoint.Y )));
+                //g.DrawImage(_img, GetRectangle(new Point(_startPoint.X +1, _startPoint.Y + 1), new Point(_endPoint.X,_endPoint.Y )));
+                g.DrawImage(_img, GetRectangle(_startPoint, _endPoint));
             }
      
         }

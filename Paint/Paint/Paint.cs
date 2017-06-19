@@ -119,6 +119,10 @@ namespace Paint
       
         private void picPaint_MouseDown(object sender, MouseEventArgs e)
         {
+            if ( Shape is RectangleSelection )
+            {
+                (Shape as RectangleSelection).isSelectDone = true;
+            }
             isSaved = false;
             if (e.Button == MouseButtons.Left)
             {
@@ -294,7 +298,7 @@ namespace Paint
                     grapList.RemoveLast();
                     picPaint.Refresh();
 
-                    Rectangle ROI = new Rectangle(Shape._startPoint.X , Shape._startPoint.Y , width , height);
+                    Rectangle ROI = new Rectangle(Shape._startPoint.X + 1, Shape._startPoint.Y + 1, width , height);
 
                     (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
                     _CopyCut._img = (Shape as RectangleSelection)._img;
