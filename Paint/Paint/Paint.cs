@@ -250,20 +250,29 @@ namespace Paint
             if (Shape != null)
 
                 Shape.Mouse_Up(e);
-            if (objectChoose == "crop")
+            if (objectChoose == "crop" || objectChoose == "select")
             {
-                if (Shape._endPoint.X < 0 || Shape._endPoint.Y < 0)
+                if (Shape._endPoint.X < 0 ) 
                 {
-                   Shape._endPoint = new Point(0, 0);
+                   Shape._endPoint.X = 0;
                 }
-                if (Shape._endPoint.X > fillImage.Size.Width || Shape._endPoint.Y > fillImage.Size.Height)
+                if (Shape._endPoint.Y < 0)
                 {
-                    Shape._endPoint = new Point(fillImage.Size.Width, fillImage.Size.Height);
+                    Shape._endPoint.Y = 0;
+                }
+                if (Shape._endPoint.X > fillImage.Size.Width )
+                {
+                    Shape._endPoint.X = fillImage.Size.Width;
+                }
+                if(Shape._endPoint.Y > fillImage.Size.Height)
+                {
+                    Shape._endPoint.Y = fillImage.Size.Height;
                 }
             }
             if ( objectChoose == "select" && isSelect == true )
             {
                 //status = DRAW_STATUS.COMPLETE;
+               
 
                 int width = Math.Abs(Shape._endPoint.X - Shape._startPoint.X);
                 int height = Math.Abs(Shape._endPoint.Y - Shape._startPoint.Y);
@@ -281,14 +290,18 @@ namespace Paint
                         Shape._startPoint.Y = Shape._endPoint.Y;
                         Shape._endPoint.Y = temp;
                     }
+                    ObjectDrawing t = Shape;
+                    grapList.RemoveLast();
+                    picPaint.Refresh();
 
+                    Rectangle ROI = new Rectangle(Shape._startPoint.X , Shape._startPoint.Y , width , height);
 
-                    ROI = new Rectangle(Shape._startPoint.X , Shape._startPoint.Y , width - 2, height - 2);
-
-
-                   (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
+                    (Shape as RectangleSelection)._img = CropImage(doubleBuffer, ROI);
                     _CopyCut._img = (Shape as RectangleSelection)._img;
 
+                    grapList._list.Insert(grapList._list.Count, t);
+          
+                    
                     RectangleDrawing rec = new RectangleDrawing(Color.White, 1);
                     rec._startPoint = Shape._startPoint;
                     rec._endPoint = Shape._endPoint;
@@ -318,6 +331,10 @@ namespace Paint
             Button btnObject = (Button)sender;
             objectChoose = btnObject.Name.Remove(0, 3).ToLower();
             grapList._posINCOMPLETE = -1;
+            if(grapList._list.Count > 0 && grapList._list[grapList._list.Count - 1] is RectangleSelection)
+                grapList._list[grapList._list.Count - 1].isSelectDone = true;
+            picPaint.Refresh();
+
             if (objectChoose != "crop")
             {
                isCrop = false;

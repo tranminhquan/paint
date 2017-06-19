@@ -24,16 +24,19 @@ namespace Paint
         }
         public override void Draw(Graphics g)
         {
+            if (isSelectDone == false)
+            {
+                Pen p = new Pen(Color.Black, 1);
+                float[] dashValues = { 2, 2, 2, 2 };
 
-            Pen p = new Pen(Color.Black, 1);
-            float[] dashValues = { 2, 2, 2, 2 };
-
-            p.DashPattern = dashValues;
-            g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
+                p.DashPattern = dashValues;
+                g.DrawRectangle(p, GetRectangle(_startPoint, _endPoint));
+            }
             if (_img != null)
             {
-                g.DrawImage(_img, GetRectangle(_startPoint, _endPoint));
+                g.DrawImage(_img, GetRectangle(new Point(_startPoint.X +1, _startPoint.Y + 1), new Point(_endPoint.X,_endPoint.Y )));
             }
+     
         }
         public override int CheckLocation(Point cursor)
         {
